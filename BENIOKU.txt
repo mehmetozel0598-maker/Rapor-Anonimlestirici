@@ -1,0 +1,7 @@
+RAPOR ANONİMLEŞTİRİCİ – TABLET/TELEFON UYGULAMASI (Sürüm 1.4)
+
+Bu klasör, uygulamanın tablete kurulabilen (ikonlu, internetsiz çalışan) halidir.
+Bir kez ücretsiz bir web adresine yüklenir; tablet ilk açılışta uygulamayı indirir,
+sonrasında internet olmadan da açılır. Raporlar yalnızca cihazda işlenir, hiçbir yere gönderilmez.
+
+Kurulum adımları için Claude'un yazdığı talimatlara bakın.

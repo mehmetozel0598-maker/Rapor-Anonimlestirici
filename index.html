@@ -1,0 +1,1353 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Rapor Anonimleştirici</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0f5c56">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Anonimleştirici">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAJYElEQVR4Xu1bC4xUVxn+zrl3ZnZ3dneWXRFXWsUu2OVRtLXlXdG2CthEMLJCYAmtNKaJiSbaNBWN6xpLDSEaTZsYUyKkC6ERtRgbwGgV5Y1G5V0LFfsIYt3H7Ozs7uy99xzznTt3urtdZOfO7AYYv2QC2Zl7///7z/86L4F3QqClRaC1VfGrmrWr7tUWVmtgvlD6DgD2CM9cT3C1FKcEcER42NW14/k/GuVaWiRaWzUAfnIQQzT3f2SIV69fvVRobITWi4RtC60U4HnXE9Grw7IgpIR2XQ0hDmqBTd3bd+0bZAjDkXjbAFnytWuXViur5nuwrQ1Qmi/h7zxoLSCEvCEsoLWCEBxpS9g2IAXgelul1/WVjh37ugcPtG+AFki0QiXWrJkAy9snotE5OpMJhtu6IUhfHYaHiMUsPTBwHJ61NLlzZ2fAmSMqaIFJzc1xWN5+EYnM0f39Dq2X/dzoMDzIidzI0XBFi7GLRFOTifs+nXlaxKL36EzGgRCRG531OyBEhNzIkVxNrmtqYnAA1WtXfVLGIvv1wAAD/nrP8oXCFdGorTLOku4dz/+aJU8mLp49JOzIXO26zI43esxfC56wbald51iyYcZCUdW8aoGU4g9QQT4oCWhIqZTSH5VS63XCsjjqudpYAlDkTO5SQy8EmxzW+VIBuSoFcrcFxHTNDm+cmxwhhtpb6yEd6thCCEnO5G5DjE/Wl0JAsj3V2nwGPPftrlwAUcs2RuFHKQU1HgYRYJ84duAYW9KC0gq9mQwyzgCktGBbFiYlaiD9KgylNK4ku+B6HpTyEItEURGLQQoJT3lDZy9FxpgZwJISrlLoSnUjFolg1vun4L5Zs7Fo+gzUVVWhcfItxjgESZ5/8w20p1I4eO4sXjp9Eqf/eQkZx0F1PA5b0hBjk6NFovlzRQ0+urAlJDrTPUhUVOAz8xZgzaLFWDxzlhn50YCecODMaew8eAC/OHoYyd5eTIhXwtOq6LmiqAZgnDN2k+k0ls+Zi6eaH8L0W27NcaZHBKmPvyX4NyYDhryfAwA76xnEuTdex9fatmHP8WNIxOM5GcVC0QxAl6fLksB3mx/GF5c9mHNvzreYAEdTZ4MESGNo6Jwxntn7Ip5o+4kxFEOqWCFRFAOQPJNcbWUlfvb41zHvg7cbImTMRHY10GBP7/0VyqJRzLz1fZhW/15Mrq3L/dx/h2CPYgx49O8v47Obn0RHT49JksUwQsEGoCsPuC6qy8vx4jdacecHbjMx/L/inWWQI9zZ04Mpj34e3akU7FgUE6sTWNQ4HSvmzkfTgnsRsSxDkuS97Dv/8o9X8eB3WtDd14eobRdcLgta4TE129RrjV9ubBkV+cHg8xMTCSSqqpGoiCPV14fdRw9j7fe3YN4TX8VvT/7NeBeX42hQGpYGpizKpOzhDVW+KMgAHJlkugdb1j+CuxumwrnGyI8EknKVZ0aaJJnt66qrceq1S/jUk9/CUz//aa6B4pSFMiiLMimbOhSC0E9zZJI9PVg+Zz4eXbLMEKHLFgKGBg3Bd1WVlSNeVoaN257Fl7f+2CRSNknsCfg9ZVI2daAuYRH6SZavqopybFm/wcgOylqxQEPQ9SfWvQs/fGE3Nr+w2+8qmROyJZSyqYNfSsMhlAHoqt3pHqycvwhT6+tNgirUFUcCs4vjuphQW4dv7mrD78+cMmHAv1MmZVMH6jLaJms4QhmAo8BavG7xfX6fPmxmV0zw/aZ/0MBj27ea0kkP0KZPgNGBupiSGQJ5G4DC05kMZk+5DQtubzQ1upAYHA0YDlUVFfjzhVew58QxP/Oz+mhtdKAu1ClMGOZvACkxMJDBA7M/bNyuGM3IaMAEyaZq95GDuZwTVA7qQp3ChGHeBqAijMOFjTOMIoXW4dGCNb+irMzMFt9sb/dLY/Zh6mJyQ4g1hLwNYJaNLRu1VVWj1b0oILmIbePfyS5cvPIv886AMHWhTmGyQF4G4Gg7joNJNTWYVl+fc8XxQrBadOb117Le50umLtSJuuXrkXkZIACTTWTQlHW8QL7sDTp7UkNEUpcwCZAIZYCbCaEMwITkqPE/K2B6AikxoXJo/qEuYRdR8zKASUSRCK50deGVy5eNI4QVHAamFEpp1g78JOi/hbpQJ+qWbyXIywBBzHiei47U0Dgca5gE7Lp4d6IGDZPek02CfhakLtQpbzJhcgAVYR9+6PzZ7CgUdU31qmCS6+3vN6vKk+vqTOsbLLFRF+qUbwUIZQAKjkZj+M3Jv5pp6Vi3wQH8xRdlJj9B6Jmld88zulCnMPOBvL2GMR+PxXDy0qs4/PJ5MxEa63aYRFO9vfjI1GlYfs9cP87p/kIYHagLdQqTj/I2gHGb7Arwcwdeys7Uxi4MTO2nUAEz/zczPy6F8QMYHcwMMeSiSCgD0O2q45VmYnLh8mXTh4dxv2uBBNn+dna049urm/GxmXf4sW7accvIpg7UhTqFQSgDEFyaSvX2mTl6EJPFBN2eNf+t9v/gSytW4vEVK80WGkc6cHXKpg7UJSxCP8m4T1RWYs/xI/jR/r1maswFy0JgttWkNO9K9fch3d+PTQ89gh9s+IIJBG6scvmL31MmZVOHQnJQQZujdPtEvBKPbX8Wd0+dZlZrr7UnMBwkw62wYGcpnemHVhp3NUzF5nUP4/7ZH/LXAbMZnwuvf7p4wcik7EJDryAD+IsUjEiBT29qHfXGSAA+/1YyOWRjZNmdd424MRIYlhsjlGW223L7EuFR8M4QUdJbYwFKenM0QElvjwco6QMSgxEckelOp0vriMxglPQhKYI9PHd+CR5oqCwvzx2T60inhhyT42Rm+DE5pQtrrEYDGxrueJwVZPuqBnWKEWtoC2La2zGcVI0IDZdHZc8Jbmvzmsk4IjgwGfw7rtCaZ4V5BumcFBCHwMmEf8emNECu5tCWOCSVEM9pzjFLa4mcZ4U9cpephsajUN4Jc7uKt8NufvDCBMiZ3Ev+ygwvTVm8O6MymW2iLGZDa94YuzmhtUOO5ErO5O7PZVtaxKSLF8v7hfM7EYncnDfHSD4Wi2jHOVGmIx+/0tDQx6u0XBHSQCuutLWl4VlLtOMcF2VlvDbHfHAz5ATDg5zIjRwNV3BNAcYA/L/i7THeqLRU8hNwnK0iGuG10+DcG6/OjmufUBB8Xf0bo7ZtkQs5kZt/a5R3pP3jBP+/PD2CpUvq+vx/AeOqVyUqrXkfAAAAAElFTkSuQmCC">
+<style>
+:root{
+  --bg:#f3f4f1;--panel:#ffffff;--paper:#fffefb;--ink:#1d2321;--muted:#66706c;--line:#dfe3df;
+  --accent:#0f5c56;--accent-ink:#ffffff;--accent-soft:#e3efed;
+  --per-bg:#dbe7fd;--per:#1d4ed8;--comp-bg:#ece5fd;--comp:#6d28d9;--place-bg:#d9f3e2;--place:#15803d;
+  --date-bg:#ffe8d3;--date:#c2410c;--amt-bg:#d2f4ef;--amt:#0f766e;--id-bg:#fde0e0;--id:#b91c1c;--cus-bg:#e7e7ea;--cus:#3f3f46;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#151918;--panel:#1d2221;--paper:#202625;--ink:#e6ebe9;--muted:#9aa5a1;--line:#2f3735;
+    --accent:#4fb3a9;--accent-ink:#0d1716;--accent-soft:#213432;
+    --per-bg:#1f2d4d;--per:#93b4ff;--comp-bg:#2e2350;--comp:#c4a8ff;--place-bg:#173523;--place:#7ddc9c;
+    --date-bg:#3d2615;--date:#ffb27a;--amt-bg:#123733;--amt:#6fe0d2;--id-bg:#3f1d1d;--id:#ff9b9b;--cus-bg:#2c2c31;--cus:#d4d4d8;
+  }
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+button,input,select,textarea{font:inherit;color:inherit}
+.top{height:54px;display:flex;align-items:center;gap:14px;padding:0 18px;border-bottom:1px solid var(--line);background:var(--panel)}
+.brand{font-weight:700;font-size:16px;letter-spacing:.2px;display:flex;align-items:center;gap:9px}
+.logo{width:24px;height:24px;border-radius:6px;background:var(--accent);display:inline-grid;place-items:center;color:var(--accent-ink);font-size:13px}
+.offline{margin-left:auto;font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.offline:before{content:"";width:8px;height:8px;border-radius:50%;background:#22a06b}
+main{display:grid;grid-template-columns:minmax(340px,430px) 1fr;gap:16px;padding:16px;height:calc(100vh - 54px)}
+.left{overflow:auto;display:flex;flex-direction:column;gap:12px;padding-right:2px}
+.right{display:flex;flex-direction:column;min-height:0;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px}
+.card h2{font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin:0 0 10px;font-weight:650}
+.card-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.card-h h2{margin:0}
+textarea{width:100%;border:1px solid var(--line);border-radius:8px;background:var(--paper);padding:10px;resize:vertical}
+#input{height:240px;font:13px/1.5 ui-monospace,Consolas,monospace}
+#input[readonly]{opacity:.75}
+.btn{border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:7px 12px;cursor:pointer;white-space:nowrap}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:650;padding:10px 16px}
+.btn.small{padding:4px 9px;font-size:12px}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.actions{display:flex;gap:8px}
+.actions .primary{flex:1}
+.badge{display:flex;align-items:center;gap:8px;background:var(--accent-soft);border-radius:8px;padding:8px 10px;margin-bottom:8px;font-size:13px}
+.badge b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.badge .btn{margin-left:auto}
+.hidden{display:none!important}
+.cats{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;margin-bottom:12px}
+.cats label{display:flex;align-items:center;gap:7px;cursor:pointer}
+.dot{width:10px;height:10px;border-radius:3px;display:inline-block;flex:none}
+.params{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.params label{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted)}
+.params input[type=number],.params input[type=text]{border:1px solid var(--line);border-radius:7px;padding:6px 8px;background:var(--paper);color:var(--ink);font-size:14px}
+.params .full{grid-column:1/-1;flex-direction:row;align-items:center;gap:8px;color:var(--ink);font-size:13px}
+.hint{font-size:12px;color:var(--muted);margin:8px 0 0}
+details{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+summary{cursor:pointer;font-weight:600}
+details textarea{height:90px;font-size:13px;margin-top:4px}
+details label{display:block;font-size:12px;color:var(--muted);margin-top:8px}
+.tabs{display:flex;align-items:center;gap:4px;padding:8px 10px;border-bottom:1px solid var(--line)}
+.tab{border:0;background:none;padding:7px 11px;border-radius:7px;cursor:pointer;color:var(--muted);font-weight:600}
+.tab.active{background:var(--accent-soft);color:var(--ink)}
+.spacer{flex:1}
+.tabs label{font-size:13px;display:flex;gap:6px;align-items:center;cursor:pointer;color:var(--muted)}
+#chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px;border-bottom:1px solid var(--line)}
+#chips:empty{display:none}
+.chip{border:0;border-radius:999px;padding:3px 10px;font-size:12px;cursor:pointer;font-weight:600}
+.view{flex:1;min-height:0;overflow:auto}
+.doc{background:var(--paper);padding:26px 34px;font:15px/1.7 Georgia,"Times New Roman",serif;white-space:pre-wrap;word-wrap:break-word;tab-size:6}
+.empty{color:var(--muted);font:14px/1.6 system-ui,sans-serif;white-space:normal;max-width:520px;margin:40px auto;text-align:center}
+.empty b{color:var(--ink)}
+mark{border-radius:3px;padding:0 2px;cursor:pointer}
+mark:hover{outline:2px solid currentColor}
+.t-per{background:var(--per-bg);color:var(--per)}.t-comp{background:var(--comp-bg);color:var(--comp)}.t-place{background:var(--place-bg);color:var(--place)}
+.t-date{background:var(--date-bg);color:var(--date)}.t-amt{background:var(--amt-bg);color:var(--amt)}.t-id{background:var(--id-bg);color:var(--id)}.t-cus{background:var(--cus-bg);color:var(--cus)}
+.d-per{background:var(--per)}.d-comp{background:var(--comp)}.d-place{background:var(--place)}.d-date{background:var(--date)}.d-amt{background:var(--amt)}.d-id{background:var(--id)}.d-cus{background:var(--cus)}
+.off{text-decoration:underline dashed var(--muted);text-underline-offset:3px;cursor:pointer}
+del.orig{color:var(--muted);font-size:.85em;margin-right:3px}
+.listbar{display:flex;gap:8px;padding:10px 12px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--panel);z-index:2}
+.listbar input,.listbar select{border:1px solid var(--line);border-radius:7px;padding:6px 8px;background:var(--paper)}
+.listbar input{flex:1}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-weight:600;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:51px;z-index:1}
+td{padding:6px 10px;border-bottom:1px solid var(--line);vertical-align:middle}
+td.o{word-break:break-word;max-width:280px}
+td input.r{width:100%;border:1px solid transparent;border-radius:6px;padding:5px 7px;background:transparent}
+td input.r:hover,td input.r:focus{border-color:var(--line);background:var(--paper)}
+tr.dis td.o,tr.dis input.r{opacity:.45}
+tr.dis input.r{text-decoration:line-through}
+.tl{display:inline-block;border-radius:5px;padding:1px 7px;font-size:12px;font-weight:600;white-space:nowrap}
+.export{display:flex;gap:8px;flex-wrap:wrap;padding:10px 12px;border-top:1px solid var(--line);align-items:center}
+.export .note{font-size:12px;color:var(--muted);margin-right:auto}
+.selbar{display:flex;gap:6px;align-items:center;padding:6px 12px;border-bottom:1px solid var(--line);font-size:12px;color:var(--muted)}
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:8px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:9}
+#toast.show{opacity:.95}
+.drop{outline:2px dashed var(--accent);outline-offset:-6px}
+@media (max-width:860px){main{grid-template-columns:1fr;height:auto}.right{min-height:70vh}.left{overflow:visible}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo">◐</span>Rapor Anonimleştirici <span style="font-weight:500;font-size:12px;color:var(--muted)">Sürüm 1.4 · 06.11.2026</span></div>
+  <div class="offline">İnternetsiz çalışır · veriler cihazınızdan çıkmaz</div>
+</header>
+<main>
+  <section class="left" id="left">
+    <div class="card">
+      <div class="card-h"><h2>1 · Rapor</h2>
+        <button class="btn small" id="btnOpen">Dosya aç (.docx / .txt)</button>
+        <input type="file" id="file" accept=".docx,.txt" hidden>
+      </div>
+      <div class="badge hidden" id="docBadge"><span>📄</span><b id="docName"></b><button class="btn small" id="btnClose">Kaldır</button></div>
+      <textarea id="input" placeholder="Rapor metnini buraya yapıştırın ya da Word dosyasını sürükleyip bırakın…"></textarea>
+      <p class="hint">Word dosyası açarsanız çıktı, biçimlendirme korunarak yine Word olarak alınır. Belge özelliklerindeki yazar/şirket bilgileri ve açıklama yazarları da temizlenir.</p>
+    </div>
+
+    <div class="card">
+      <h2>2 · Neler değişsin</h2>
+      <div class="cats">
+        <label><input type="checkbox" id="o_per" checked><span class="dot d-per"></span>Kişi adları</label>
+        <label><input type="checkbox" id="o_comp" checked><span class="dot d-comp"></span>Şirket unvanları</label>
+        <label><input type="checkbox" id="o_place" checked><span class="dot d-place"></span>Yer, adres, VD adı</label>
+        <label><input type="checkbox" id="o_date" checked><span class="dot d-date"></span>Tarihler</label>
+        <label><input type="checkbox" id="o_year" checked><span class="dot d-date"></span>Tek başına yıllar</label>
+        <label><input type="checkbox" id="o_amt" checked><span class="dot d-amt"></span>Tutarlar</label>
+        <label><input type="checkbox" id="o_ids" checked><span class="dot d-id"></span>TCKN, VKN, IBAN, tel, e-posta</label>
+        <label><input type="checkbox" id="o_plate" checked><span class="dot d-id"></span>Araç plakaları</label>
+        <label><input type="checkbox" id="o_num" checked><span class="dot d-id"></span>Diğer numaralar (6+ hane)</label>
+        <label><input type="checkbox" id="o_ref" checked><span class="dot d-id"></span>Yazı sayısı, ada/parsel, dosya/sicil no</label>
+        <label style="grid-column:1/-1"><input type="checkbox" id="o_law" checked><span class="dot d-cus"></span>Mevzuat kısmına dokunma (kanun alıntıları, atıflar, Danıştay kararları)</label>
+        <label style="grid-column:1/-1"><input type="checkbox" id="o_inst" checked><span class="dot d-comp"></span>Kurum adları (T.C., Bakanlık, Başkanlık, Müdürlük)</label>
+        <label style="grid-column:1/-1"><input type="checkbox" id="o_compfull" checked><span class="dot d-comp"></span>Şirket unvanındaki faaliyet kelimelerini de değiştir (çağrışım kalmasın)</label>
+      </div>
+      <div class="params">
+        <label class="full" style="justify-content:space-between">Kurgu isim ve yerler
+          <select id="locale" style="border:1px solid var(--line);border-radius:7px;padding:5px 8px;background:var(--paper);color:var(--ink)">
+            <option value="tr" selected>Türkçe (Ahmet Kaya, Cevizova…)</option>
+            <option value="en">Yabancı (James Walker, Ashford…)</option>
+          </select></label>
+        <label>Yıl kaydırma (yıl)<input type="number" id="yearShift" step="1"></label>
+        <label>Gün kaydırma (gün)<input type="number" id="dayShift" step="1" value="0"></label>
+        <label>Tutar çarpanı<input type="text" id="factor" inputmode="decimal"></label>
+        <label class="full"><input type="checkbox" id="roundNice">Yuvarlak tutarları yuvarlak tut (50.000 → 150.000 gibi)</label>
+      </div>
+      <p class="hint">Tüm tutarlar aynı çarpanla çarpılır; oranlar (%) değişmez, bu sayede matrah–vergi–toplam ilişkisi korunur. <b>Tam sayı çarpan</b> (2, 3, 4…) seçilirse toplamlar kuruşu kuruşuna tutar. Gün kaydırma 0 iken gün/ay aynı kalır, sadece yıl kayar (dönem sonu, beyan günü gibi ilişkiler bozulmaz).</p>
+      <details>
+        <summary>Özel liste ve hariç tutulanlar</summary>
+        <label>Ayrıca değiştirilecek ifadeler (her satıra bir tane; istenirse <code>orijinal =&gt; yeni</code>)</label>
+        <textarea id="custom" placeholder="Moda Gıda&#10;Kuzey Grubu => Eastwind Group"></textarea>
+        <label>Asla değiştirilmeyecek ifadeler (her satıra bir tane)</label>
+        <textarea id="excl" placeholder="Hazine ve Maliye Bakanlığı"></textarea>
+      </details>
+    </div>
+
+    <div class="actions">
+      <button class="btn primary" id="btnRun">Anonimleştir</button>
+      <button class="btn" id="btnNew" title="Yeni isimler, yeni yıl kayması ve yeni çarpan">Yeni senaryo</button>
+    </div>
+  </section>
+
+  <section class="right">
+    <div class="tabs">
+      <button class="tab active" data-tab="preview">Önizleme</button>
+      <button class="tab" data-tab="list">Değişiklik listesi <span id="cnt"></span></button>
+      <div class="spacer"></div>
+      <label><input type="checkbox" id="cmp">Orijinali de göster</label>
+    </div>
+    <div id="chips"></div>
+    <div class="selbar hidden" id="selbar">Seçili metin:
+      <button class="btn small" id="btnSelAdd">Bunu da değiştir</button>
+      <button class="btn small" id="btnSelEx">Bunu hiç değiştirme</button>
+    </div>
+    <div class="view" id="vPreview"><div class="doc" id="preview"><div class="empty"><b>Henüz sonuç yok.</b><br>Soldan raporu yapıştırın veya Word dosyasını açın, sonra <b>Anonimleştir</b>'e basın.<br><br>Değişen her yer renkli işaretlenir. Üzerine gelince orijinali görünür, tıklayınca o değişiklik geri alınır (tekrar tıklayınca yeniden uygulanır).</div></div></div>
+    <div class="view hidden" id="vList">
+      <div class="listbar"><select id="fType"><option value="">Tüm türler</option></select><input id="fText" placeholder="Ara…"></div>
+      <table><thead><tr><th style="width:34px"></th><th style="width:110px">Tür</th><th>Orijinal</th><th>Yeni (düzenlenebilir)</th><th style="width:50px">Adet</th></tr></thead><tbody id="tbody"></tbody></table>
+    </div>
+    <div class="export">
+      <span class="note" id="note">Otomatik tespit kusursuz değildir; paylaşmadan önce önizlemeyi gözden geçirin.</span>
+      <button class="btn" id="btnCopy" disabled>Metni kopyala</button>
+      <button class="btn" id="btnTxt" disabled>.txt indir</button>
+      <button class="btn" id="btnDocx" disabled>Word – temiz</button>
+      <button class="btn" id="btnDocxHl" disabled title="Değişen yerler Word vurgusuyla boyanır: kişi turkuaz, şirket pembe, yer yeşil, tarih sarı, tutar ve numaralar gri">Word – değişiklikler boyalı</button>
+      <button class="btn" id="btnCsv" disabled title="Gerçek ↔ kurgu eşleşmelerini içerir">Eşleşme listesi</button>
+    </div>
+  </section>
+</main>
+<div id="toast"></div>
+
+<script>
+'use strict';
+/* ====================== Temel yardımcılar ====================== */
+const UC='A-ZÇĞİÖŞÜÂÎÛ', LC='a-zçğıöşüâîû';
+const LB=`(?<![${UC}${LC}0-9])`, LA=`(?![${UC}${LC}0-9])`;
+const SP='[ \\u00A0]+';
+const CAPW=`[${UC}][${LC}]+`, UPW=`[${UC}]{2,}`, NAMEW=`(?:${CAPW}|${UPW})`;
+const trU=s=>s.toLocaleUpperCase('tr');
+const trL=s=>s.toLocaleLowerCase('tr');
+const norm=s=>trU(s).replace(/[.’'`]/g,'').replace(/\s+/g,' ').trim();
+const esc=s=>s.replace(/[.*+?^${}()|[\]\\\/]/g,'\\$&');
+const htmlEsc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const reCapStart=new RegExp(`^[${UC}]`,'u');
+const reNameTok=new RegExp(`^${NAMEW}$`,'u');
+const reUpTok=new RegExp(`^[${UC}]{2,}$`,'u');
+const reCapTok=new RegExp(`^${CAPW}$`,'u');
+function ci(word){
+  const pairs={'i':'iİIı','ı':'ıIiİ','ş':'şŞ','ç':'çÇ','ğ':'ğĞ','ö':'öÖ','ü':'üÜ','â':'âÂaA','î':'îÎ','û':'ûÛ'};
+  let out='';
+  for(const ch of word){
+    const lo=trL(ch);
+    if(pairs[lo]) out+='['+pairs[lo]+']';
+    else if(/[a-z]/i.test(ch)) out+='['+ch.toLowerCase()+ch.toUpperCase()+']';
+    else if(ch===' ') out+=SP;
+    else out+=esc(ch);
+  }
+  return out;
+}
+const mkSet=str=>new Set(str.split(/\s+/).filter(Boolean).map(norm));
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function applyCase(src,fake){
+  const letters=src.replace(new RegExp(`[^${UC}${LC}A-Za-z]`,'gu'),'');
+  if(letters.length>1 && letters===trU(letters)) return S.locale==='tr'?trU(fake):fake.toUpperCase();
+  if(letters && letters===trL(letters)) return S.locale==='tr'?trL(fake):fake.toLowerCase();
+  return fake;
+}
+
+/* ====================== Sözlükler ====================== */
+const FIRST_M=mkSet(`Ahmet Mehmet Mustafa Ali Hüseyin Hasan İbrahim İsmail Osman Yusuf Murat Ömer Ramazan Halil Süleyman Abdullah Mahmut Recep Salih Fatih Kadir Emre Hakan Adem Kemal Yaşar Bekir Musa Metin Serkan Orhan Burak Uğur Erkan Selim Gökhan Volkan Cengiz Sinan Tolga Levent Serdar Erdal Tuncay Bülent Cem Kaan Onur Can Emin Okan Ercan Erol Ferhat Tamer Tarık Taner Ayhan Abdurrahman Alper Anıl Arda Barış Batuhan Berk Bilal Cihan Cüneyt Doğukan Engin Enes Eren Ertan Ertuğrul Ferdi Fikret Furkan Gürkan Hamza Harun Hayati Hikmet İlhan İlker İsa Kerem Koray Kürşat Mert Mesut Muhammed Muhammet Muharrem Necati Nedim Nevzat Nihat Oğuz Oğuzhan Ozan Özcan Özgür Rıza Rıdvan Sadık Samet Sedat Sefa Selçuk Semih Serhat Sezer Sezgin Şükrü Tahsin Taylan Turgay Turgut Tuncer Ufuk Umut Ümit Utku Vedat Veli Yakup Yasin Yavuz Yiğit Yunus Zafer Zeki Ziya Necmettin Nurettin Cemal Celal Cevdet Haydar İlyas İhsan Kâzım Kazım Lütfi Mevlüt Nazım Remzi Rasim Sabri Şevket Talat Tevfik Erhan Evren Faruk Fevzi Hilmi Hüsnü Kamil Kenan Kubilay Mithat Muammer Nuri Rahmi Raşit Sami Savaş Tayfun Tuğrul Hüsamettin Alaattin Bayram Cafer Davut Ekrem Eyüp Fahri Ferit Gökay Hamit Hidayet İrfan İsmet Kadri Mücahit Nazmi Nusret Oktay Orçun Recai Reşat Sadettin Sait Seyit Şenol Şeref Şakir Tufan Vahap Yener Yücel Zülfikar Burhan Cahit Durmuş Ercüment Erdem Ergün Eray Fuat Gürsel Kamuran Mazhar Mümtaz Necdet Nejat Niyazi Rauf Suat Şaban Tacettin Yahya Zekeriya Deniz Emrah Erkut Gökmen Hakkı Hulusi İlkay Kerim Mahir Mazlum Melih Muzaffer Nail Namık Nazif Orkun Reha Selahattin Sertaç Sırrı Tuncel Uğurhan Ulaş Vural Yalın Yekta Yüksel Zihni Abdülkadir Abdulkadir Bahadır Berkay Çağlar Çağatay Ender Emrecan Gökberk Hüsnü Kutay Mutlu Nevzat Osman Sabahattin Adnan Akif Alican Alim Alparslan Altan Arif Arslan Asım Atakan Atilla Aykut Aytaç Azmi Baki Battal Baran Barbaros Bedri Behçet Berkant Bora Cemil Cengizhan Cevat Cumali Coşkun Çetin Dursun Ediz Egemen Ekin Emirhan Emir Ensar Erbil Ergin Erman Ersin Fazıl Feridun Fikri Gani Göksel Güray Habib Haluk Hamdi Hami Hayrettin Hayri İlhami İnan İskender İzzet Kahraman Kani Kayhan Kemalettin Kutlu Latif Lokman Medet Metehan Mikail Mirza Muhittin Muhsin Mümin Münir Mürsel Necip Nesim Nizamettin Nuh Numan Önder Özkan Polat Rafet Ragıp Rahim Refik Reşit Rüstem Rüştü Sadi Saffet Salim Sarp Satılmış Selami Sencer Sercan Seyfettin Sezai Sıddık Soner Süha Şahin Şamil Şefik Tahir Talha Tanju Tarkan Tayyip Teoman Toygar Tuğhan Tunahan Turan Tümer Ünal Vahit Vehbi Veysel Yalçın Zahit Zekai Kudret Kurtuluş Tolgahan Berat Berkan Berke Görkem Kağan Mertcan Oğulcan Onurcan Selçuk Serkan Taha Tunç Yağız Alperen Miraç Abdulkerim Abdurrahim Abdülhamit Abdülkerim Abdulsamet Cuma Cumhur Haşim Hızır Mahsun Medeni Memduh Necmi Nurullah Sefer Selman Şevki Talip Tekin Timur Ulvi Vahdettin Zübeyir Emrullah Fethullah Hüseyin Kerem Fahrettin Fehmi Hüsamettin Ruhi Sinan Yıldırım Ergün Eşref Hasip Hulki İdris Kenan Lütfü Mehdi Muzaffer Necdet Nuhi Rıfat Sedat Şahap Ümran Yakup`);
+const FIRST_F=mkSet(`Ayşe Fatma Emine Hatice Zeynep Elif Meryem Şerife Zehra Sultan Hanife Merve Havva Zeliha Esra Fadime Özlem Hacer Melek Yasemin Hülya Leyla Derya Gülsüm Ebru Sevgi Songül Dilek Büşra Kübra Tuğba Sibel Aysel Aynur Gül Gülay Nurcan Nermin Nihal Pınar Sevim Seda Selin Sema Serap Sinem Şule Tülay Yeliz Zerrin Burcu Canan Çiğdem Didem Ece Esin Filiz Gamze Gizem Hande İrem Melike Nazlı Nilay Nilüfer Oya Öznur Rabia Sevda Şeyma Tuba Ümran Yeşim Arzu Aslı Ayten Belgin Berna Betül Birsen Duygu Emel Esma Feride Gonca Gülşen Hilal İlknur Kevser Meltem Müge Necla Nur Nurten Pelin Reyhan Saadet Selma Semra Sena Sevil Sevinç Şükran Ülkü Yağmur Zuhal Aylin Ayşegül Bahar Banu Berrin Buket Cansu Demet Dilara Dilan Eda Elçin Esen Fatoş Fulya Funda Gökçe Gülcan Gülten Güler Gülizar Handan Hayriye Hediye Işıl İclal Jale Kader Lale Leman Melahat Mine Mukaddes Münevver Nagihan Naciye Nazan Nazife Neslihan Nevin Nezahat Nilgün Nuray Nurhan Nursel Özge Özden Perihan Rukiye Sabiha Safiye Saliha Sanem Selda Semiha Serpil Sevgül Sevtap Şaziye Şenay Tijen Tuğçe Türkan Ümmühan Yıldız Zübeyde Zümrüt Aleyna Asiye Azize Bedriye Cemile Ecem Elvan Feyza Gülnur Hümeyra Kezban Mediha Nesrin Nefise Nurhayat Sevilay Begüm Beril Bengü Damla Deniz Ezgi Gülden İpek Merve Nehir Seher Sezen Tülin Yonca Zeren Afet Ahu Akgül Aliye Arife Asuman Ayla Aysun Ayşen Aysu Azra Bediha Belkıs Berfin Berivan Beyza Bilge Burçin Ceren Çağla Didem Dudu Durdane Edibe Elanur Esengül Fahriye Fehime Fazilet Feray Fevziye Figen Fikriye Gülbahar Gülhan Gülistan Gülsen Gülseren Gülşah Güldane Hafize Hamiyet Huriye İlayda İnci Kadriye Kamile Lütfiye Makbule Melda Melis Meral Mehtap Meliha Mualla Muazzez Müberra Müzeyyen Nadide Nafiye Nalan Nazmiye Necmiye Nesibe Nihan Nuran Nurdan Nurgül Nuriye Nursen Pakize Raziye Remziye Sabriye Sadiye Saniye Sevcan Sıdıka Simge Süheyla Sümeyye Şahika Şengül Şükriye Ülfet Ümmü Ümmügülsüm Ünzile Vildan Yeter Zahide Zekiye Zühal Zümra Eslem Nisa Nisanur Ravza Tuana Yaren Buse Ceyda Duygu Gözde Hayrünnisa Gülfidan Fidan Nuray Aysel Sevim Nazife Perihan`);
+const HONOR=mkSet('Bey Hanım Beyefendi Hanımefendi');
+const STOP=mkSet(`Vergi Vergisi Dairesi Daire Müdürlüğü Müdürü Müdür Başkanlığı Başkanı Başkan Kanunu Kanun Kanunun Gelir Kurumlar Katma Değer Özel Tüketim Damga Harçlar Emlak Motorlu Taşıtlar Usul Usulü Rapor Raporu Raporları Teftiş İnceleme İncelemesi Tespit Tespitler Madde Maddesi Maddesinin Fıkra Fıkrası Bent Bendi Türkiye Cumhuriyeti T.C TC Maliye Bakanlığı Hazine Ve İle Veya Tarih Tarihi Sayı Sayılı Konu Ek Ekler İlgi Ocak Şubat Mart Nisan Mayıs Haziran Temmuz Ağustos Eylül Ekim Kasım Aralık Pazartesi Salı Çarşamba Perşembe Cuma Cumartesi Pazar Toplam Tutar Tutarı Dönem Dönemi Beyanname Beyannamesi Fatura Faturası Mükellef Mükellefi Mükellefin Şirket Şirketi Şirketin Firma Firması Bu Şu O Söz Konusu Diğer İlgili Adı Unvanı Ünvanı Soyadı Adresi Adres Sonuç Değerlendirme Açıklama Açıklamalar Giriş Bölüm Kısım Tablo Genel Tebliğ Tebliği Sirküler Özelge Yönetmelik Yönetmeliği Resmi Gazete Sayın Başkanlığına Müdürlüğüne KDV ÖTV VUK GVK KVK KDVK ÖTVK DVK AATUHK SGK VDK GİB TL TRY USD EUR AŞ LTD ŞTİ NO SN DR AV SMMM YMM Mali Müşavir Avukat Defter Defteri Defterdarlığı Kayıt Kayıtları Hesap Hesabı Hesapları Bilanço Tablosu Satış Satışlar Maliyet Gider Giderleri Gideri İndirim İndirilecek Hesaplanan Devreden İade İstisna Matrah Matrahı Ceza Cezası Cezalı Tarhiyat Gecikme Faizi Faiz Ziyaı Usulsüzlük Tahakkuk Tahsilat Borç Alacak Ödeme Ödemeler İhtiyari Pişmanlık Uzlaşma Dava Mahkeme Mahkemesi Danıştay Anayasa Yargıtay İdare İdaresi Bölge Komisyon Komisyonu Kurul Kurulu Karar Kararı Yazı Yazısı Dilekçe Tutanak Tutanağı Çizelge Liste Listesi Not Notlar Sayfa Son İlk Birinci İkinci Üçüncü Denetim Müfettiş Müfettişi Müfettişleri Başmüfettiş Memur Memuru Şefi Şef Servis Servisi Müdür Yardımcısı Ayrıca Ancak Dolayısıyla Nitekim Buna Göre Öte Yandan Yapılan İncelenen Ayrıntılı Detay Detaylı Toplamı Alt Üst Not Bilgi Bilgiler Bilgileri Kimlik Numarası Numara No Sicil Sicili Telefon Faks Eposta E-posta Web Plaka Plakası Araç Kurumu Kurum Kurumu Hizmet Hizmetler Sigorta Sosyal Güvenlik Banka Bankası Şube Şubesi Ticaret Sanayi Odası Belediye Belediyesi Valiliği Kaymakamlığı İl İlçe Mahalle Köy Cadde Sokak Bulvar Kat Daire Blok Kapı Yeni Eski Büyük Küçük Merkez Merkezi Genel Müdürlük Müdürlüğü Daire Başkanlığı Grup Başkanlığı`);
+const COMP_STOP=mkSet(`Mükellef Mükellefi Mükellefin Mükellefe Şirket Şirketi Şirketin Firma Firması Bu Şu Söz Konusu Diğer İlgili Adı Unvanı Ünvanı Unvanlı Ünvanlı Sayın İle Tarafından Olan Nolu Numaralı Ayrıca Ancak Dolayısıyla Nitekim Buna Göre Öte Yandan Yapılan İncelenen Alıcı Satıcı Müşteri Tedarikçi Ocak Şubat Mart Nisan Mayıs Haziran Temmuz Ağustos Eylül Ekim Kasım Aralık Konu Konusu İlgi Sonuç Not Unvan Ünvan Faturayı Düzenleyen Mükellefler Firmalar`);
+const GENERIC=mkSet(`san sanayi sanayii tic ticaret ve inş inşaat taah taahhüt ith ihr ithalat ihracat paz pazarlama gıda tekstil teks otomotiv oto turizm tur nakliyat nakliye nak lojistik loj enerji madencilik mad elektrik elektronik elk elek makina makine mak kimya kim petrol pet akaryakıt tarım hayvancılık hayv yapı malz malzemeleri malzemecilik mobilya metal plastik ambalaj yazılım bilişim bilgisayar danışmanlık dan hizmetleri hiz hizm hizmet temizlik güvenlik sağlık ecza med medikal taşımacılık taş uluslararası ulusl dış gayrimenkul emlak yatırım yat holding organizasyon org reklam matbaacılık kağıt ürünleri ürün ürt üretim grup group ilaç kozmetik teknoloji tek teknolojileri mühendislik müh mimarlık proje projecilik dekorasyon dek seramik cam kimyevi maddeler toptan perakende perak dayanıklı tüketim malları mamulleri mam deri konfeksiyon konf örme dokuma iplik halı altın kuyumculuk mücevherat otelcilik restoran yemek eğitim yayıncılık medya film spor sigorta aracılık finans faktoring leasing kiralama işletmeciliği işletmeleri işl sistemleri sis çevre geri dönüşüm atık hurda orman kereste market mağazacılık marketçilik ticari ve & dış nakliyat lim limited anonim şirketi şti ltd koll kom ticaret sanayi`);
+const PROVS=`Adana Adıyaman Afyonkarahisar Afyon Ağrı Amasya Ankara Antalya Artvin Aydın Balıkesir Bilecik Bingöl Bitlis Bolu Burdur Bursa Çanakkale Çankırı Çorum Denizli Diyarbakır Edirne Elazığ Erzincan Erzurum Eskişehir Gaziantep Antep Giresun Gümüşhane Hakkari Hakkâri Hatay Isparta Mersin İçel İstanbul İzmir Kars Kastamonu Kayseri Kırklareli Kırşehir Kocaeli İzmit Konya Kütahya Malatya Manisa Kahramanmaraş Maraş Mardin Muğla Muş Nevşehir Niğde Ordu Rize Sakarya Adapazarı Samsun Siirt Sinop Sivas Tekirdağ Tokat Trabzon Tunceli Şanlıurfa Urfa Uşak Van Yozgat Zonguldak Aksaray Bayburt Karaman Kırıkkale Batman Şırnak Bartın Ardahan Iğdır Yalova Karabük Kilis Osmaniye Düzce`.split(/\s+/);
+const PROV_N=new Set(PROVS.map(norm));
+const PROV_RE=PROVS.slice().sort((a,b)=>b.length-a.length).map(ci).join('|');
+const DIST_LIST='Altıeylül|Ayvalık|Balya|Bandırma|Bigadiç|Burhaniye|Dursunbey|Edremit|Erdek|Gömeç|Gönen|Havran|İvrindi|Karesi|Kepsut|Manyas|Marmara|Savaştepe|Sındırgı|Susurluk|Bozüyük|Gölpazarı|İnhisar|Merkez|Osmaneli|Pazaryeri|Söğüt|Yenipazar|Adaklı|Genç|Karlıova|Kiğı|Solhan|Yayladere|Yedisu|Adilcevaz|Ahlat|Güroymak|Hizan|Mutki|Tatvan|Dörtdivan|Gerede|Göynük|Kıbrıscık|Mengen|Mudurnu|Seben|Yeniçağa|Ağlasun|Altınyayla|Bucak|Çavdır|Çeltikçi|Gölhisar|Karamanlı|Kemer|Tefenni|Yeşilova|Büyükorhan|Gemlik|Gürsu|Harmancık|İnegöl|İznik|Karacabey|Keles|Kestel|Mudanya|Mustafakemalpaşa|Nilüfer|Orhaneli|Orhangazi|Osmangazi|Yenişehir|Yıldırım|Ayvacık|Bayramiç|Biga|Bozcaada|Çan|Eceabat|Ezine|Gelibolu|Gökçeada|Lapseki|Yenice|Atkaracalar|Bayramören|Çerkeş|Eldivan|Ilgaz|Kızılırmak|Korgun|Kurşunlu|Orta|Şabanözü|Yapraklı|Alaca|Bayat|Boğazkale|Dodurga|İskilip|Kargı|Laçin|Mecitözü|Oğuzlar|Ortaköy|Osmancık|Sungurlu|Uğurludağ|Acıpayam|Babadağ|Baklan|Bekilli|Beyağaç|Bozkurt|Buldan|Çal|Çameli|Çardak|Çivril|Güney|Honaz|Kale|Merkezefendi|Pamukkale|Sarayköy|Serinhisar|Tavas|Bağlar|Bismil|Çermik|Çınar|Çüngüş|Dicle|Eğil|Ergani|Hani|Hazro|Kayapınar|Kocaköy|Kulp|Lice|Silvan|Sur|Enez|Havsa|İpsala|Keşan|Lalapaşa|Meriç|Süloğlu|Uzunköprü|Ağın|Alacakaya|Arıcak|Baskil|Karakoçan|Keban|Kovancılar|Maden|Palu|Sivrice|Çayırlı|İliç|Kemah|Kemaliye|Otlukbeli|Refahiye|Tercan|Üzümlü|Aşkale|Aziziye|Çat|Hınıs|Horasan|İspir|Karaçoban|Karayazı|Köprüköy|Narman|Oltu|Olur|Palandöken|Pasinler|Pazaryolu|Şenkaya|Tekman|Tortum|Uzundere|Yakutiye|Alpu|Beylikova|Çifteler|Günyüzü|Han|İnönü|Mahmudiye|Mihalgazi|Mihalıççık|Odunpazarı|Sarıcakaya|Seyitgazi|Sivrihisar|Tepebaşı|Araban|İslahiye|Karkamış|Nizip|Nurdağı|Oğuzeli|Şahinbey|Şehitkamil|Yavuzeli|Alucra|Bulancak|Çamoluk|Çanakçı|Dereli|Doğankent|Espiye|Eynesil|Görele|Güce|Keşap|Piraziz|Şebinkarahisar|Tirebolu|Yağlıdere|Kelkit|Köse|Kürtün|Şiran|Torul|Çukurca|Derecik|Şemdinli|Yüksekova|Altınözü|Antakya|Arsuz|Belen|Defne|Dörtyol|Erzin|Hassa|İskenderun|Kırıkhan|Kumlu|Payas|Reyhanlı|Samandağ|Yayladağı|Aksu|Atabey|Eğirdir|Gelendost|Keçiborlu|Senirkent|Sütçüler|Şarkikaraağaç|Uluborlu|Yalvaç|Yenişarbademli|Akdeniz|Anamur|Aydıncık|Bozyazı|Çamlıyayla|Erdemli|Gülnar|Mezitli|Mut|Silifke|Tarsus|Toroslar|Adalar|Arnavutköy|Ataşehir|Avcılar|Bağcılar|Bahçelievler|Bakırköy|Başakşehir|Bayrampaşa|Beşiktaş|Beykoz|Beylikdüzü|Beyoğlu|Büyükçekmece|Çatalca|Çekmeköy|Esenler|Esenyurt|Eyüpsultan|Fatih|Gaziosmanpaşa|Güngören|Kadıköy|Kağıthane|Kartal|Küçükçekmece|Maltepe|Pendik|Sancaktepe|Sarıyer|Silivri|Sultanbeyli|Sultangazi|Şile|Şişli|Tuzla|Ümraniye|Üsküdar|Zeytinburnu|Aliağa|Balçova|Bayındır|Bayraklı|Bergama|Beydağ|Bornova|Buca|Çeşme|Çiğli|Dikili|Foça|Gaziemir|Güzelbahçe|Karabağlar|Karaburun|Karşıyaka|Kemalpaşa|Kınık|Kiraz|Konak|Menderes|Menemen|Narlıdere|Ödemiş|Seferihisar|Selçuk|Tire|Torbalı|Urla|Akyaka|Arpaçay|Digor|Kağızman|Sarıkamış|Selim|Susuz|Abana|Ağlı|Araç|Azdavay|Cide|Çatalzeytin|Daday|Devrekani|Doğanyurt|Hanönü|İhsangazi|İnebolu|Küre|Pınarbaşı|Seydiler|Şenpazar|Taşköprü|Tosya|Akkışla|Bünyan|Develi|Felahiye|Hacılar|İncesu|Kocasinan|Melikgazi|Özvatan|Sarıoğlan|Sarız|Talas|Tomarza|Yahyalı|Yeşilhisar|Babaeski|Demirköy|Kofçaz|Lüleburgaz|Pehlivanköy|Pınarhisar|Vize|Akçakent|Akpınar|Boztepe|Çiçekdağı|Kaman|Mucur|Başiskele|Çayırova|Darıca|Derince|Dilovası|Gebze|Gölcük|İzmit|Kandıra|Karamürsel|Kartepe|Körfez|Ahırlı|Akören|Akşehir|Altınekin|Beyşehir|Bozkır|Cihanbeyli|Çeltik|Çumra|Derbent|Derebucak|Doğanhisar|Emirgazi|Ereğli|Güneysınır|Hadim|Halkapınar|Hüyük|Ilgın|Kadınhanı|Karapınar|Karatay|Kulu|Meram|Sarayönü|Selçuklu|Seydişehir|Taşkent|Tuzlukçu|Yalıhüyük|Yunak|Altıntaş|Aslanapa|Çavdarhisar|Domaniç|Dumlupınar|Emet|Gediz|Hisarcık|Pazarlar|Simav|Şaphane|Tavşanlı|Akçadağ|Arapgir|Arguvan|Battalgazi|Darende|Doğanşehir|Doğanyol|Hekimhan|Kuluncak|Pütürge|Yazıhan|Yeşilyurt|Ahmetli|Akhisar|Alaşehir|Demirci|Gölmarmara|Gördes|Kırkağaç|Köprübaşı|Kula|Salihli|Sarıgöl|Saruhanlı|Selendi|Soma|Şehzadeler|Turgutlu|Yunusemre|Afşin|Andırın|Çağlayancerit|Dulkadiroğlu|Ekinözü|Elbistan|Göksun|Nurhak|Onikişubat|Pazarcık|Türkoğlu|Artuklu|Dargeçit|Derik|Kızıltepe|Mazıdağı|Midyat|Nusaybin|Ömerli|Savur|Yeşilli|Bodrum|Dalaman|Datça|Fethiye|Kavaklıdere|Köyceğiz|Marmaris|Menteşe|Milas|Ortaca|Seydikemer|Ula|Yatağan|Bulanık|Hasköy|Korkut|Malazgirt|Varto|Acıgöl|Avanos|Derinkuyu|Gülşehir|Hacıbektaş|Kozaklı|Ürgüp|Altunhisar|Bor|Çamardı|Çiftlik|Ulukışla|Akkuş|Altınordu|Aybastı|Çamaş|Çatalpınar|Çaybaşı|Fatsa|Gölköy|Gülyalı|Gürgentepe|İkizce|Kabadüz|Kabataş|Korgan|Kumru|Mesudiye|Perşembe|Ulubey|Ünye|Ardeşen|Çamlıhemşin|Çayeli|Derepazarı|Fındıklı|Güneysu|Hemşin|İkizdere|İyidere|Kalkandere|Pazar|Adapazarı|Akyazı|Arifiye|Erenler|Ferizli|Geyve|Hendek|Karapürçek|Karasu|Kaynarca|Kocaali|Pamukova|Sapanca|Serdivan|Söğütlü|Taraklı|19 Mayıs|Alaçam|Asarcık|Atakum|Bafra|Canik|Çarşamba|Havza|İlkadım|Kavak|Ladik|Salıpazarı|Tekkeköy|Terme|Vezirköprü|Yakakent|Baykan|Eruh|Kurtalan|Pervari|Şirvan|Tillo|Ayancık|Boyabat|Dikmen|Durağan|Erfelek|Gerze|Saraydüzü|Türkeli|Akıncılar|Divriği|Doğanşar|Gemerek|Gölova|Gürün|Hafik|İmranlı|Kangal|Koyulhisar|Suşehri|Şarkışla|Ulaş|Yıldızeli|Zara|Çerkezköy|Çorlu|Ergene|Hayrabolu|Kapaklı|Malkara|Marmaraereğlisi|Muratlı|Saray|Süleymanpaşa|Şarköy|Almus|Artova|Başçiftlik|Erbaa|Niksar|Reşadiye|Sulusaray|Turhal|Zile|Akçaabat|Araklı|Arsin|Beşikdüzü|Çarşıbaşı|Çaykara|Dernekpazarı|Düzköy|Hayrat|Maçka|Of|Ortahisar|Sürmene|Şalpazarı|Tonya|Vakfıkebir|Yomra|Çemişgezek|Hozat|Mazgirt|Nazımiye|Ovacık|Pertek|Pülümür|Akçakale|Birecik|Bozova|Ceylanpınar|Eyyübiye|Halfeti|Haliliye|Harran|Hilvan|Karaköprü|Siverek|Suruç|Viranşehir|Banaz|Eşme|Karahallı|Sivaslı|Bahçesaray|Başkale|Çaldıran|Çatak|Erciş|Gevaş|Gürpınar|İpekyolu|Muradiye|Özalp|Tuşba|Akdağmadeni|Boğazlıyan|Çandır|Çayıralan|Çekerek|Kadışehri|Saraykent|Sarıkaya|Sorgun|Şefaatli|Yenifakılı|Yerköy|Alaplı|Çaycuma|Devrek|Gökçebey|Kilimli|Kozlu|Ağaçören|Eskil|Gülağaç|Güzelyurt|Sarıyahşi|Sultanhanı|Aydıntepe|Demirözü|Ayrancı|Başyayla|Ermenek|Kazımkarabekir|Sarıveliler|Bahşılı|Balışeyh|Çelebi|Delice|Karakeçili|Keskin|Sulakyurt|Yahşihan|Beşiri|Gercüş|Hasankeyf|Kozluk|Sason|Beytüşşebap|Cizre|Güçlükonak|İdil|Silopi|Uludere|Amasra|Kurucaşile|Ulus|Çıldır|Damal|Göle|Hanak|Posof|Aralık|Karakoyunlu|Tuzluca|Altınova|Armutlu|Çınarcık|Çiftlikköy|Termal|Eflani|Eskipazar|Safranbolu|Elbeyli|Musabeyli|Polateli|Bahçe|Düziçi|Hasanbeyli|Kadirli|Sumbas|Toprakkale|Akçakoca|Cumayeri|Çilimli|Gölyaka|Gümüşova|Kaynaşlı|Yığılca|Aladağ|Ceyhan|Çukurova|Feke|İmamoğlu|Karaisalı|Karataş|Kozan|Pozantı|Saimbeyli|Sarıçam|Seyhan|Tufanbeyli|Yumurtalık|Yüreğir|Besni|Çelikhan|Gerger|Gölbaşı|Kahta|Samsat|Sincik|Tut|Başmakçı|Bolvadin|Çay|Çobanlar|Dazkırı|Dinar|Emirdağ|Evciler|Hocalar|İhsaniye|İscehisar|Kızılören|Sandıklı|Sinanpaşa|Sultandağı|Şuhut|Diyadin|Doğubayazıt|Eleşkirt|Hamur|Patnos|Taşlıçay|Tutak|Göynücek|Gümüşhacıköy|Hamamözü|Merzifon|Suluova|Taşova|Akyurt|Altındağ|Ayaş|Bala|Beypazarı|Çamlıdere|Çankaya|Çubuk|Elmadağ|Etimesgut|Evren|Güdül|Haymana|Kahramankazan|Kalecik|Keçiören|Kızılcahamam|Mamak|Nallıhan|Polatlı|Pursaklar|Sincan|Şereflikoçhisar|Yenimahalle|Akseki|Alanya|Demre|Döşemealtı|Elmalı|Finike|Gazipaşa|Gündoğmuş|İbradı|Kaş|Kepez|Konyaaltı|Korkuteli|Kumluca|Manavgat|Muratpaşa|Serik|Ardanuç|Arhavi|Borçka|Hopa|Murgul|Şavşat|Yusufeli|Bozdoğan|Buharkent|Çine|Didim|Efeler|Germencik|İncirliova|Karacasu|Karpuzlu|Koçarlı|Köşk|Kuşadası|Kuyucak|Nazilli|Söke|Sultanhisar'.split('|');
+const DIST_EX=mkSet('Merkez Araç Perşembe Pazar Çarşamba Aralık Kale Kemer Genç Orta Güney Çan Çal Çat Han Hani Sur Maden Olur Susuz Bor Mut Tut Çay Bahçe Saray Ulus Bala Of Kavak Kumru Kiraz Ağlı Eğil Eskil Ula Kula Hamur Köşk Köse Belen Defne Konak Kulp Nilüfer Fatih Selçuk Selim Ulaş Evren İnönü Marmara Akdeniz Yıldırım Kocasinan Gazi Şahinbey Kurtalan');
+const DISTS=DIST_LIST.filter(d=>/^[^0-9]/.test(d)&&!DIST_EX.has(norm(d))&&!PROV_N.has(norm(d)));
+const DIST_RE=DISTS.slice().sort((a,b)=>b.length-a.length).map(ci).join('|');
+const MONTHS=['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+const MONTH_N=MONTHS.map(norm);
+const MONTH_RE=MONTHS.map(ci).join('|');
+const PLACE_STOP=new Set([...STOP,...mkSet('Mahallesi Mah Mh Caddesi Cad Cd Sokak Sokağı Sok Sk Bulvarı Bulv Blv Apartmanı Apt Sitesi Plaza Plazası Pasajı Köyü OSB İli İlçesi İl İlçe Merkez Adres Adresi')]);
+
+const F_M=`James John Robert Michael William David Richard Thomas Daniel Matthew Andrew Mark Steven Paul Kevin Brian George Edward Henry Jack Oliver Harry Samuel Lucas Ethan Noah Liam Owen Adrian Victor Martin Peter Simon Felix Hugo Leon Oscar Arthur Julian Ronald Gregory Dennis Walter Philip Vincent Gordon Howard Ralph Roger Stanley Frank Joseph Charles Albert Patrick Ryan Nathan Sean Colin Neil Stuart Graham Lewis Elliot`.split(' ');
+const F_F=`Emma Olivia Sophia Isabella Mia Charlotte Amelia Emily Grace Chloe Lily Hannah Laura Sarah Anna Clara Julia Alice Rachel Helen Nora Ruby Sophie Lucy Megan Claire Diana Elena Fiona Irene Jessica Karen Linda Maria Natalie Paula Rebecca Susan Victoria Zoe Abigail Audrey Bella Caroline Daisy Eleanor Evelyn Florence Gemma Harriet Isla Jane Kate Leah Madeline Molly Naomi Penelope Rose Stella Violet Willow`.split(' ');
+const F_S=`Anderson Baker Carter Davis Evans Fisher Graham Harris Irving Jenkins Keller Lawson Mitchell Nelson Owens Parker Quinn Reynolds Sullivan Turner Underwood Vaughn Walker Young Bennett Collins Dawson Ellis Foster Gibson Hughes Jordan Kennedy Lambert Morgan Norris Palmer Russell Spencer Thornton Wallace Whitman Bradley Chapman Crawford Fleming Hayes Hudson Lowell Marshall Porter Sawyer Sutton Warren Wheeler Barnes Brooks Cole Doyle Fletcher Grant Hammond Hartley Holt Kerr Mercer Moss Pierce Ramsey Shaw Stone Tate Weston Ashby Blake Calloway Dalton Emerson Finch Garrett Hollis Langley Maddox Prescott Radcliffe Sinclair Thorne Whitaker`.split(' ');
+const BRANDS=`Northwind Bluestone Silverline Redwood Harborview Ironbridge Greenfield Summitcrest Crestline Oakmont Westbrook Brightwater Falconridge Evergreen Pinecrest Starling Granitefield Clearwater Highmoor Riverside Sterlingham Lakeshore Maplewood Copperfield Stonegate Windmere Blackwood Goldcrest Seabrook Aspenvale Ravenhill Foxglove Kingsley Larchmont Wexford Ambergate Cobalt Driftwood Elmstead Hawkridge`.split(' ');
+const BRAND2=`Atlas Nova Prime Vertex Orion Delta Apex Zenith Horizon Meridian Pioneer Keystone Beacon Compass Summit Venture`.split(' ');
+const PLACES=`Ashford Brookhaven Millbrook Westmere Kingsport Riverton Oakridge Fairhaven Stonebridge Lakewood Elmwood Hollowbrook Redcliff Silverton Northgate Eastwick Bramford Cliffside Dunmore Greenhill Hawthorne Ivydale Juniper Kestrel Larkspur Moorfield Newhaven Orchardton Pembrook Queensbury Rosewood Thornbury Upland Valemont Whitford Yarrow Ambleside Briarwood Copperton Dovercrest Edgewater Foxborough Glenmoor Harrowgate Ironvale Kingsmere Lindenford Marrowby Northcliff Oakhurst Pinehollow Ravensby Saltmarsh Tidewell Underhill Westvale Wyncombe Ashbury Barrowfield Coldbrook Dalmere Eastholm Fernleigh Galeton Hartwell Holloway Kirkdale Langford Maplecross Netherby Oldcastle Penwick Quarrydale Redmoor Sandholm Stonemere Thistlebay Waverly Whitmoor Brackenridge Cresthaven Duskwood Elderbrook Fallowmere Greystone Highfield Larkhaven Meadowbank Northbury Southwold`.split(' ');
+const STREETS=`Maple Cedar Willow Birch Elm Linden Poplar Chestnut Hazel Rowan Aspen Laurel Magnolia Juniper Sycamore Hawthorn Primrose Bluebell Heather Clover Ivy Lilac Myrtle Oakleaf Pinewood Rosemary Sage Thistle Violet Wisteria Acorn Alder Amber Apple Ashgrove Bayberry Beech Blackthorn Bramble Briar Buttercup Camellia Cherry Cloudberry Cornflower Cypress Daffodil Dahlia Elder Fennel Fern Foxglove Gardenia Ginger Hemlock Holly Honeysuckle Iris Jasmine Larch Lavender Lemon Lily Lupin Mallow Marigold Meadow Mistletoe Mulberry Nettle Olive Orchid Peony Pepper Plum Quince Redbud Reed Saffron Spruce Tamarisk Tulip Walnut Yew Zinnia`.split(' ');
+
+/* Türkiye'ye uygun kurgu havuzları (yer ve şirket adları gerçek il/ilçe/mahalle listesiyle çakışmayacak şekilde üretildi) */
+const TR_M=`Ahmet Mehmet Mustafa Ali Hüseyin Hasan İbrahim İsmail Osman Yusuf Murat Ömer Ramazan Süleyman Mahmut Recep Salih Emre Hakan Bekir Musa Serkan Burak Erkan Gökhan Volkan Sinan Tolga Levent Serdar Erdal Tuncay Bülent Cem Kaan Okan Erol Ferhat Tarık Taner Alper Anıl Arda Batuhan Berk Bilal Cüneyt Doğukan Engin Enes Eren Ertuğrul Fikret Furkan Gürkan Harun İlker Kerem Koray Kürşat Muharrem Nedim Nihat Oğuzhan Ozan Rıdvan Samet Sedat Semih Serhat Taylan Turgay Utku Vedat Yakup Yasin Yunus Necmettin Nurettin Cevdet Haydar İlyas Lütfi Mevlüt Talat Erhan Faruk Fevzi Hilmi Kubilay Mithat Muammer Raşit Tuğrul Alaattin Cafer Davut Ekrem Eyüp Ferit Gökay Hamit İrfan Mücahit Nusret Orçun Recai Reşat Sadettin Seyit Vahap Zülfikar Burhan Cahit Ercüment Eray Fuat Gürsel Kamuran Mümtaz Necdet Niyazi Suat Şaban Tacettin Zekeriya Emrah Erkut Gökmen Hulusi İlkay Melih Namık Orkun Reha Selahattin Sertaç Vural Yekta Bahadır Berkay Çağatay Gökberk Kutay Sabahattin Adnan Alican Alparslan Atakan Aykut Aytaç Barbaros Behçet Berkant Cemil Cevat Ediz Egemen Emirhan Ensar Erman Ersin Feridun Göksel Güray Haluk Hayrettin İskender Kayhan Metehan Mikail Muhittin Necip Önder Rüstem Sencer Sercan Soner Tanju Tarkan Teoman Toygar Tunahan Veysel Berat Berkan Görkem Kağan Mertcan Oğulcan Yağız Alperen`.split(' ');
+const TR_F=`Ayşe Fatma Emine Hatice Zeynep Elif Meryem Şerife Zehra Hanife Merve Havva Zeliha Esra Fadime Özlem Hacer Yasemin Hülya Leyla Gülsüm Ebru Songül Dilek Büşra Kübra Tuğba Sibel Aysel Aynur Gülay Nurcan Nermin Nihal Seda Selin Sema Serap Sinem Şule Tülay Yeliz Zerrin Burcu Canan Çiğdem Didem Ece Esin Filiz Gamze Gizem Hande İrem Melike Nilay Oya Öznur Rabia Sevda Şeyma Tuba Yeşim Aslı Ayten Belgin Berna Betül Birsen Duygu Feride Gülşen İlknur Kevser Meltem Müge Necla Nurten Pelin Reyhan Selma Semra Sena Sevil Zuhal Aylin Ayşegül Banu Berrin Buket Cansu Demet Dilara Dilan Eda Elçin Fatoş Fulya Funda Gökçe Gülcan Gülten Gülizar Handan Hediye Işıl İclal Jale Leman Melahat Mine Mukaddes Münevver Nagihan Naciye Nazan Nazife Neslihan Nevin Nezahat Nilgün Nuray Nurhan Nursel Özge Özden Perihan Rukiye Sabiha Safiye Saliha Sanem Selda Semiha Serpil Sevgül Sevtap Şaziye Şenay Tijen Tuğçe Türkan Zübeyde Aleyna Asiye Azize Cemile Ecem Elvan Feyza Gülnur Hümeyra Kezban Mediha Nesrin Nefise Sevilay Begüm Beril Bengü Gülden Sezen Tülin Zeren Aliye Asuman Ayla Aysun Ayşen Azra Belkıs Berfin Beyza Burçin Ceren Çağla Elanur Figen Gülhan Gülseren Gülşah Hafize Melda Melis Meral Nalan Nihan Nuran Nurdan Nurgül Simge Süheyla Sümeyye Şengül Zekiye Zühal Buse Ceyda Gözde`.split(' ');
+const TR_S=`Yılmaz Kaya Demir Şahin Çelik Öztürk Aydın Özdemir Arslan Doğan Kılıç Aslan Çetin Koç Kurt Özkan Şimşek Polat Özcan Korkmaz Çakır Erdoğan Yavuz Acar Aktaş Güler Yalçın Bozkurt Bulut Keskin Ünal Turan Özer Kaplan Avcı Tekin Köse Yüksel Ateş Aksoy Altun Aydoğan Akbaş Akkaya Aktürk Albayrak Alkan Altıntaş Aydemir Balcı Başaran Bayrak Bilgin Bilgiç Bozdağ Coşkun Çakmak Çiftçi Demirci Demirel Dinç Duman Durmaz Eker Ekinci Erol Ersoy Ertürk Göçmen Göktaş Gündoğdu Gürbüz Gürsoy Kahraman Kalkan Kandemir Karaca Karadağ Karakaya Karakuş Karataş Kayacan Kılınç Kocaman Kocabaş Koçak Korkut Oral Oruç Önal Özbek Özkaya Özyurt Saraç Soylu Sönmez Söylemez Sağlam Tanrıverdi Taşkın Temel Toprak Topal Tuncer Uçar Uysal Ünlü Varol Yaman Yazıcı Yazıcıoğlu Yücel Zengin Akdağ Akyüz Aras Atalay Atasoy Bektaş Budak Canpolat Cebeci Dikmen Dumlu Ekici Erden Esen Gezer Güngör Gürel Karabulut Karahan Keleş Kılıçarslan Kocabıyık Kurtoğlu Okur Öcal Özçelik Özgün Sungur Şener Taşdemir Tekeli Tezcan Tokgöz Tosun Türkmen Ulusoy Ünver Yener Yüce Zorlu Bostancı Sarıkaya Karakoç Kızıltaş Aslantaş Çolak Dalkılıç Demirtaş Ekmekçi Erbaş Gültekin Hacıoğlu Kaçar Karaaslan Karakurt Koyuncu Özmen Öztekin Sarıgül Soydan Turhan Yağcı Yalçınkaya Yetkin Yörük Zeybek Akçay Akdoğan Akgün Akpınar Alp Altınbaş Arıkan Avşar Ayaz Baysal Bilici Bolat Çalışkan Çevik Dağdelen Delibaş Demiray Demirhan Dündar Gedik Gençer Gökalp Gören Güleç Gülmez Günay Gürkan Kalender Karagöz Karaman Kaygısız Kılıçaslan Kırbaş Kocatürk Köksal Mercan Nalbant Özsoy Öztaş Pamuk Pehlivan Sancak Serin Sezgin Solmaz Şanlı Talay Taşçı Temiz Türkoğlu Uğurlu Uslu Üstün Yanık Yazgan Yurdakul Yurtsever`.split(' ');
+const TR_PLACES=["Yeşilbeli", "Bayıryayla", "Kartaldüzü", "Ovabahçe", "Meşedağ", "Cevizova", "Kumbük", "Meşetaş", "Bayırova", "Gülyayla", "Çambahçe", "Ceylanbük", "Laleçay", "Geyikyurt", "Kavakçay", "Ardıççay", "Cevizçeşme", "Dutburun", "Tuzyamaç", "Kumdüzü", "Söğütçay", "Kayabük", "Kirazyamaç", "Dutyazı", "Tepeyamaç", "Pınarburun", "Cevizkent", "Laleburun", "Bulutyamaç", "Yücehisar", "Rüzgartaş", "Cevizburun", "Gümüşyamaç", "Kızılbağ", "Eriktepe", "Deretepe", "Buluthisar", "Aygöl", "Demirgöl", "Kayayayla", "Gümüşbeli", "Ovayayla", "Günhisar", "Meşedere", "Ardıçyurt", "Kırgöl", "Ilgınalan", "Kumalan", "Söğütyaka", "Doğanyaka", "Alabük", "Dutgöl", "Meşebeli", "Pınaralan", "Söğütgöl", "Günburun", "Kartalhisar", "Ceylangöl", "Balbeli", "Altınbeli", "Bulutyaka", "Ilgınova", "Erikdağ", "Elmayurt", "Kıryurt", "Geyikyayla", "Tuzgöl", "Altınkuyu", "Erikburun", "Yıldızçay", "Bulutyurt", "Şahindağ", "Gölburun", "Şahinpınar", "Akbeli", "Gülkuyu", "Sümbülova", "Yıldızdağ", "Bayırbağ", "Gülbeli", "Tuztepe", "Söğütdağ", "Balkent", "Bozbağ", "Altınburun", "Kavakyayla", "Gökbağ", "Bayırkaya", "Ayçeşme", "Yeşilçeşme", "Söğütköy", "Kumhisar", "Kayagöl", "Yıldıztaş", "Yüceyazı", "Söğütkent", "Cevizyaka", "Sümbüldüzü", "Ilgınpınar", "Ulukoru", "Yıldızbağ", "Pınarören", "Şahingöl", "Bayırçeşme", "Balyamaç", "Çamkoru", "Lalehisar", "Bayırtaş", "Ceylanyaka", "Sarıkoru", "Cevizbağ", "Sümbülyayla", "Kırkent", "Erikyamaç", "Kayakuyu", "Karaçeşme", "Kirazova", "Aybahçe", "Dereçay", "Doğangöl", "Ceylandağ", "Şahinyazı", "Gökkoru", "Sümbülhisar", "Güldüzü", "Altıngöl", "Ilgınkaya", "Laledere", "Çamyaka", "Turnaçay", "Demiryamaç", "Sümbülkaya", "Geyikgöl", "Şahintaş", "Şahinburun", "Güngöl", "Kızılçeşme", "Turnabağ", "Ceylanyayla", "Yeşilkoru", "Kavakyurt", "Aybağ", "Ilgınyayla", "Şahinkent", "Tuzkent", "Kirazyaka", "Eriktaş", "Alakoru", "Dutalan", "Erikyaka", "Sümbüldağ", "Aladüzü", "Yücealan", "Yücegöl", "Akkoru", "Lalepınar", "Şahinbahçe", "Sümbülçay", "Kirazbahçe", "Doğankoru", "Bozbahçe", "Rüzgarkent", "Bulutbeli", "Balköy", "Turnabahçe", "Bulutyazı", "Pınaryurt", "Sümbülbahçe", "Kavakbağ", "Kartalburun", "Cevizyurt", "Bayırkent", "Kartalkoru", "Kartalyurt", "Bulutören", "Erikalan", "Sümbülbeli", "Laleyazı", "Kırbağ", "Erikbahçe", "Ardıçkaya", "Kartalbük", "Gümüşdağ", "Kirazkent", "Bulutyayla", "Ceylantepe", "Dereyamaç", "Kavakyaka", "Kartalyayla", "Pınarbağ", "Kırkuyu", "Yaylaçay", "Yücedere", "Çınarkent", "Turnahisar", "Turnaburun", "Bulutdüzü", "Dutbük", "Sümbülkoru", "Geyikçeşme", "Çınarova", "Ovakaya", "Tuzpınar", "Geyikyazı", "Taşbeli", "Ardıçyazı", "Laleova", "Kirazdağ", "Sümbülçeşme", "Laleçeşme", "Kayakoru", "Ilgınyamaç", "Çınarbağ", "Dutköy", "Altınkoru", "Turnaalan", "Rüzgaryamaç", "Alabahçe", "Bulutköy", "Gümüşkent", "Söğütburun", "Pınartaş", "Taşalan", "Söğütbahçe", "Günçay", "Bozgöl", "Kavaktaş", "Rüzgarören", "Ilgınkent", "Bulutburun", "Ardıçtaş", "Turnabeli", "Yaylakoru", "Yıldızkent", "Ilgınköy", "Yüceova", "Turnadağ", "Ceviztaş", "Gülbağ", "Kartalgöl", "Günköy", "Turnabük", "Kızıldüzü", "Kızılyayla", "Balkoru", "Dereyaka", "Kartalova", "Şahinçay", "Yaylayamaç", "Sarıkent", "Yıldızyazı", "Lalebeli", "Taşgöl", "Sümbülyurt", "Elmataş", "Bayırdere", "Kartalyamaç", "Meşeova", "Dereburun", "Elmaova", "Cevizkuyu", "Erikkent", "Dutören", "Gülçay", "Geyikkuyu", "Uluyaka", "Gökhisar", "Cevizyayla", "Rüzgaralan", "Kartalköy", "Turnaçeşme", "Tuzdağ", "Cevizkaya", "Alaburun", "Yıldızyurt", "Erikova", "Kavakyazı", "Kayaçeşme", "Tepeyazı", "Şahinkoru", "Gülkoru", "Doğanbahçe", "Taşhisar", "Ulubeli", "Geyikyaka", "Tuzova", "Kıryamaç", "Tuzkuyu", "Bayırhisar", "Derebeli", "Tuzçeşme", "Gümüşhisar", "Kırbeli", "Çamburun", "Çamdağ", "Cevizkoru", "Geyikyamaç", "Taşyurt", "Doğanbük", "Gökçeşme"];
+const TR_STREETS=`Akasya Ihlamur Papatya Menekşe Begonya Kardelen Sümbül Zambak Manolya Erguvan Gelincik Karanfil Leylak Lavanta Ladin Ardıç Servi Fesleğen Nane Reyhan Yonca Ayçiçeği Begonvil Gardenya Orkide Şebboy Hanımeli Mimoza Zakkum Ebegümeci Kekik Biberiye Gökkuşağı Yıldızlı Güneşli Bulutlu Rüzgârlı Huzur Barış Umut Sevgi Dostluk Kardeşlik Birlik Bereket Şafak Seher Ayışığı Yakamoz Martı Kumru Serçe Bülbül Turna Kırlangıç Çalıkuşu`.split(' ');
+const TR_BRANDS=["Simgehan", "Zümrüttek", "Güneysoy", "Toroskoru", "Meşehan", "Yıldızyol", "Egekale", "Defnetek", "Yıldızsan", "Doğukale", "Çınarsan", "Batısan", "Toroskale", "Güneykale", "Kalepınar", "Lalesoy", "Turkuaztepe", "Akdağışık", "Zümrüttepe", "Akdağsan", "Ufukkent", "Kaletaş", "Kartalyıldız", "Çınaryıldız", "Çınartek", "Turkuazpınar", "Yıldızpınar", "Kervansan", "Tunçyol", "Safirkoru", "Pusulasan", "Simgekanat", "Doruktek", "Meşeyıldız", "Doğuhan", "Gümüşyıldız", "Batıpınar", "Doruksoy", "Atasan", "Kervantek", "Atatek", "Ankaışık", "Zümrütsoy", "Meşetaş", "Göktek", "Zirvesan", "Kervansoy", "Meşepınar", "Akdağsel", "Gökışık", "Kuzeytek", "Mavikoru", "Safirtek", "Zümrütkanat", "Ufukkoru", "Akkanat", "Çınarhan", "Laletepe", "Kuzeyyol", "Kartalkoru", "Simgetepe", "Yüceyol", "Egetepe", "Tunçhan", "Çelikkanat", "Ataışık", "Akkale", "Batıkale", "Ankakoru", "Zirvekanat", "Zirvekale", "Zirvepınar", "Tunçkanat", "Zümrütkent", "Tunçsoy", "Batıkoru", "Lalekent", "Kervantepe", "Akdağtek", "Beyazyol", "Çeliktaş", "Beyazhan", "Gökyol", "Batıtaş", "Göksoy", "Yücetaş", "Safirtepe", "Safirsan", "Batısel", "Egepınar", "Gümüşkoru", "Çelikkent", "Güneykoru", "Zümrütyıldız", "Pusulaışık", "Yıldızyıldız", "Akışık", "Meşesan", "Doğuyol", "Doruksel", "Yıldızsoy", "Pusulapınar", "Kartalyol", "Ufuktaş", "Yıldıztaş", "Güneyyol", "Batıışık", "Yüceyıldız", "Ufuksel", "Tunçtepe", "Ankataş", "Yüceışık", "Gümüşsel", "Ankayol", "Gümüşsan", "Kaleışık", "Meşetek", "Çınarsoy", "Laleyıldız", "Gökkale", "Toroshan", "Lalesan", "Lalekoru", "Defnekoru", "Laleışık", "Güneytek", "Defnesoy", "Kartaltek", "Kuzeyyıldız", "Ufuktek", "Doğutek", "Defneyıldız", "Ufukkanat", "Kervanyol", "Safirkanat", "Egekoru", "Doruktaş", "Defnekanat", "Ufukkale", "Meşekoru", "Safirhan", "Safiryol", "Kuzeytaş", "Torossan", "Tunçtek", "Safirkale", "Tunçtaş", "Zirvehan", "Çınaryol", "Dorukkanat", "Zirveyol", "Atakale", "Turkuaztaş", "Ankakent", "Safirtaş", "Ankasan", "Altınsoy", "Pusulakoru", "Defneyol", "Simgepınar", "Çınarışık", "Simgetek", "Çelikpınar", "Batıyıldız", "Yıldızkent", "Beyazışık", "Altınyol", "Turkuazyol", "Atasel", "Torossel", "Meşekanat", "Altınkanat", "Ufukyıldız", "Kuzeykale", "Ufukyol", "Defnekale", "Meşekent", "Egeyol", "Turkuaztek", "Toroskanat", "Meşeyol", "Ankasoy", "Maviyıldız", "Atasoy", "Akdağkanat", "Doğukanat", "Turkuazsel", "Zümrütsel", "Beyazkoru", "Batıkanat", "Zümrütpınar", "Kaletek", "Kaleyol", "Defnetepe", "Akdağkent", "Safirkent", "Güneytaş", "Torossoy", "Mavikanat", "Doğukoru", "Ufukışık", "Dorukhan", "Turkuazışık", "Meşesoy", "Ankapınar", "Zirvekoru", "Kuzeykanat", "Defnesel", "Akkoru", "Çelikyol", "Ufuksoy", "Mavipınar", "Beyazsel", "Çınarsel", "Aktek", "Dorukkent", "Kuzeysel", "Yücehan", "Torostek", "Turkuazkoru"];
+const TR_BRAND2=`Doruk Zirve Ufuk Pusula Eksen Odak Vizyon Kardelen Simge Kervan Yıldız Işık Kale Atlas Meridyen Anka Çınar Ekin Ilgaz Toros`.split(' ');
+const TR_INST_TC='T.C.';
+const notRealPlace=w=>!w.split(/\s+/).some(x=>{const n=norm(x);return PROV_N.has(n)||new Set(DIST_LIST.map(norm)).has(n);});
+
+/* ====================== Durum ====================== */
+const S={seed:0,rng:null,cache:new Map(),used:{},disabled:new Set(),overrides:new Map(),docx:null,res:null,opt:null,locale:'tr',docWords:new Set()};
+let _TRS=null,_TRB2=null;
+const POOL=k=>S.locale==='tr'?(k==='street'?(_TRS||(_TRS=TR_STREETS.filter(notRealPlace))):k==='brand2'?(_TRB2||(_TRB2=TR_BRAND2.filter(notRealPlace))):null)||{m:TR_M,f:TR_F,s:TR_S,place:TR_PLACES,street:TR_STREETS,brand:TR_BRANDS,brand2:TR_BRAND2}[k]:{m:F_M,f:F_F,s:F_S,place:PLACES,street:STREETS,brand:BRANDS,brand2:BRAND2}[k];
+function resetScenario(seed){
+  S.seed=seed??((Math.random()*2147483647)|0);
+  S.rng=mulberry32(S.seed);S.cache.clear();S.used={};S.overrides.clear();S.disabled.clear();
+}
+resetScenario();
+const rnd=n=>Math.floor(S.rng()*n);
+function cached(key,fn){if(!S.cache.has(key))S.cache.set(key,fn());return S.cache.get(key);}
+function pickUnique(pool,name,joiner){
+  const used=S.used[name]||(S.used[name]=new Set());
+  const inDoc=x=>String(x).split(/[ -]/).some(w=>S.docWords.has(norm(w)));
+  let free=pool.filter(x=>!used.has(x)&&!inDoc(x));
+  let v;
+  if(free.length) v=free[rnd(free.length)];
+  else { let g=0; do{ v=pool[rnd(pool.length)]+(joiner||' ')+pool[rnd(pool.length)]; g++; }while(used.has(v)&&g<500); }
+  used.add(v);return v;
+}
+function randDigits(n,firstNonZero){let s='';for(let i=0;i<n;i++){let d=rnd(10);if(i===0&&firstNonZero&&d===0)d=1+rnd(9);s+=d;}return s;}
+function uniqueNum(name,orig,fn){const used=S.used[name]||(S.used[name]=new Set());let v,g=0;do{v=fn();g++;}while((used.has(v)||v===orig)&&g<1000);used.add(v);return v;}
+
+/* ====================== Kurgu üreticiler ====================== */
+function fakeFirst(n,g){
+  return cached('F:'+n,()=>{
+    let gender=g||(FIRST_F.has(n)&&!FIRST_M.has(n)?'F':FIRST_M.has(n)?'M':(S.rng()<.5?'M':'F'));
+    return gender==='F'?pickUnique(POOL('f'),'ff'):pickUnique(POOL('m'),'fm');
+  });
+}
+const fakeSur=n=>cached('S:'+n,()=>pickUnique(POOL('s'),'sur','-'));
+const fakePlace=n=>cached('PLACE:'+n,()=>pickUnique(POOL('place'),'place'));
+function fakeCompanyHead(n,tokCount){return cached('CH:'+n,()=>{const b=pickUnique(POOL('brand'),'brand');const b2=POOL('brand2');return tokCount>=2?b+' '+b2[rnd(b2.length)]:b;});}
+function fakeAddr(n,orig){
+  return cached('ADDR:'+n,()=>{
+    if(/^[0-9]/.test(orig)) return orig.replace(/[0-9]/g,(d,i)=>String(i===0?1+rnd(9):rnd(10)));
+    return pickUnique(POOL('street'),'street');
+  });
+}
+function tcknFake(orig){
+  return cached('TC:'+orig,()=>uniqueNum('tc',orig,()=>{
+    const d=[1+rnd(9)];for(let i=1;i<9;i++)d.push(rnd(10));
+    const d9=((7*(d[0]+d[2]+d[4]+d[6]+d[8])-(d[1]+d[3]+d[5]+d[7]))%10+10)%10;d.push(d9);
+    const ok=d.reduce((a,b)=>a+b,0)%10;d.push((ok+1+rnd(9))%10); // bilerek geçersiz kontrol hanesi
+    return d.join('');
+  }));
+}
+function vknCheck(d){let sum=0;for(let i=0;i<9;i++){const tmp=(d[i]+(9-i))%10;let v=(tmp*Math.pow(2,9-i))%9;if(tmp!==0&&v===0)v=9;sum+=v;}return(10-(sum%10))%10;}
+function vknFake(orig){
+  return cached('VK:'+orig,()=>uniqueNum('vk',orig,()=>{
+    const d=[];for(let i=0;i<9;i++)d.push(rnd(10));
+    d.push((vknCheck(d)+1+rnd(9))%10); // bilerek geçersiz
+    return d.join('');
+  }));
+}
+function digitSwap(orig,keep,special){let i=0;return orig.replace(/[0-9]/g,c=>{const r=i<keep?c:(special&&special(i))??String(rnd(10));i++;return r;});}
+const ibanFake=o=>cached('IB:'+o.replace(/\s/g,''),()=>digitSwap(o,0,i=>i<2?'0':null));
+const phoneFake=o=>cached('TEL:'+o.replace(/\D/g,''),()=>digitSwap(o,o.trim().startsWith('+')?3:2));
+const asciiTr=s=>s.replace(/[çÇ]/g,'c').replace(/[ğĞ]/g,'g').replace(/[ıİ]/g,'i').replace(/[öÖ]/g,'o').replace(/[şŞ]/g,'s').replace(/[üÜ]/g,'u').replace(/[âÂ]/g,'a').replace(/[îÎ]/g,'i').replace(/[ûÛ]/g,'u');
+function mailFake(o){return cached('ML:'+o.toLowerCase(),()=>{const f=pickUnique(POOL('m').concat(POOL('f')),'mailf');const sp=POOL('s');const s=sp[rnd(sp.length)];return asciiTr(trL(f+'.'+s)).replace(/[^a-z.]/g,'')+'@example.com';});}
+function plateFake(m){
+  return cached('PL:'+norm(m[0]).replace(/\s/g,''),()=>{
+    const L='ABCDEFGHJKLMNPRSTUVYZ';let letters='';for(let i=0;i<m[2].length;i++)letters+=L[rnd(L.length)];
+    return m[0].replace(m[1],'9'+rnd(10)).replace(m[2],letters).replace(new RegExp(m[3]+'$'),randDigits(m[3].length,true));
+  });
+}
+const numFake=o=>cached('NUM:'+o,()=>uniqueNum('num',o,()=>randDigits(o.length,o[0]!=='0')));
+function fakeCustom(from,match){
+  const raw=cached('CUS:'+norm(from),()=>{
+    if(/^[0-9 ]+$/.test(from)) return from.replace(/[0-9]/g,()=>String(rnd(10)));
+    const w=from.trim().split(/\s+/);
+    if(w.length>=2 && w.every(x=>reCapStart.test(x))) return pickUnique(S.rng()<.5?POOL('m'):POOL('f'),'cusf')+' '+pickUnique(POOL('s'),'sur','-');
+    return pickUnique(POOL('brand'),'brand');
+  });
+  return applyCase(match,raw);
+}
+
+/* ====================== Tarih & tutar ====================== */
+const pad=(n,len)=>String(n).padStart(len,'0');
+function shiftDMY(d,m,y,O){
+  y+=O.yearShift;
+  if(O.dayShift){const dt=new Date(Date.UTC(y,m-1,d));dt.setUTCDate(dt.getUTCDate()+O.dayShift);return[dt.getUTCDate(),dt.getUTCMonth()+1,dt.getUTCFullYear()];}
+  const dim=new Date(Date.UTC(y,m,0)).getUTCDate();if(d>dim)d=dim;return[d,m,y];
+}
+function monthName(idx,src){const n=MONTHS[idx];return src===trU(src)?trU(n):src===trL(src)?trL(n):n;}
+function scaleAmount(str,O){
+  const [ip,dp='']=str.split(',');
+  const hasSep=ip.includes('.');const intDigits=ip.replace(/\./g,'');const dec=dp.length;
+  const units=Number(intDigits+dp);
+  let nv=Math.round(units*O.factor);
+  if(O.roundNice&&dec===0){const tz=(intDigits.match(/0+$/)||[''])[0].length;if(tz>=3){const p=Math.pow(10,tz);nv=Math.max(p,Math.round(nv/p)*p);}}
+  const s=String(nv).padStart(dec+1,'0');let I=s.slice(0,s.length-dec);const D=s.slice(s.length-dec);
+  if(hasSep)I=I.replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+  return I+(dec?','+D:'');
+}
+
+/* ====================== Tespit ====================== */
+function tokensIn(seg,base){const out=[];const re=/\S+/g;let m;while((m=re.exec(seg)))out.push({t:m[0],s:base+m.index,e:base+m.index+m[0].length});return out;}
+function backHead(text,p,{max,stop,allowNum,allowConn,sentEnd}){
+  const ls=text.lastIndexOf('\n',p-1)+1;
+  const toks=tokensIn(text.slice(ls,p),ls);
+  const acc=[];let nextS=p;
+  for(let i=toks.length-1;i>=0&&acc.length<max;i--){
+    let {t,s,e}=toks[i];
+    if(/\t/.test(text.slice(e,nextS)))break;
+    if(/[,;:)\]"”’]$/.test(t))break;
+    if(sentEnd&&/\.$/.test(t)&&/[a-zçğıöşü]{3,}\.$|\)\.$/.test(t))break;
+    const pm=t.match(/^[“"'‘(\[]+/);let boundary=false;
+    if(pm){t=t.slice(pm[0].length);s+=pm[0].length;boundary=true;}
+    if(!t)break;
+    const n=norm(t);
+    if(allowConn&&(t==='&'||n==='VE'||t==='-')){acc.unshift({t,s,e,conn:true});nextS=s;if(boundary)break;continue;}
+    const okCap=reCapStart.test(t);
+    const okNum=allowNum&&/^[0-9]+\.?(\/[A-Za-z0-9]+)?$/.test(t);
+    if(!(okCap||okNum))break;
+    if(stop.has(n))break;
+    acc.unshift({t,s,e});nextS=s;
+    if(boundary)break;
+  }
+  while(acc.length&&acc[0].conn)acc.shift();
+  return acc;
+}
+const isFirst=n=>FIRST_M.has(n)||FIRST_F.has(n);
+const isUpperTok=t=>reUpTok.test(t);
+const isSurCand=tk=>reNameTok.test(tk.t)&&tk.n.length>=2&&!STOP.has(tk.n)&&!GENERIC.has(tk.n)&&!HONOR.has(tk.n)&&!MONTH_N.includes(tk.n);
+const SUR_BLOCK=mkSet('Vergi Vergisi Dairesi Daire Müdürü Müdürlüğü Müdür Başkanı Başkanlığı Bakanlığı Mahallesi Mah Caddesi Cad Sokak Sok Bulvarı Ltd Şti AŞ Ve İle Veya Tarafından Hakkında İçin Raporu Rapor Kanunu Kanun Tarih Tarihli Sayı Sayılı TC KDV ÖTV VUK GVK KVK SGK VDK GİB TL Müfettişi Müfettiş Memuru Şefi Uzmanı Uzman Avukat Mali Müşavir SMMM YMM Ocak Şubat Mart Nisan Mayıs Haziran Temmuz Ağustos Eylül Ekim Kasım Aralık Bey Hanım Beyefendi Hanımefendi Ticaret Sanayi İnşaat Gıda');
+const isSurAfterFirst=tk=>reNameTok.test(tk.t)&&tk.n.length>=2&&!SUR_BLOCK.has(tk.n)&&!HONOR.has(tk.n);
+const SURNAMES=mkSet(`Yılmaz Kaya Demir Şahin Çelik Yıldız Yıldırım Öztürk Aydın Özdemir Arslan Doğan Kılıç Aslan Çetin Kara Koç Kurt Özkan Şimşek Polat Özcan Korkmaz Çakır Erdoğan Yavuz Can Acar Şen Aktaş Güler Yalçın Güneş Bozkurt Bulut Keskin Ünal Turan Gül Özer Işık Kaplan Avcı Sarı Tekin Taş Köse Yüksel Ateş Aksoy Akın Altun Aydoğan Akbaş Akgül Akkaya Aktürk Albayrak Alkan Altıntaş Arı Aydemir Balcı Başaran Bayram Bayrak Bilgin Bilgiç Bozdağ Cengiz Coşkun Çakmak Çiftçi Çınar Demirci Demirel Dinç Duman Durmaz Eker Ekinci Elmas Eren Erol Ersoy Ertürk Genç Göçmen Gökçe Göktaş Gündoğdu Gürbüz Gürsoy Güven İnce Kahraman Kalkan Kandemir Karaca Karadağ Karadeniz Karakaya Karakuş Karataş Kartal Kayacan Kılınç Kocaman Kocabaş Koçak Korkut Kurtuluş Metin Oral Oruç Orhan Önal Özbek Özgür Özkaya Özyurt Parlak Saraç Sevim Soylu Sönmez Söylemez Sezer Sağlam Tanrıverdi Taşkın Tatlı Temel Toprak Topal Tuncer Tunç Uçar Uysal Uzun Ünlü Varol Yaman Yazıcı Yazıcıoğlu Yeşil Yiğit Yücel Zengin Akdağ Akyüz Altay Aras Atalay Atasoy Ayhan Bektaş Berber Budak Canpolat Cebeci Ceylan Dikmen Dumlu Ekici Erdem Erden Ergin Ergün Erkan Ertan Esen Gezer Gümüş Güngör Gürel Karabulut Karahan Keleş Kılıçarslan Kocabıyık Kurtoğlu Okur Öcal Ölmez Özçelik Özgün Sungur Şeker Şener Şenol Taşdemir Tekeli Tezcan Tokgöz Tosun Türkmen Ulusoy Ural Ünver Yazar Yener Yılmazer Yüce Zorlu Bostancı Gündüz Kurtulmuş Sarıkaya Karakoç Kızıltaş Aslantaş Çolak Cömert Dalkılıç Demirtaş Durak Ekmekçi Erbaş Gültekin Hacıoğlu Kaçar Kalay Karaaslan Karakurt Kaynak Kesici Koyuncu Oğuz Özmen Öztekin Sarıgül Soydan Şahan Tunca Turhan Yağcı Yalçınkaya Yetkin Yolcu Yörük Zeybek Akçay Akdoğan Akgün Akpınar Aksu Aktepe Alp Altınbaş Arıkan Aslıhan Avşar Ayaz Aydınlı Baysal Bilici Birinci Bolat Börekçi Bulgur Büyük Canbaz Çağlar Çakar Çalışkan Çevik Çiçek Dağdelen Delibaş Demiray Demirhan Dündar Ercan Erdal Erel Erkoç Gedik Gençer Gökalp Gökmen Gönen Gören Gözübüyük Güleç Gülmez Gültek Gümüştaş Günay Günel Gürkan Güzel Hamarat Haznedar İnan İşler Kabak Kalender Kalkavan Kantar Karagöz Karakılıç Karaman Karasu Kaygısız Kılıçaslan Kırbaş Koca Kocatürk Kolay Konuk Köksal Kuzu Mercan Nalbant Oktay Ongun Onur Ordu Özen Özkök Özsoy Öztaş Pamuk Pehlivan Sakarya Sancak Savaş Sayın Seçkin Selçuk Serin Sevgi Sezgin Solmaz Sucu Şahinkaya Şanlı Şimşir Talay Taşçı Tayfun Tekinalp Tektaş Temiz Tepe Tuna Tümer Türkoğlu Uğurlu Uslu Ustaoğlu Üstün Yağız Yalvaç Yanık Yazgan Yeniay Yıldızhan Yurdakul Yurtsever Zeren`);
+// kelime anlamı da olan adlar: yalnızca arkasından gerçek bir soyad gelirse isim sayılır
+const FIRST_RISKY=mkSet(`Hakkı Hayati Rıza Ferdi Fahri Fikri Selim Yeter Kıymet Sadık Mahir Zeki Ziya Talip Rahim Adil Nadir Halis Mazlum Kadri Şevket Tevfik Yüksel Güler İnci Ülkü Nazlı Mesut Yaşar Saadet Hidayet İhsan Fazilet Şükran Hayri Kamil Kâmil Şakir Mümin Kudret Kurtuluş Sefer Dursun Satılmış Gani Hami Medet Medeni Cumhur Arif Alim Baki Kani Latif Münir Reşit Salim Sıddık Vehbi Hızır Arife Afet Ahu Bilge Hayat Makbule Nimet Rüya Saniye Selvi Ülfet Menekşe Nergis Fidan Vildan Derya Pınar Özgür Uğur Adem Nejat Yıldırım Tufan Bora Yiğit Güven Kartal Tayfun Savaş Tuna Ceylan İpek Sevgi Sevim Sevinç Gönül Kader Hikmet Emin Nail Gazi Selçuk Erdem`);
+const isRisky=n=>FIRST_RISKY.has(n)||FIRST_AMBIG.has(n);
+const isKnownSur=tk=>SURNAMES.has(tk.n)||(isUpperTok(tk.t)&&tk.n.length>=3);
+function mkPer(firsts,surs,initials){
+  let g=null;for(const f of firsts){if(FIRST_F.has(f.n)&&!FIRST_M.has(f.n)){g='F';break;}if(FIRST_M.has(f.n)){g='M';break;}}
+  const parts=(initials||[]).map(x=>({s:x.s,e:x.e,role:'I'})).concat(firsts.map(f=>({s:f.s,e:f.e,role:'F',g})),surs.map(x=>({s:x.s,e:x.e,role:'S'}))).sort((a,b)=>a.s-b.s);
+  return{s:parts[0].s,e:parts[parts.length-1].e,parts};
+}
+const plainCap=tk=>reCapTok.test(tk.t)&&tk.n.length>=3&&!STOP.has(tk.n)&&!GENERIC.has(tk.n)&&!PROV_N.has(tk.n)&&!SUR_BLOCK.has(tk.n)&&!MONTH_N.includes(tk.n)&&!HONOR.has(tk.n);
+function analyzeRun(toks){
+  const res=[];let i=0;
+  while(i<toks.length){
+    const T=toks[i];
+    if(isFirst(T.n)&&!STOP.has(T.n)){
+      const firsts=[T];let j=i+1;
+      while(j<toks.length&&firsts.length<3&&isFirst(toks[j].n)&&!STOP.has(toks[j].n)&&!(SURNAMES.has(toks[j].n)&&!(j+1<toks.length&&isSurAfterFirst(toks[j+1]))))firsts.push(toks[j++]);
+      if(j<toks.length&&HONOR.has(toks[j].n)){res.push(mkPer(firsts,[]));i=j+1;continue;}
+      const cand=[];let k=j;
+      if(k<toks.length&&isSurAfterFirst(toks[k]))cand.push(toks[k++]); // ilk addan hemen sonra: "Özel", "Yeni" gibi kelime-soyadlar da kabul
+      while(cand.length&&k<toks.length&&cand.length<2&&isSurCand(toks[k]))cand.push(toks[k++]);
+      // riskli ad (Hakkı, Medeni, Fikri…): yalnız gerçek soyadla
+      if(firsts.every(f=>isRisky(f.n))){
+        if(!cand.length||!isKnownSur(cand[0])){ if(firsts.length>=2&&isKnownSur(firsts[firsts.length-1])){}else{i++;continue;} }
+      }
+      let surs=[];
+      const up=cand.findIndex(c=>isUpperTok(c.t));
+      if(up>=0&&!(isUpperTok(T.t)&&up>0)){firsts.push(...cand.slice(0,up));surs=[cand[up]];j+=up+1;}
+      else if(cand.length===2&&SURNAMES.has(cand[1].n)&&!SURNAMES.has(cand[0].n)){firsts.push(cand[0]);surs=[cand[1]];j+=2;}
+      else if(cand.length){surs=[cand[0]];j++;if(cand.length===2&&j+1===toks.length&&!PROV_N.has(cand[1].n)&&isUpperTok(cand[0].t)===isUpperTok(cand[1].t)){surs.push(cand[1]);j++;}}
+      if(!surs.length){if(firsts.length>=2)surs=[firsts.pop()];else{i++;continue;}}
+      res.push(mkPer(firsts,surs));i=j;continue;
+    }
+    const N=toks[i+1];
+    // önce soyad: "YILMAZ Ahmet", "YILMAZ AHMET CAN"
+    if(N&&isUpperTok(T.t)&&T.n.length>=3&&isSurCand(T)&&!SUR_BLOCK.has(T.n)&&!PROV_N.has(T.n)&&isFirst(N.n)&&!isRisky(N.n)&&!STOP.has(N.n)){
+      const fs=[N];let j=i+2;while(j<toks.length&&fs.length<3&&isFirst(toks[j].n)&&!STOP.has(toks[j].n))fs.push(toks[j++]);
+      res.push(mkPer(fs,[T]));i=j;continue;
+    }
+    // bilinmeyen ad + BÜYÜK HARF soyad
+    if(N&&plainCap(T)&&isUpperTok(N.t)&&N.n.length>=3&&isSurCand(N)&&!SUR_BLOCK.has(N.n)){
+      res.push(mkPer([T],[N]));i+=2;continue;
+    }
+    // bilinmeyen ad + bilinen soyad: "Berkant Yazıcıoğlu"
+    if(N&&plainCap(T)&&!SURNAMES.has(T.n)&&SURNAMES.has(N.n)&&!DIST_SET.has(T.n)){
+      res.push(mkPer([T],[N]));i+=2;continue;
+    }
+    i++;
+  }
+  return res;
+}
+
+const ciLoose=w=>ci(w).split(SP).join('[ \\u00A0]*');
+const UNIT_STEMS=['bakanlı','başkanlı','müdürlü','defterdarlı','valili','kaymakamlı'].map(ci).join('|');
+const UNIT_N=/^(BAKANLI|BAŞKANLI|MÜDÜRLÜ|DEFTERDARLI|VALİLİ|KAYMAKAMLI)/;
+const INST_STRUCT=mkSet('Daire Dairesi Grup Kurulu Kurul Genel Bölge İl Şube Merkez');
+const INST_BLOCK=mkSet('Şirket Şirketi Firma Mükellef Yönetim Satış Muhasebe Pazarlama İnsan Kaynakları Okul Spor Kulübü Derneği Vakfı');
+const DIST_SET=new Set(DISTS.map(norm));
+const INST_DESC=['Mali Kontrol','Gelir Gözetim','Kamu Hesapları','Mali İzleme','Gelir Analiz','Hesap Uyum','Kamu Gelirleri İzleme','Mali Güvence','Gelir Kontrol','Mali Uyum','Kamu Kaynakları','Hesap Denetleme','Gelir Koordinasyon','Mali Değerlendirme','Ekonomik İşler','Kamu Finansmanı','Hesap Gözetim','Mali Yönetim','Gelir Planlama','Kamu Mali Hizmetler'];
+const COUNTRIES=['Valdoria','Norvenia','Westmark','Eldoria','Sarnavia','Ostravia'];
+const instCase=(src,v)=>{const l=src.replace(new RegExp(`[^${UC}${LC}]`,'gu'),'');return l.length>1&&l===trU(l)?trU(v):v;};
+const IDLBLS=['T.C. Kimlik Numarası','T.C. Kimlik No','T.C. Kimlik','T.C. No','T.C.','TC Kimlik Numarası','TC Kimlik No','TC Kimlik','TC No','TCKN','TCKNO','TCNO','TC','Kimlik Numarası','Kimlik No','VKN','V.K.N.','VKNO','Vergi Kimlik Numarası','Vergi Kimlik No','Vergi Kimlik','Vergi Numarası','Vergi No'];
+const REFLBLS=['dosya numarası','dosya no','dosya','esas numarası','esas no','esas','karar numarası','karar no','rapor numarası','rapor no','tutanak numarası','tutanak no','fatura seri no','fatura sıra no','fatura numarası','fatura no','irsaliye no','belge numarası','belge no','ticaret sicil numarası','ticaret sicil no','sicil numarası','sicil no','mersis numarası','mersis no','abone numarası','abone no','hesap numarası','hesap no','müşteri no','poliçe no','sözleşme no','tapu no','cilt no','sayfa no','yevmiye no','kapı no','bina no','ada/parsel','ada-parsel','ada no','parsel no','pafta no','ada','parsel','pafta','çek no','senet no','şasi no','motor no','vergi dairesi kodu','vd kodu','sicil'];
+const KEEP_CODES=mkSet('VUK KDV GVK KVK ÖTV VDK GİB EBYS VD TC TL');
+function refFake(orig,O){
+  return cached('REF:'+O.yearShift+':'+orig,()=>orig.replace(/[0-9]+|[A-Za-zÇĞİÖŞÜçğıöşü]{2,}/g,tok=>{
+    if(/^[0-9]+$/.test(tok)){
+      if(/^(19|20)[0-9]{2}$/.test(tok))return String(+tok+O.yearShift);
+      let s='';for(let i=0;i<tok.length;i++){let d=rnd(10);if(i===0&&tok[0]!=='0'&&d===0)d=1+rnd(9);s+=d;}
+      if(s===tok)s=s.slice(0,-1)+((+s.slice(-1)+1)%10);return s;
+    }
+    if(KEEP_CODES.has(norm(tok)))return tok;
+    const L='ABCDEFGHJKLMNPRSTUVYZ';let s='';for(const ch of tok){const r=L[rnd(L.length)];s+=ch===ch.toLowerCase()&&ch!==ch.toUpperCase()?r.toLowerCase():r;}return s;
+  }));
+}
+const WEB_KEEP=/(?:^|\.)(?:gib|hmb|vdk|resmigazete|mevzuat|turkiye|ivd|ebeyanname|sgk|ticaret)\.gov\.tr/i;
+function webFake(o){return cached('WEB:'+o.toLowerCase(),()=>{const b=asciiTr(trL(pickUnique(POOL('brand'),'webbrand')));return (/^https?:\/\//i.test(o)?o.match(/^https?:\/\//i)[0]:'')+(/^(https?:\/\/)?www\./i.test(o)?'www.':'')+b+'.example.com';});}
+const CUES=['Sayın','Sn.','Bay','Bayan','Av.','Dr.','SMMM','YMM','Mali Müşavir','Avukat','ortağı','ortakları','ortaklarından','müdürü','yetkilisi','temsilcisi','vekili','mükellef','Mükellef','adına','eşi','oğlu','kızı','kardeşi','babası','annesi','imzalı'];
+const RE={
+  mail:/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g,
+  iban:/\bTR[0-9]{2}(?:[ ]?[0-9]{4}){5}[ ]?[0-9]{2}\b/gi,
+  phone:/(?<![0-9])(?:\+90[ -]?\(?0?|\(?0)[2-5][0-9]{2}\)?[ -]?[0-9]{3}[ -]?[0-9]{2}[ -]?[0-9]{2}(?![0-9])/g,
+  tckn:/(?<![0-9,])(?<![0-9]\.)[1-9][0-9]{10}(?![0-9]|[.,][0-9])/g,
+  vkn:/(?<![0-9,])(?<![0-9]\.)[0-9]{10}(?![0-9]|[.,][0-9])/g,
+  grpnum:/(?<![0-9,])(?<![0-9]\.)[0-9]{2,5}(?:(?:[  ]|[  ]?[-.][  ]?)[0-9]{2,5}){1,4}(?![0-9]|[.,][0-9])/g,
+  idlbl:new RegExp(`(?<![${UC}${LC}])(?:${IDLBLS.slice().sort((a,b)=>b.length-a.length).map(ciLoose).join('|')})\\.?[ \\u00A0]*[:=]?[ \\u00A0]*([0-9](?:[0-9]|[ \\u00A0](?=[0-9])){5,15})(?![0-9])`,'gu'),
+  web:/(?:https?:\/\/|www\.)[^\s<>"'”)\]]+|(?<![A-Za-z0-9@.\-])[a-z0-9][a-z0-9\-]*(?:\.[a-z0-9\-]+)*\.(?:com|net|org|info|biz|av|bel|k12|gen|web|tv|co|io)(?:\.tr)?(?![A-Za-z0-9\-])/gi,
+  sayili:new RegExp(`(?<![^\\s(“"'‘])([${UC}${LC}0-9][${UC}${LC}0-9.\\/\\-\\[\\]()]*)(?=[ \\u00A0]+${ci('sayılı')}${LA})`,'gu'),
+  lawAfter:new RegExp(`^[ \\u00A0]+${ci('sayılı')}(?:[ \\u00A0]+(?:[${UC}][^\\s]*|ve|ile)){0,8}?[ \\u00A0]+(?:${['kanun','khk','kararname','resmi gazete','resmî gazete','bakanlar kurulu','cumhurbaşkanı','cumhurbaşkanlığı','tebliğ','vuk','gvk','kvk','kdvk','ötvk','dvk','hk','aatuhk','ttk','tck','hmk','iyuk','mtvk','evk'].map(ci).join('|')})`,'u'),
+  sayiLbl:new RegExp(`${LB}(?:${['evrak sayısı','evrak no','sayımız','sayınız','sayısı','sayı'].map(ciLoose).join('|')})[ \\u00A0]*:[ \\u00A0]*([^\\s,;]+(?:[ \\u00A0]*[-–][ \\u00A0]*[^\\s,;]+)*)`,'gu'),
+  refLbl:new RegExp(`(?:${LB}(?:${REFLBLS.slice().sort((a,b)=>b.length-a.length).map(ciLoose).join('|')})|(?<![${UC}${LC}])[EK]\\.)(?:[ \\u00A0]*(?:${['numaralı','numarası','nolu','no'].map(ci).join('|')}))?\\.?[ \\u00A0]*[:=]?[ \\u00A0]*([0-9A-Za-zÇĞİÖŞÜçğıöşü][0-9A-Za-zÇĞİÖŞÜçğıöşü.\\/\\-]*)`,'gu'),
+  refEsas:new RegExp(`(?<![0-9./])[0-9]{4}[ \\u00A0]*/[ \\u00A0]*[0-9]+(?=[ \\u00A0]*(?:E\\.|K\\.|${ci('esas')}|${ci('karar')}|${ci('d.iş')}|${ci('değişik iş')})${LA})`,'gu'),
+  refAda:new RegExp(`(?<![0-9.,])([0-9]+(?:\\/[0-9]+)?)(?=[ \\u00A0]*(?:${['ada/parsel','ada','parsel','pafta'].map(ci).join('|')})${LA})`,'gu'),
+  refNolu:new RegExp(`(?<![0-9A-Za-z.,])([0-9A-Za-z][0-9A-Za-z\\/\\-]*)(?=[ \\u00A0]*(?:${["nolu","no'lu","no.lu","numaralı"].map(ci).join('|')})${LA})`,'gu'),
+  addrNo:new RegExp(`(?:${LB}(?:${['kapı no','no','daire','kat'].map(ciLoose).join('|')})|(?<![${UC}${LC}])[DK])[ \\u00A0]*[:.][ \\u00A0]*([0-9]+[A-Za-z]?(?:\\/[0-9A-Za-z]+)?)(?![0-9])`,'gu'),
+  plcLbl:new RegExp(`${LB}(?:${['ilçesi','ilçe','ili','il','mahallesi','mahalle','köyü','köy','beldesi','belde','semti','semt','mevkii','mevki'].map(ci).join('|')})[ \\u00A0]*:[ \\u00A0]*(${NAMEW}(?:${SP}${NAMEW}(?![ \\u00A0]*:)){0,2})${LA}(?![ \\u00A0]*:)`,'gu'),
+  plcSuf:new RegExp(`${LB}(${NAMEW})(?=${SP}(?:${['ilçesindeki','ilçesinde','ilçesine','ilçesi','ilindeki','ilinde','iline','ili','beldesi','beldesinde','köyünde','köyü'].map(ci).join('|')})${LA})`,'gu'),
+  unit:new RegExp(`(?<=[ \\u00A0])(?:(?:${UNIT_STEMS})[ğkĞK][${UC}${LC}'’]*|${ci('kurulu')}${LA})`,'gu'),
+  tcInst:new RegExp(`(?<![${UC}${LC}])T\\.[ ]?C\\.(?![ \\u00A0]*(?:${ci('kimlik')}|${ci('no')}|[0-9:]))(?=[ \\u00A0]+[^\\n]{0,90}?(?:${UNIT_STEMS})|[ \\t]*\\n[ \\t\\n]*[^\\n]*(?:${UNIT_STEMS}))`,'gu'),
+  dist2:new RegExp(`${LB}(?:${DIST_RE})${LA}`,'gu'),
+  dnum:/(?<![0-9])(?<![0-9]\.)(0?[1-9]|[12][0-9]|3[01])([./-])(0?[1-9]|1[0-2])\2((?:19|20)[0-9]{2})(?![0-9])/g,
+  dnum2:/(?<![0-9])(?<![0-9]\.)(0?[1-9]|[12][0-9]|3[01])([./-])(0?[1-9]|1[0-2])\2([0-9]{2})(?![0-9]|[.,][0-9])/g,
+  byear:/(?<![0-9.,\/])(?:1[89][0-9]{2}|20[0-2][0-9])(?![0-9]|[.,\/-][0-9])/g,
+  diso:/(?<![0-9])((?:19|20)[0-9]{2})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])(?![0-9])/g,
+  dtxt:new RegExp(`(?<![0-9])(0?[1-9]|[12][0-9]|3[01])${SP}(${MONTH_RE})${SP}((?:19|20)[0-9]{2})(?![0-9])`,'gu'),
+  dmy:new RegExp(`${LB}(${MONTH_RE})${SP}((?:19|20)[0-9]{2})(?![0-9])`,'gu'),
+  ym:/(?<![0-9.\/,])((?:19|20)[0-9]{2})([\/.-])(0?[1-9]|1[0-2])(?![0-9])/g,
+  my:/(?<![0-9.\/,])(0?[1-9]|1[0-2])([\/.-])((?:19|20)[0-9]{2})(?![0-9])/g,
+  year:new RegExp(`(?<![0-9.,/])((?:19[5-9]|20[0-9])[0-9])(?![0-9]|[.,][0-9])(?![ \\u00A0]*${ci('sayılı')})`,'gu'),
+  amt1:/(?<![0-9.,])(?<!%[ \u00A0]?)([0-9]{1,3}(?:\.[0-9]{3})+(?:,[0-9]{1,2})?|[0-9]+,[0-9]{2})(?![0-9]|[.,][0-9])(?![ \u00A0]?%)/g,
+  amtSp:/(?<![0-9.,])(?<![0-9][ \u00A0])[0-9]{1,3}(?:[ \u00A0][0-9]{3})+(?:,[0-9]{1,2})?(?=[ \u00A0]?(?:TL|\u20BA|TRY|USD|EUR|\u20AC|\$|T\u00FCrk Liras\u0131|Euro|Avro|Dolar|lira)(?![A-Za-z\u00C7\u011E\u0130\u00D6\u015E\u00DC\u00E7\u011F\u0131\u00F6\u015F\u00FC]))/g,
+  amt2:/(?<![0-9.,])(?<![0-9][ \u00A0])(?<!%[ \u00A0]?)[0-9]+(?=[ \u00A0]?(?:TL|₺|TRY|USD|EUR|€|\$|Türk Lirası|Euro|Avro|Dolar|lira)(?![A-Za-zÇĞİÖŞÜçğıöşü]))/g,
+  amt3:/(?<=(?:₺|\$|€)[ \u00A0]?)[0-9]+(?![0-9]|[.,][0-9])/g,
+  plate:/(?<![A-Za-zÇĞİÖŞÜçğıöşü0-9])(0[1-9]|[1-7][0-9]|8[01])[ ]?([A-Z]{1,3})[ ]?([0-9]{2,4})(?![A-Za-zÇĞİÖŞÜçğıöşü0-9])/g,
+  num:/(?<![0-9,])(?<![0-9]\.)[0-9]{6,}(?![0-9]|[.,][0-9])/g,
+  initName:new RegExp(`(?<![${UC}${LC}0-9.])[${UC}]\\.[ \\u00A0]?(?:${NAMEW}[ \\u00A0]+){0,2}${NAMEW}${LA}`,'gu'),
+  run:new RegExp(`${LB}${NAMEW}(?:${SP}${NAMEW})*${LA}`,'gu'),
+  tok:new RegExp(NAMEW,'gu'),
+  cue:new RegExp(`${LB}(?:${CUES.map(c=>ci(c)).join('|')})${SP}(${NAMEW}(?:${SP}${NAMEW}){1,2})${LA}`,'gu'),
+  comp:new RegExp(`(?<=[ \\u00A0])(?:${ci('anonim şirketi')}|${ci('limited şirketi')}|${ci('kollektif şirketi')}|${ci('komandit şirketi')}|(?:${ci('ltd')}|${ci('koll')}|${ci('kom')})\\.?[ \\u00A0]*${ci('şti')}\\.?|[Aa]\\.[ ]?[ŞşSs]\\.?|${ci('şti')}\\.)(?![${UC}${LC}0-9])`,'gu'),
+  inst:new RegExp(`(?<=[ \\u00A0])(?:${['vergi dairesi','v.d.','defterdarlığı','belediyesi','noterliği','ticaret sicil','ticaret odası','sanayi odası','valiliği','kaymakamlığı','sgk','organize sanayi'].map(ci).join('|')})(?![${UC}${LC}])`,'gu'),
+  addr:new RegExp(`(?<=[ \\u00A0])(?:${['mahallesi','caddesi','sokağı','sokak','bulvarı','apartmanı','sitesi','plazası','plaza','iş merkezi','iş hanı','pasajı','köyü','mevkii'].map(ci).join('|')}|(?:${['mah','mh','cad','cd','sok','sk','bulv','blv','apt'].map(ci).join('|')})\\.)(?![${UC}${LC}])`,'gu'),
+  prov:new RegExp(`${LB}(?:${PROV_RE})${LA}`,'gu'),
+  dist:new RegExp(`${LB}(${NAMEW})(?=[ \\u00A0]?(?:/|\\(|-[ \\u00A0])[ \\u00A0]?(?:${PROV_RE}|${DIST_RE})${LA})`,'gu'),
+  distRev:new RegExp(`(?<=${LB}(?:${PROV_RE}|${DIST_RE})[ \\u00A0]?/[ \\u00A0]?)(${NAMEW})${LA}`,'gu'),
+};
+const PLATE_EX=new Set(['TL','KDV','VUK','GVK','KVK','TC','BA','BS','SGK','VDK','NO','MD','ADET','KG','LT','M','KM','GR']);
+
+/* ====================== Mevzuat koruması ====================== */
+const DATE_PAT=`(?:[0-9]{1,2}[./-][0-9]{1,2}[./-][0-9]{2,4}|[0-9]{1,2}[ \\u00A0]+(?:${MONTH_RE})[ \\u00A0]+[0-9]{4})`;
+const LAW_DOCS=['resmi gazete','resmî gazete','kanun','khk','kararname','cumhurbaşkanı','cumhurbaşkanlığı','bakanlar kurulu','tebliğ','özelge','sirküler','yönetmelik','genelge','karar'].map(ci).join('|');
+const RX_LAW={
+  head:new RegExp(['mevzuat','yasal düzenleme','ilgili hükümler','yasal dayanak','hukuki dayanak','yasal çerçeve','kanuni düzenleme','ilgili düzenleme','yasal durum','hukuki durum'].map(ci).join('|'),'u'),
+  legalWord:new RegExp(['madde','kanun','tebliğ','yönetmelik','kararname','sirküler','özelge','gazete','sayılı','mevzuat','fıkra','bent','khk','genelge'].map(ci).join('|'),'u'),
+  endHead:new RegExp(`^[ \\t]*(?:[0-9.]+[.)\\-–][ \\t]*|[IVX]+[.\\-–][ \\t]*)?(?:${['sonuç','değerlendirme','tespit','inceleme','açıklama','eleştiri','öneri','kanaat','hesaplama','olay','konu','genel bilgi','giriş'].map(ci).join('|')})`,'u'),
+  article:new RegExp(`^[ \\t]*[“"']?[ \\t]*(?:(?:${['geçici','ek','mükerrer'].map(ci).join('|')})[ \\t]+)?(?:${ci('madde')})[ \\t]*[0-9]+[A-Za-z/]*[ \\t]*(?:[-–—:]|$)`,'u'),
+  sub:/^[ \t]*[“"']?[ \t]*(?:\([0-9]+\)|[a-zçğıöşü]\)|[0-9]+\)|[-–•])/u,
+  amend:new RegExp(`\\((?:${['değişik','ek','mülga','iptal','yeniden düzenleme','yürürlük','ilave'].map(ci).join('|')})[^)]{0,240}\\)`,'gu'),
+  sayili:new RegExp(`${ci('sayılı')}`,'gu'),
+  citeAfter:new RegExp(`^${ci('sayılı')}(?:[ \\u00A0]+(?:[${UC}][^\\s]*|ve|ile|${ci('genel')}|${ci('uygulama')})){0,12}?[ \\u00A0]+(?:${LAW_DOCS})|^${ci('sayılı')}[ \\u00A0]+(?:${ci('özelge')}|${ci('karar')}|${ci('sirküler')}|${ci('genelge')}|${ci('yazı')}[^\\n]{0,40}${ci('özelge')})`,'u'),
+  citeBefore:new RegExp(`(${DATE_PAT})[ \\u00A0]*(?:${ci('tarih')}[${LC}]*)?[ \\u00A0,]*(?:${ci('ve')})?[ \\u00A0]*[^\\s]+[ \\u00A0]*$`,'u'),
+  rgFwd:new RegExp(`${ci('resm')}[iîİÎ][ \\u00A0]*${ci('gazete')}[^\\n.]{0,40}?${DATE_PAT}[^\\n]{0,60}?(?:${ci('sayı')}[${LC}]*)`,'gu'),
+  rgBack:new RegExp(`${DATE_PAT}[^\\n.]{0,40}?(?:${ci('resm')}[iîİÎ][ \\u00A0]*${ci('gazete')}|${ci('yürürlüğe')}|${ci('yayımla')}|${ci('yayınla')})`,'gu'),
+  rg:new RegExp(`\\(?${ci('r.g.')}[^\\n)]{0,60}\\)?`,'gu'),
+  court:new RegExp(`${['danıştay','yargıtay','anayasa mahkemesi','vergi dava daireleri','vddk','içtihadı birleştirme','uyuşmazlık mahkemesi','bölge idare mahkemesi','idari dava daireleri'].map(ci).join('|')}`,'gu'),
+  courtEnd:new RegExp(`${['kararı','kararında','kararıyla','kararları','kararlarında','ilamı','kararın'].map(ci).join('|')}`,'u'),
+  sira:new RegExp(`(?:${ci('sıra')}|${ci('seri')})[ \\u00A0]*${ci('no')}[.:]*[ \\u00A0]*[0-9]+|[0-9]+[ \\u00A0]*(?:${ci('sıra')}|${ci('seri')})[ \\u00A0]*${ci('no')}[.'’]*[${LC}]*`,'gu'),
+  instCtx:new RegExp(['tebliğ','özelge','sirküler','yönetmelik','resmi gazete','resmî gazete','kararname','yayımla','yayınla','genelge','kanun hükmünde'].map(ci).join('|'),'u'),
+};
+function isHeadLine(t){
+  t=t.trim();if(!t||t.length>110||/[.;]$/.test(t))return false;
+  if(/^(?:[0-9]+(?:\.[0-9]+)*|[IVXLC]+|[A-HJ-Z])[.)\-–][ \t]*\S/.test(t))return true;
+  const L=t.replace(/[^A-Za-zÇĞİÖŞÜçğıöşü]/g,'');if(L.length>=4&&L===trU(L))return true;
+  const ws=t.split(/\s+/);return ws.length<=10&&ws.filter(w=>reCapStart.test(w)).length>=Math.ceil(ws.length*0.7);
+}
+function legalRanges(text){
+  const R=[];const add=(s,e)=>{if(e>s)R.push([s,e]);};
+  const lines=[];{let p=0;for(const l of text.split('\n')){lines.push({s:p,e:p+l.length,t:l});p+=l.length+1;}}
+  // 1) "Yasal Mevzuat" gibi başlıkların altındaki bölüm
+  for(let i=0;i<lines.length;i++){
+    if(!isHeadLine(lines[i].t)||!RX_LAW.head.test(lines[i].t))continue;
+    let j=i+1;
+    for(;j<lines.length;j++){const t=lines[j].t;if(!t.trim())continue;if(lines[j].s-lines[i].e>25000)break;
+      if((isHeadLine(t)&&!RX_LAW.legalWord.test(t))||(t.trim().length<110&&RX_LAW.endHead.test(t)&&!/\.$/.test(t.trim())))break;}
+    add(lines[i].s,lines[j-1].e);i=j-1;
+  }
+  // 2) "Madde 30 –" ile başlayan kanun alıntıları ve devamındaki (1), a) fıkraları
+  for(let i=0;i<lines.length;i++){
+    if(!RX_LAW.article.test(lines[i].t))continue;
+    let j=i+1;while(j<lines.length&&(RX_LAW.sub.test(lines[j].t)||!lines[j].t.trim()))j++;
+    add(lines[i].s,lines[j-1].e);i=j-1;
+  }
+  // 3) tırnak içindeki kanun alıntıları
+  for(const m of text.matchAll(/[“"]([^”"]{40,4000})[”"]/g)){
+    if(/(?:Madde|MADDE)\s*[0-9]+\s*[-–—]|(?:^|\s)\([0-9]+\)\s|\((?:Değişik|Ek|Mülga)/.test(m[1]))add(m.index,m.index+m[0].length);
+  }
+  // 4) (Değişik: 23/1/2008-5728/4 md.) notları, R.G. atıfları, Sıra/Seri No
+  for(const re of [RX_LAW.amend,RX_LAW.rg,RX_LAW.sira,RX_LAW.rgFwd,RX_LAW.rgBack]){re.lastIndex=0;for(const m of text.matchAll(re))add(m.index,m.index+m[0].length);}
+  // 5) "… tarih ve 32416 sayılı Resmi Gazete / Kanun / özelge / Cumhurbaşkanı Kararı"
+  RX_LAW.sayili.lastIndex=0;
+  for(const m of text.matchAll(RX_LAW.sayili)){
+    const idx=m.index,after=text.slice(idx,idx+220),am=RX_LAW.citeAfter.exec(after);if(!am)continue;
+    const ls=text.lastIndexOf('\n',idx-1)+1,win=text.slice(Math.max(ls,idx-110),idx),bm=RX_LAW.citeBefore.exec(win);
+    let st;if(bm)st=idx-win.length+bm.index;else{const tm=/[^\s]+[ \u00A0]*$/.exec(win);st=tm?idx-win.length+tm.index:idx;}
+    add(st,idx+am[0].length);
+  }
+  // 6) Danıştay / Yargıtay / AYM kararlarına yapılan atıflar
+  RX_LAW.court.lastIndex=0;
+  for(const m of text.matchAll(RX_LAW.court)){
+    const rest=text.slice(m.index,m.index+320),em=RX_LAW.courtEnd.exec(rest);
+    let e;if(em)e=m.index+em.index+em[0].length;else{const nl=rest.search(/\n|\.\s+[A-ZÇĞİÖŞÜ]/);e=m.index+(nl<0?Math.min(rest.length,200):nl);}
+    add(m.index,e);
+  }
+  return R;
+}
+function sentenceAt(text,s,e){
+  let a=s;for(let k=0;k<400&&a>0;k++){const c=text[a-1];if(c==='\n'||(/[.!?]/.test(c)&&/\s/.test(text[a]||'')&&!/(?:Ltd|Şti|San|Tic|Mah|Cad|Sok|No|vb|vs|md|bkz|A\.Ş)\.$/i.test(text.slice(Math.max(0,a-6),a))))break;a--;}
+  let b=e;for(let k=0;k<400&&b<text.length;k++){const c=text[b];if(c==='\n'||(/[.!?]/.test(c)&&/\s/.test(text[b+1]||'')))break;b++;}
+  return text.slice(a,b);
+}
+const LAW_PROT=new Set(['DATE','YEAR','AMT','INST','REF','NUM','PLACE','BDATE']);
+
+/* ====================== Adres (bütün halinde) ====================== */
+const ADDR_KW=mkSet('Mah Mahallesi Mahalle Mahallesinde Mh Cad Caddesi Cadde Caddesinde Cd Sok Sokak Sokağı Sokağında Sokakta Sokagi Sk Bulvarı Bulvar Bulvarında Blv Bulv Apt Apartmanı Ap Sitesi Site Sitesinde Blok Blokları Plaza Plazası İş Merkezi Hanı Han Pasajı Çarşısı Köyü Köy Köyünde Mevkii Mevki OSB Organize Sanayi Bölgesi No Numara Nolu Kapı İç Dış Kat Daire D K Zemin Bodrum Küme Evleri Kısım Yolu Yolunda Merkez Sanayi Toplu Konutları Konutlar Kampüsü');
+const ADDR_STRONG=mkSet('Mah Mahallesi Mahalle Mahallesinde Mh Cad Caddesi Cadde Caddesinde Cd Sok Sokak Sokağı Sokağında Sokakta Sk Bulvarı Bulvar Bulvarında Blv Bulv Apt Apartmanı Sitesi Köyü Köyünde OSB Plaza Plazası Pasajı Mevkii');
+const ADDR_BACKBLOCK=mkSet('Adres Adresi Adresinde Adresine İkametgah İkametgâh İkamet İşyeri Mükellef Mükellefin Şirket Şirketi Şirketin Firma Firması Ve İle Sayın Ltd Şti AŞ TC Bulunan Kain Olan');
+const L_RE=`A-Za-zÇĞİÖŞÜÂÎÛçğıöşüâîû`;
+function addrTokInfo(t){
+  const lead=(t.match(/^[(“"‘']+/)||[''])[0];let core=t.slice(lead.length);
+  const trail=(core.match(/[,;)”"’]+$|\.+$|[,;)”"’.]+$/)||[''])[0];
+  const body=trail?core.slice(0,core.length-trail.length):core;
+  let kind='other',strong=false;
+  if(/^[0-9]/.test(body))kind='num';
+  else{
+    const left=body.split(/[:]/)[0].replace(/['’].*$/,'').replace(/\./g,'');
+    const n=norm(left);
+    if(n&&ADDR_KW.has(n)&&new RegExp(`^[${L_RE}]`).test(left)){kind='kw';strong=ADDR_STRONG.has(n)&&reCapStart.test(left);}
+    else if(/:$/.test(body)||/:$/.test(core))kind='label';
+    else if(body===':'||body==='-'||body==='–')kind='punct';
+    else if(reCapStart.test(body))kind='cap';
+    else if(new RegExp(`^[${L_RE}]`).test(body))kind='low';
+  }
+  return{lead,core,body,trail,kind,strong,slash:/\//.test(body),n:norm(body.replace(/['’].*$/,''))};
+}
+function addrSpans(text){
+  const out=[];const lblRe=new RegExp(`(?:${['ikametgah adresi','ikametgâh adresi','ikamet adresi','işyeri adresi','iş adresi','tebligat adresi','yazışma adresi','merkez adresi','şube adresi','adresi','adres','ikametgah','ikametgâh'].map(ciLoose).join('|')})[ \\u00A0]*:`,'gu');
+  let ls=0;
+  for(const line of text.split('\n')){
+    const toks=[];const re=/\S+/g;let m;
+    while((m=re.exec(line)))toks.push(Object.assign({s:ls+m.index,e:ls+m.index+m[0].length,t:m[0]},addrTokInfo(m[0])));
+    const sentEnd=k=>{const p=toks[k];return p&&/\.$/.test(p.core)&&p.kind!=='kw'&&p.kind!=='num';};
+    const capOk=(j,labeled)=>{
+      const c=toks[j];if(c.kind!=='cap')return false;
+      if(labeled||c.slash||PROV_N.has(c.n)||DIST_SET.has(c.n))return true;
+      for(let k=j+1;k<=j+3&&k<toks.length;k++){const d=toks[k];if(d.kind==='kw'||d.kind==='num')return true;if(d.kind!=='cap')break;}
+      return false;
+    };
+    const walk=(i,labeled)=>{
+      let end=i;
+      for(let j=i+1;j<toks.length;j++){
+        const p=toks[j-1],c=toks[j];
+        if(sentEnd(j-1)||/;$/.test(p.core))break;
+        if(/,$/.test(p.core)&&!(c.kind==='kw'||c.kind==='num'||capOk(j,false)))break;
+        if(c.kind==='kw'||c.kind==='num'||c.kind==='punct'){end=j;continue;}
+        if(capOk(j,labeled)){end=j;continue;}
+        break;
+      }
+      return end;
+    };
+    const add=(a,b)=>{
+      while(b>=a&&toks[b].kind==='punct')b--;if(b<a)return;
+      const A=toks[a],B=toks[b];let e=B.e-B.trail.length;
+      if(B.kind==='kw'&&/^\./.test(B.trail))e+=1; // "Sok." gibi kısaltma noktası adrese dahil
+      out.push({s:A.s+A.lead.length,e});
+    };
+    // 1) etiketli adresler: "Adres: ..." satırın geri kalanı
+    lblRe.lastIndex=0;
+    for(const lm of line.matchAll(lblRe)){
+      const pos=ls+lm.index+lm[0].length;const i=toks.findIndex(t=>t.s>=pos);
+      if(i<0)continue;if(!(toks[i].kind==='cap'||toks[i].kind==='num'||toks[i].kind==='kw'))continue;
+      add(i,walk(i,true));
+    }
+    // 2) etiketsiz: Mah./Cad./Sok./Bulvarı… çevresi
+    for(let i=0;i<toks.length;i++){
+      if(!toks[i].strong)continue;
+      let st=i,cnt=0;
+      for(let j=i-1;j>=0&&cnt<4;j--){
+        const c=toks[j];
+        if(/[;:]$/.test(c.core)||c.kind==='label')break;
+        if(sentEnd(j))break;
+        if(/,$/.test(c.core)&&c.kind!=='kw'&&c.kind!=='num')break;
+        if(c.kind==='kw'){st=j;continue;}
+        if((c.kind==='cap'&&!ADDR_BACKBLOCK.has(c.n)&&!MONTH_N.includes(c.n))||c.kind==='num'){st=j;cnt++;continue;}
+        break;
+      }
+      add(st,walk(i,false));
+    }
+    ls+=line.length+1;
+  }
+  out.sort((a,b)=>a.s-b.s);const mg=[];
+  for(const r of out){const l=mg[mg.length-1];if(l&&r.s<=l.e+1)l.e=Math.max(l.e,r.e);else mg.push({...r});}
+  return mg;
+}
+function fakeAddress(src){
+  return cached('AD:'+norm(src),()=>{
+    const P=src.match(new RegExp(`[0-9]+|[${L_RE}]+|[^0-9${L_RE}]+`,'gu'))||[];
+    const isW=p=>p&&new RegExp(`^[${L_RE}]`).test(p);
+    let out='',groups=[];
+    for(let i=0;i<P.length;){
+      const p=P[i];
+      if(/^[0-9]/.test(p)){out+=p.length===1?String(1+rnd(9)):randDigits(p.length,true);i++;continue;}
+      if(!isW(p)){out+=p;i++;continue;}
+      if(i>0&&/['’]$/.test(P[i-1])){out+=p;i++;continue;}               // ek: 'nde, 'ta
+      if(ADDR_KW.has(norm(p))){out+=p;i++;continue;}
+      if(p.length===1){const L='ABCDEFGHKLMNPRST';const r=L[rnd(L.length)];out+=p===p.toLowerCase()?r.toLowerCase():r;i++;continue;}
+      let j=i,txt=p;
+      const isPN=w=>{const n=norm(w);return PROV_N.has(n)||DIST_SET.has(n);};
+      while(!isPN(p)&&j+2<P.length&&/^[  ]+$/.test(P[j+1])&&isW(P[j+2])&&P[j+2].length>1&&!ADDR_KW.has(norm(P[j+2]))&&!isPN(P[j+2])){txt+=P[j+1]+P[j+2];j+=2;}
+      const gn=norm(txt);
+      const nearSlash=(i>0&&/\/[  ]*$/.test(P[i-1]))||(j+1<P.length&&/^[  ]*\//.test(P[j+1]));
+      const isPl=PROV_N.has(gn)||DIST_SET.has(gn)||nearSlash;
+      const fake=isPl?fakePlace(gn):cached('ADW:'+gn,()=>pickUnique(POOL('street'),'street'));
+      out+=applyCase(txt,fake);groups.push({n:gn,key:isPl?'PLACE:'+gn:'ADW:'+gn,pl:isPl});i=j+1;
+    }
+    return{text:out,groups};
+  });
+}
+/* ====================== Doğum tarihi ====================== */
+const BIRTH_BEFORE=new RegExp(`(?:${['doğum tarihi','doğum tarihli','doğum yılı','doğum yeri ve tarihi','doğum yeri/tarihi','doğum yeri-tarihi','doğum','d.tarihi','d.tar','d.t.','d.t','doğ.'].map(ciLoose).join('|')})[^\\n]{0,30}$`,'u');
+const BIRTH_AFTER=new RegExp(`^[ \\u00A0]*(?:${['doğumlu','d.lu','tarihinde doğ','yılında doğ','doğ.'].map(ciLoose).join('|')})`,'u');
+function isBirth(text,s,e){const ls=text.lastIndexOf('\n',s-1)+1;return BIRTH_BEFORE.test(text.slice(Math.max(ls,s-55),s))||BIRTH_AFTER.test(text.slice(e,e+25));}
+function birthFake(key,y,O){return cached('BD:'+key,()=>({d:1+rnd(28),m:1+rnd(12),y:y+O.yearShift+(rnd(7)-3)}));}
+/* ====================== Tek başına isimler ====================== */
+const FIRST_AMBIG=mkSet('Can Deniz Umut Ümit Barış Savaş Bahar Yıldız Mutlu Kader Nur Gül Emin Ender Nail Sevgi Gonca Onur Zafer Bayram Evren Erdem Melek Sultan Hilal Damla Ezgi Nehir İpek Yonca Lale Hikmet Cihan Güven Gazi Hayat Rüya Cennet Şeref Arzu Emel Ilgaz Defne Irmak Ceylan Menekşe Selvi Nergis Yağmur Tuna Kartal Poyraz Rüzgar Ege Doruk Efe Mert Asya Ela Sevinç Nimet Kıymet Seher Tan Ay Su');
+const NAME_LBL=new RegExp(`(?:(?<=^|[\\n,;(\\t]|[ \\u00A0]{2})[ \\u00A0]*(?:${['adı soyadı','adı-soyadı','adı ve soyadı','ad soyad','ad-soyad','adı','soyadı','isim','ismi','isim soyisim'].map(ciLoose).join('|')})|${LB}(?:${['baba adı','ana adı','anne adı','eşinin adı','eş adı','babasının adı','annesinin adı'].map(ciLoose).join('|')}))[ \\u00A0]*:[ \\u00A0]*(${NAMEW}(?:${SP}${NAMEW}){0,3})${LA}`,'gu');
+const NAME_SUF=new RegExp(`(${NAMEW}(?:${SP}${NAMEW}){0,3})(?=${SP}(?:${['isimli','adlı','adındaki','isminde','ismindeki','adlı kişi','isimli şahıs'].map(ci).join('|')})${LA})`,'gu');
+
+function detect(text,O){
+  const C=[];
+  const ex=(s,e)=>O.excl.size&&O.excl.has(norm(text.slice(s,e)));
+  const push=(s,e,type,pri,key,gen,extra)=>{if(e>s&&!ex(s,e))C.push(Object.assign({s,e,type,pri,key,gen},extra||{}));};
+  const all=(re,fn)=>{re.lastIndex=0;for(const m of text.matchAll(re))fn(m,m.index,m.index+m[0].length);};
+
+  for(const it of O.custom){
+    const re=new RegExp((/^[\p{L}\p{N}]/u.test(it.from)?LB:'')+ci(it.from)+(/[\p{L}\p{N}]$/u.test(it.from)?LA:''),'gu');
+    all(re,(m,s,e)=>push(s,e,'CUS',110,'CUS:'+norm(it.from),()=>it.to!=null?it.to:fakeCustom(it.from,m[0])));
+  }
+  if(O.ids){
+    all(RE.mail,(m,s,e)=>push(s,e,'MAIL',100,'ML:'+m[0].toLowerCase(),()=>mailFake(m[0])));
+    all(RE.iban,(m,s,e)=>push(s,e,'IBAN',95,'IB:'+m[0].replace(/\s/g,''),()=>ibanFake(m[0])));
+    all(RE.phone,(m,s,e)=>push(s,e,'TEL',65,'TEL:'+m[0].replace(/\D/g,''),()=>phoneFake(m[0])));
+    all(RE.tckn,(m,s,e)=>push(s,e,'TCKN',60,'TC:'+m[0],()=>tcknFake(m[0])));
+    all(RE.vkn,(m,s,e)=>push(s,e,'VKN',60,'VK:'+m[0],()=>vknFake(m[0])));
+    all(RE.idlbl,(m)=>{
+      const g=m[1],s=m.index+m[0].length-g.length,e=s+g.length,d=g.replace(/\D/g,'');
+      const isV=/[vV]/.test(m[0].slice(0,m[0].length-g.length));
+      const key=(isV?'VK:':'TC:')+d;
+      push(s,e,isV?'VKN':'TCKN',98,key,()=>{
+        const f=isV&&d.length===10?vknFake(d):!isV&&d.length===11?tcknFake(d):cached(key,()=>uniqueNum('idx',d,()=>randDigits(d.length,true)));
+        let i=0;return g.replace(/[0-9]/g,()=>f[i++]);
+      });
+    });
+    // "960 086 2028", "123-456-78901", "960.086.2028" gibi parçalı yazılmış numaralar
+    all(RE.grpnum,(m,s,e)=>{
+      const g=m[0],d=g.replace(/\D/g,'');
+      if(/^[0-9]{1,3}(\.[0-9]{3})+$/.test(g))return; // 1.250.000 gibi tutarlar
+      if(/^[0-9]{1,3}([  ][0-9]{3})+$/.test(g)&&/^[  ]?(TL|₺|TRY|USD|EUR)/.test(text.slice(e,e+6)))return;
+      const isT=d.length===11&&d[0]!=='0',isV=d.length===10;
+      const groups=g.split(/[^0-9]+/).length;
+      if(!isT&&!isV&&!(O.num&&d.length>=8&&groups>=3&&!/^[0-9]{1,3}([  ][0-9]{3})+$/.test(g)))return;
+      const key=isT?'TC:'+d:isV?'VK:'+d:'NUM:'+d;
+      push(s,e,isT?'TCKN':isV?'VKN':'NUM',isT||isV?73:61,key,()=>{
+        const f=isT?tcknFake(d):isV?vknFake(d):numFake(d);let i=0;return g.replace(/[0-9]/g,()=>f[i++]);
+      });
+    });
+    all(RE.web,(m,s)=>{
+      const w=m[0].replace(/[.,;:!?]+$/,'');if(WEB_KEEP.test(w))return;
+      push(s,s+w.length,'WEB',100,'WEB:'+w.toLowerCase(),()=>webFake(w));
+    });
+  }
+  if(O.ref){
+    const refPush=(s,e,str)=>{if(!/[0-9]/.test(str))return;push(s,e,'REF',72,'REF:'+str,()=>refFake(str,O));};
+    const grp=(m)=>{let g=m[1].replace(/[.\-–\/]+$/,'');const s=m.index+m[0].length-m[1].length;return[s,s+g.length,g];};
+    all(RE.sayili,(m,s,e)=>{
+      const tok=m[1];if(!/[0-9]/.test(tok))return;
+      if(/^[0-9]+$/.test(tok)&&RE.lawAfter.test(text.slice(e,e+220)))return; // kanun / Resmi Gazete numaraları kalır
+      if(/^[0-9]{1,2}$/.test(tok))return;
+      refPush(s,e,tok);
+    });
+    all(RE.sayiLbl,m=>{const[s,e,g]=grp(m);if(/^[0-9]{1,2}[./][0-9]{1,2}[./][0-9]{4}$/.test(g))return;refPush(s,e,g);});
+    all(RE.refLbl,m=>{const[s,e,g]=grp(m);refPush(s,e,g);});
+    all(RE.refAda,(m,s,e)=>refPush(s,e,m[0]));
+    all(RE.refEsas,(m,s,e)=>push(s,e,'REF',73,'REF:'+m[0],()=>refFake(m[0],O)));
+    all(RE.refNolu,(m,s,e)=>{if((m[0].match(/[0-9]/g)||[]).length>=3)refPush(s,e,m[0]);});
+    all(RE.addrNo,m=>{
+      const[s,e,g]=grp(m);const ls=text.lastIndexOf('\n',s-1)+1,le=text.indexOf('\n',s);
+      const line=text.slice(ls,le<0?text.length:le);
+      if(/(mah|cad|cd\.|sok|sk\.|bulv|blv|apt|sitesi|köyü|plaza|adres)/i.test(line))refPush(s,e,g);
+    });
+  }
+  if(O.date){
+    // doğum tarihleri: gün, ay ve yıl tamamen yeniden üretilir
+    all(RE.dnum,(m,s,e)=>{
+      if(isBirth(text,s,e)){push(s,e,'BDATE',71,'BD:'+m[0],()=>{const b=birthFake(m[0],+m[4],O);return pad(b.d,m[1].length)+m[2]+pad(b.m,m[3].length)+m[2]+b.y;});return;}
+      push(s,e,'DATE',70,'D:'+m[0],()=>{const[d,mo,y]=shiftDMY(+m[1],+m[3],+m[4],O);return pad(d,m[1].length)+m[2]+pad(mo,m[3].length)+m[2]+y;});
+    });
+    all(RE.dnum2,(m,s,e)=>{if(!isBirth(text,s,e))return;push(s,e,'BDATE',71,'BD:'+m[0],()=>{const b=birthFake(m[0],1900+(+m[4]),O);return pad(b.d,m[1].length)+m[2]+pad(b.m,m[3].length)+m[2]+String(b.y).slice(-2);});});
+    all(RE.byear,(m,s,e)=>{if(!isBirth(text,s,e))return;push(s,e,'BDATE',71,'BD:'+m[0],()=>String(birthFake(m[0],+m[0],O).y));});
+    all(RE.diso,(m,s,e)=>{
+      if(isBirth(text,s,e)){push(s,e,'BDATE',71,'BD:'+m[0],()=>{const b=birthFake(m[0],+m[1],O);return b.y+'-'+pad(b.m,2)+'-'+pad(b.d,2);});return;}
+      push(s,e,'DATE',70,'D:'+m[0],()=>{const[d,mo,y]=shiftDMY(+m[3],+m[2],+m[1],O);return y+'-'+pad(mo,2)+'-'+pad(d,2);});
+    });
+    all(RE.dtxt,(m,s,e)=>{const mi=MONTH_N.indexOf(norm(m[2]));if(mi<0)return;
+      if(isBirth(text,s,e)){push(s,e,'BDATE',71,'BD:'+norm(m[0]),()=>{const b=birthFake(norm(m[0]),+m[3],O);return pad(b.d,m[1].length)+' '+monthName(b.m-1,m[2])+' '+b.y;});return;}
+      push(s,e,'DATE',70,'D:'+norm(m[0]),()=>{const[d,mo,y]=shiftDMY(+m[1],mi+1,+m[3],O);return pad(d,m[1].length)+' '+monthName(mo-1,m[2])+' '+y;});});
+    all(RE.dmy,(m,s,e)=>{if(MONTH_N.indexOf(norm(m[1]))<0)return;push(s,e,'DATE',69,'D:'+norm(m[0]),()=>m[1]+' '+(+m[2]+O.yearShift));});
+    all(RE.ym,(m,s,e)=>push(s,e,'DATE',68,'D:'+m[0],()=>(+m[1]+O.yearShift)+m[2]+m[3]));
+    all(RE.my,(m,s,e)=>push(s,e,'DATE',68,'D:'+m[0],()=>m[1]+m[2]+(+m[3]+O.yearShift)));
+  }
+  if(O.year) all(RE.year,(m,s,e)=>push(s,e,'YEAR',30,'Y:'+m[0],()=>String(+m[0]+O.yearShift)));
+  if(O.amt){
+    for(const re of[RE.amt1,RE.amt2,RE.amt3]) all(re,(m,s,e)=>push(s,e,'AMT',50,'A:'+m[0],()=>scaleAmount(m[0],O)));
+    all(RE.amtSp,(m,s,e)=>{const sep=m[0].match(/[  ]/)[0];push(s,e,'AMT',52,'A:'+m[0],()=>scaleAmount(m[0].split(sep).join('.'),O).split('.').join(sep));});
+  }
+  if(O.plate) all(RE.plate,(m,s,e)=>{if(PLATE_EX.has(m[2]))return;push(s,e,'PLATE',55,'PL:'+m[0].replace(/\s/g,''),()=>plateFake(m));});
+  if(O.num) all(RE.num,(m,s,e)=>push(s,e,'NUM',40,'NUM:'+m[0],()=>numFake(m[0])));
+
+  if(O.comp){
+    all(RE.comp,(m,p)=>{
+      const head=backHead(text,p,{max:10,stop:COMP_STOP,allowNum:true,allowConn:true});
+      let k=head.length;while(k>0&&(head[k-1].conn||GENERIC.has(norm(head[k-1].t))))k--;
+      if(!k)return;
+      const idt=head.slice(0,k).filter(x=>!x.conn);const s=head[0].s,e=head[k-1].e;
+      const ht=text.slice(s,e),hn=norm(ht);
+      const extra={head:hn,firstTok:idt.length>=2?idt[0].t:null};
+      if(O.compFull&&k<head.length){
+        const e2=head[head.length-1].e,tail=text.slice(e,e2).trim();
+        const tw=tail===trU(tail)?'TİCARET':tail===trL(tail)?'ticaret':'Ticaret';
+        push(s,e2,'COMP',90,'CU:'+norm(text.slice(s,e2)),()=>applyCase(ht,fakeCompanyHead(hn,idt.length))+' '+tw,extra);
+      }else push(s,e,'COMP',90,'CH:'+hn,()=>applyCase(ht,fakeCompanyHead(hn,idt.length)),extra);
+    });
+  }
+  if(O.place){
+    for(const r of addrSpans(text)){
+      const src=text.slice(r.s,r.e);if(!/[0-9A-Za-zÇĞİÖŞÜçğıöşü]/.test(src))continue;
+      push(r.s,r.e,'ADDR',88,'AD:'+norm(src),()=>fakeAddress(src).text);
+    }
+    all(RE.inst,(m,p)=>{
+      let head=backHead(text,p,{max:3,stop:PLACE_STOP,allowNum:true,sentEnd:true});
+      while(head.length&&/^[0-9]/.test(head[head.length-1].t))head.pop();
+      head=head.filter((x,i)=>i>0||!/^[0-9]/.test(x.t));
+      if(!head.length)return;
+      const s=head[0].s,e=head[head.length-1].e,ht=text.slice(s,e),hn=norm(ht);
+      push(s,e,'PLACE',80,'PLACE:'+hn,()=>applyCase(ht,fakePlace(hn)),{head:hn});
+    });
+    all(RE.addr,(m,p)=>{
+      const head=backHead(text,p,{max:3,stop:PLACE_STOP,allowNum:true,sentEnd:true});
+      if(!head.length)return;
+      const s=head[0].s,e=head[head.length-1].e,ht=text.slice(s,e),hn=norm(ht);
+      push(s,e,'PLACE',80,'ADDR:'+hn,()=>/^[0-9]/.test(ht)?fakeAddr(hn,ht):applyCase(ht,fakeAddr(hn,ht)));
+    });
+    all(RE.dist,(m,s,e)=>{const n=norm(m[1]);if(STOP.has(n))return;push(s,e,'PLACE',76,'PLACE:'+n,()=>applyCase(m[0],fakePlace(n)),{head:n});});
+    all(RE.distRev,(m,s,e)=>{const n=norm(m[1]);if(STOP.has(n)||GENERIC.has(n))return;push(s,e,'PLACE',76,'PLACE:'+n,()=>applyCase(m[0],fakePlace(n)),{head:n});});
+    all(RE.prov,(m,s,e)=>{if(!reCapStart.test(m[0]))return;const n=norm(m[0]);push(s,e,'PLACE',75,'PLACE:'+n,()=>applyCase(m[0],fakePlace(n)),{head:n});});
+    all(RE.dist2,(m,s,e)=>{if(!reCapStart.test(m[0]))return;const n=norm(m[0]);if(STOP.has(n))return;push(s,e,'PLACE',74,'PLACE:'+n,()=>applyCase(m[0],fakePlace(n)),{head:n});});
+    const plc=(m,pri)=>{
+      const s=m.index+m[0].lastIndexOf(m[1]);const toks=[];RE.tok.lastIndex=0;
+      for(const t of m[1].matchAll(RE.tok)){const n=norm(t[0]);if(STOP.has(n)||GENERIC.has(n))break;toks.push({s:s+t.index,e:s+t.index+t[0].length});}
+      if(!toks.length)return;const e=toks[toks.length-1].e,ht=text.slice(s,e),n=norm(ht);
+      push(s,e,'PLACE',pri,'PLACE:'+n,()=>applyCase(ht,fakePlace(n)),{head:n});
+    };
+    all(RE.plcLbl,m=>plc(m,78));
+    all(RE.plcSuf,m=>plc(m,77));
+  }
+  if(O.inst){
+    if((O.locale||'tr')!=='tr')all(RE.tcInst,(m,s,e)=>{
+      const up=/^[\s]*[^\s]+/.exec(text.slice(e,e+40));const isUp=up&&up[0].trim()===trU(up[0].trim());
+      push(s,e,'INST',96,'INST:TC',()=>{const c=cached('INST:TC',()=>COUNTRIES[rnd(COUNTRIES.length)]+' Cumhuriyeti');return isUp?trU(c):c;});
+    });
+    all(RE.unit,(m,p)=>{
+      const un=norm(m[0]);
+      let head=backHead(text,p,{max:9,stop:new Set([...COMP_STOP,'TC']),allowNum:true,allowConn:true,sentEnd:true});
+      while(head.length&&(head[0].conn||/^[0-9]{3,}/.test(head[0].t)||/[0-9]{3,}\.$/.test(head[0].t)))head.shift();
+      if(un==='KURULU'){const last=head[head.length-1];if(!last||!['DENETİM','TEFTİŞ','İNCELEME'].includes(norm(last.t)))return;}
+      let cut=-1;head.forEach((h,i)=>{if(UNIT_N.test(norm(h.t)))cut=i;});head=head.slice(cut+1);
+      while(head.length&&head[0].conn)head.shift();
+      if(!head.length||head.some(h=>INST_BLOCK.has(norm(h.t))))return;
+      // tanımlayıcı kelime grupları (yer adları ve "Daire", "Kurulu" gibi yapı kelimeleri hariç)
+      const runs=[];let curRun=null;
+      head.forEach((h,i)=>{
+        const n=norm(h.t),nx=head[i+1]?norm(head[i+1].t):'';
+        const struct=INST_STRUCT.has(n)||(n==='VERGİ'&&nx==='DAİRESİ');
+        const place=PROV_N.has(n)||DIST_SET.has(n);
+        if(h.conn){if(curRun)curRun.pend=h;return;}
+        if(struct||place){curRun=null;return;}
+        if(curRun){curRun.e=h.e;curRun.pend=null;}else{curRun={s:h.s,e:h.e};runs.push(curRun);}
+      });
+      for(const r of runs){
+        const t=text.slice(r.s,r.e),key='INST:'+norm(t),hasNum=/[0-9]/.test(t);
+        push(r.s,r.e,'INST',71,key,()=>instCase(t,cached(key,()=>pickUnique(INST_DESC,'inst')+(hasNum?'-'+(1+rnd(9)):''))));
+      }
+    });
+  }
+  if(O.per){
+    all(RE.run,(m,s0)=>{
+      const toks=[];RE.tok.lastIndex=0;
+      for(const t of m[0].matchAll(RE.tok))toks.push({t:t[0],s:s0+t.index,e:s0+t.index+t[0].length,n:norm(t[0])});
+      for(const p of analyzeRun(toks))pushPer(p,85);
+    });
+    all(RE.cue,(m)=>{
+      const gs=m.index+m[0].length-m[1].length;
+      const toks=[];RE.tok.lastIndex=0;
+      for(const t of m[1].matchAll(RE.tok)){const tk={t:t[0],s:gs+t.index,e:gs+t.index+t[0].length,n:norm(t[0])};if(!isSurCand(tk)&&!isFirst(tk.n))break;toks.push(tk);}
+      if(toks.length>=2)pushPer(mkPer(toks.slice(0,-1),toks.slice(-1)),84);
+    });
+    const grabToks=(str,gs)=>{const toks=[];RE.tok.lastIndex=0;for(const t of str.matchAll(RE.tok))toks.push({t:t[0],s:gs+t.index,e:gs+t.index+t[0].length,n:norm(t[0])});return toks;};
+    // "Adı Soyadı: …", "Baba Adı: …" gibi etiketler
+    all(NAME_LBL,(m)=>{
+      const gs=m.index+m[0].length-m[1].length;const lbl=norm(m[0].slice(0,m[0].length-m[1].length));
+      let toks=grabToks(m[1],gs);const cut=toks.findIndex(t=>SUR_BLOCK.has(t.n)||GENERIC.has(t.n)||COMP_STOP.has(t.n));if(cut>=0)toks=toks.slice(0,cut);
+      if(!toks.length)return;
+      const ln=lbl.replace(/[^A-ZÇĞİÖŞÜ]/g,'');
+      const onlySur=ln==='SOYADI';
+      const fullName=/SOYAD|SOYİSİM/.test(ln)&&!onlySur;
+      if(onlySur)pushPer(mkPer([],toks),86);
+      else if(fullName&&toks.length>=2)pushPer(mkPer(toks.slice(0,-1),toks.slice(-1)),86);
+      else pushPer(mkPer(toks,[]),86);
+    });
+    // "Berkant Aksoy isimli / adlı …"
+    all(NAME_SUF,(m)=>{
+      let toks=grabToks(m[1],m.index);let k=toks.length;
+      while(k>0&&!(SUR_BLOCK.has(toks[k-1].n)||STOP.has(toks[k-1].n)||GENERIC.has(toks[k-1].n)))k--;
+      toks=toks.slice(k).slice(-3);if(!toks.length)return;
+      pushPer(toks.length>=2?mkPer(toks.slice(0,-1),toks.slice(-1)):mkPer(toks,[]),84);
+    });
+    // baş harfli: "A. KORKMAZ", "M. Ali Yılmaz"
+    all(RE.initName,(m)=>{
+      const s0=m.index;const ini={s:s0,e:s0+1,n:norm(m[0][0])};
+      const rest=grabToks(m[0].slice(m[0].indexOf('.')+1),s0+m[0].indexOf('.')+1);if(!rest.length)return;
+      const sur=rest[rest.length-1];if(!isKnownSur(sur)||!isSurCand(sur)||SUR_BLOCK.has(sur.n))return;
+      const mids=rest.slice(0,-1);if(mids.some(x=>!isFirst(x.n)&&!plainCap(x)))return;
+      pushPer(mkPer(mids,[sur],[ini]),83);
+    });
+    // tek başına geçen bilinen adlar ("Hasan", "Fatma'nın")
+    RE.tok.lastIndex=0;
+    for(const t of text.matchAll(RE.tok)){
+      const n=norm(t[0]);if(!isFirst(n)||isRisky(n)||SURNAMES.has(n)||STOP.has(n)||PROV_N.has(n)||DIST_SET.has(n)||MONTH_N.includes(n))continue;
+      const s=t.index,e=s+t[0].length;if(O.excl.has(n))continue;
+      push(s,e,'PER',20,'F1:'+n,()=>applyCase(t[0],fakeFirst(n)),{parts:[{s,e,role:'F'}],weak:true});
+    }
+  }
+  function pushPer(p,pri){
+    const full=text.slice(p.s,p.e);
+    push(p.s,p.e,'PER',pri,'PER:'+norm(full),()=>{
+      let out='',cur=p.s;
+      for(const q of p.parts){out+=text.slice(cur,q.s);const t=text.slice(q.s,q.e),n=norm(t);out+=q.role==='I'?cached('I:'+n+':'+norm(full),()=>'ABCDEFGHKLMNPRSTVYZ'[rnd(19)]):applyCase(t,q.role==='F'?fakeFirst(n,q.g):fakeSur(n));cur=q.e;}
+      return out+text.slice(cur,p.e);
+    },{parts:p.parts});
+  }
+  return C;
+}
+
+function anonymize(text,O){
+  S.locale=O.locale||'tr';
+  S.docWords=new Set();RE.tok.lastIndex=0;for(const t of text.matchAll(RE.tok))S.docWords.add(norm(t[0]));
+  let C=detect(text,O);
+  if(O.law){
+    const LR=legalRanges(text);const prot=new Uint8Array(text.length+1);for(const[s,e]of LR)prot.fill(1,s,e);
+    const hit=c=>{for(let i=c.s;i<c.e;i++)if(prot[i])return true;return false;};
+    C=C.filter(c=>{
+      if((LAW_PROT.has(c.type)||c.weak)&&hit(c))return false;
+      if(c.type==='INST'&&RX_LAW.instCtx.test(sentenceAt(text,c.s,c.e)))return false;
+      return true;
+    });
+    S.prot=prot;
+  }else S.prot=null;
+  const mask=new Uint8Array(text.length+1);
+  C.sort((a,b)=>b.pri-a.pri||(b.e-b.s)-(a.e-a.s)||a.s-b.s);
+  const acc=[];
+  for(const c of C){let free=true;for(let i=c.s;i<c.e;i++)if(mask[i]){free=false;break;}if(!free)continue;mask.fill(1,c.s,c.e);acc.push(c);}
+  acc.sort((a,b)=>a.s-b.s);
+  for(const a of acc)a.repl=a.gen();
+  // 2. tur: aynı soyadı / şirket adı / yer adı metnin başka yerinde tek başına geçiyorsa
+  const dict=new Map();
+  for(const a of acc){
+    if(a.type==='PER')for(const q of a.parts){if(q.role!=='F')continue;const n=norm(text.slice(q.s,q.e));if(n.length>=3&&!isRisky(n)&&!SURNAMES.has(n)&&!STOP.has(n)&&!O.excl.has(n)&&!dict.has(n)&&S.cache.has('F:'+n))dict.set(n,{type:'PER',key:'F:'+n,raw:()=>S.cache.get('F:'+n)});}
+    if(a.type==='PER')for(const q of a.parts){if(q.role!=='S')continue;const n=norm(text.slice(q.s,q.e));if(n.length>=3&&!isFirst(n)&&!O.excl.has(n)&&!dict.has(n))dict.set(n,{type:'PER',key:'S:'+n,raw:()=>S.cache.get('S:'+n),apos:STOP.has(n)||GENERIC.has(n)||PROV_N.has(n)});}
+    if(a.type==='COMP'&&a.head){const ck='CH:'+a.head;dict.set(a.head,{type:'COMP',key:ck,raw:()=>S.cache.get(ck)});
+      if(a.firstTok){const n=norm(a.firstTok);if(n.length>=3&&!STOP.has(n)&&!GENERIC.has(n)&&!isFirst(n)&&!O.excl.has(n)&&!dict.has(n))dict.set(n,{type:'COMP',key:'CT:'+n,raw:()=>(S.cache.get(ck)||'').split(' ')[0]});}}
+    if(a.type==='PLACE'&&a.head&&!dict.has(a.head))dict.set(a.head,{type:'PLACE',key:a.key,raw:()=>S.cache.get(a.key)});
+    if(a.type==='ADDR')for(const g of ((S.cache.get(a.key)||{}).groups||[])){
+      if(g.n.length<4||dict.has(g.n)||O.excl.has(g.n))continue;
+      const single=!/ /.test(g.n);
+      dict.set(g.n,{type:g.pl?'PLACE':'ADDR',key:g.key,raw:()=>S.cache.get(g.key),apos:single&&(isFirst(g.n)||STOP.has(g.n)||GENERIC.has(g.n))});
+    }
+    if(a.type==='PLACE'&&a.key.startsWith('ADDR:')){const n=a.key.slice(5);if(!/^[0-9]/.test(n)&&n.length>=3&&!STOP.has(n)&&!dict.has(n))dict.set(n,{type:'PLACE',key:a.key,raw:()=>S.cache.get(a.key)});}
+  }
+  if(dict.size){
+    const keys=[...dict.keys()].sort((a,b)=>b.length-a.length);
+    const re=new RegExp(`${LB}(?:${keys.map(k=>ci(trL(k))).join('|')})${LA}`,'gu');
+    const extra=[];
+    for(const m of text.matchAll(re)){
+      const s=m.index,e=s+m[0].length;
+      if(!reCapStart.test(m[0]))continue;
+      let free=true;for(let i=s;i<e;i++)if(mask[i]){free=false;break;}if(!free)continue;
+      const d=dict.get(norm(m[0]));if(!d)continue;
+      if(S.prot&&(d.type==='PLACE'||d.type==='ADDR')&&S.prot[s])continue;
+      if(d.apos&&!/^['’]/.test(text.slice(e,e+1)))continue; // "Özel" gibi kelime-soyadlar tek başına sadece "Özel'in" biçiminde değişir
+      const raw=d.raw();if(!raw)continue;
+      mask.fill(1,s,e);extra.push({s,e,type:d.type,key:d.key,repl:applyCase(m[0],raw)});
+    }
+    acc.push(...extra);acc.sort((a,b)=>a.s-b.s);
+  }
+  return acc.map(a=>({s:a.s,e:a.e,type:a.type,key:a.key,repl:a.repl}));
+}
+function currentRepl(sp){if(S.disabled.has(sp.key))return null;if(S.overrides.has(sp.key))return S.overrides.get(sp.key);return sp.repl;}
+function outputText(){
+  const{text,spans}=S.res;let out='',cur=0;
+  for(const sp of spans){const r=currentRepl(sp);if(r==null)continue;out+=text.slice(cur,sp.s)+r;cur=sp.e;}
+  return out+text.slice(cur);
+}
+
+/* ====================== ZIP / DOCX ====================== */
+const CRC_T=(()=>{const t=new Uint32Array(256);for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;t[n]=c>>>0;}return t;})();
+function crc32(u8){let c=0xFFFFFFFF;for(let i=0;i<u8.length;i++)c=CRC_T[(c^u8[i])&0xFF]^(c>>>8);return(c^0xFFFFFFFF)>>>0;}
+async function streamThrough(u8,ts){return new Uint8Array(await new Response(new Blob([u8]).stream().pipeThrough(ts)).arrayBuffer());}
+/* Saf JavaScript inflate (DecompressionStream olmayan eski tarayıcılar için) */
+const INF_LB=[3,4,5,6,7,8,9,10,11,13,15,17,19,23,27,31,35,43,51,59,67,83,99,115,131,163,195,227,258],INF_LE=[0,0,0,0,0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,0];
+const INF_DB=[1,2,3,4,5,7,9,13,17,25,33,49,65,97,129,193,257,385,513,769,1025,1537,2049,3073,4097,6145,8193,12289,16385,24577],INF_DE=[0,0,0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13];
+function inflateRaw(src,sizeHint){
+  let pos=0,bb=0,bc=0,out=new Uint8Array(Math.max(sizeHint||0,src.length*3,1024)),ol=0;
+  const need=n=>{if(ol+n>out.length){const nb=new Uint8Array(Math.max(out.length*2,ol+n));nb.set(out.subarray(0,ol));out=nb;}};
+  const bit=()=>{if(!bc){if(pos>=src.length)throw new Error('Word dosyası bozuk (eksik veri).');bb=src[pos++];bc=8;}const b=bb&1;bb>>>=1;bc--;return b;};
+  const bits=n=>{let v=0;for(let i=0;i<n;i++)v|=bit()<<i;return v;};
+  const build=L=>{const cnt=new Uint16Array(16),off=new Uint16Array(16);for(const l of L)cnt[l]++;cnt[0]=0;for(let i=1;i<16;i++)off[i]=off[i-1]+cnt[i-1];const sym=new Uint16Array(L.length);for(let i=0;i<L.length;i++)if(L[i])sym[off[L[i]]++]=i;return{cnt,sym};};
+  const dec=t=>{let code=0,first=0,idx=0;for(let len=1;len<16;len++){code|=bit();const c=t.cnt[len];if(code-c<first)return t.sym[idx+(code-first)];idx+=c;first+=c;first<<=1;code<<=1;}throw new Error('Word dosyası bozuk (kod).');};
+  let FL=null,FD=null;
+  for(let last=0;!last;){
+    last=bit();const type=bits(2);
+    if(type===0){bc=0;const len=src[pos]|(src[pos+1]<<8);pos+=4;need(len);out.set(src.subarray(pos,pos+len),ol);ol+=len;pos+=len;continue;}
+    let lt,dt;
+    if(type===1){
+      if(!FL){const l=new Array(288);for(let i=0;i<288;i++)l[i]=i<144?8:i<256?9:i<280?7:8;FL=build(l);FD=build(new Array(30).fill(5));}
+      lt=FL;dt=FD;
+    }else if(type===2){
+      const hl=bits(5)+257,hd=bits(5)+1,hc=bits(4)+4,ord=[16,17,18,0,8,7,9,6,10,5,11,4,12,3,13,2,14,1,15],cl=new Array(19).fill(0);
+      for(let i=0;i<hc;i++)cl[ord[i]]=bits(3);
+      const ct=build(cl),L=[];
+      while(L.length<hl+hd){const s=dec(ct);
+        if(s<16)L.push(s);else if(s===16){const pv=L[L.length-1];for(let r=3+bits(2);r>0;r--)L.push(pv);}
+        else if(s===17){for(let r=3+bits(3);r>0;r--)L.push(0);}else{for(let r=11+bits(7);r>0;r--)L.push(0);}}
+      lt=build(L.slice(0,hl));dt=build(L.slice(hl,hl+hd));
+    }else throw new Error('Word dosyası bozuk (blok).');
+    for(;;){
+      const s=dec(lt);
+      if(s<256){need(1);out[ol++]=s;continue;}
+      if(s===256)break;
+      const li=s-257,len=INF_LB[li]+bits(INF_LE[li]),di=dec(dt),dist=INF_DB[di]+bits(INF_DE[di]);
+      need(len);for(let i=0;i<len;i++){out[ol]=out[ol-dist];ol++;}
+    }
+  }
+  return out.slice(0,ol);
+}
+async function inflateAny(raw,size){
+  if(typeof DecompressionStream!=='undefined'){try{return await streamThrough(raw,new DecompressionStream('deflate-raw'));}catch(e){}}
+  return inflateRaw(raw,size);
+}
+async function unzip(buf){
+  if(buf.length>=4&&buf[0]===0xD0&&buf[1]===0xCF&&buf[2]===0x11&&buf[3]===0xE0)throw new Error('Bu Word dosyası şifreli/korumalı (ör. "Gizli" etiketli) ya da eski .doc biçiminde. Word\'de açıp Farklı Kaydet → "Word Belgesi (.docx)" seçin; şifre/etiket kaldırılamıyorsa metni kopyalayıp sol kutuya yapıştırın.');
+  const dv=new DataView(buf.buffer,buf.byteOffset,buf.byteLength);let eocd=-1;
+  for(let i=buf.length-22;i>=Math.max(0,buf.length-65558);i--)if(dv.getUint32(i,true)===0x06054b50){eocd=i;break;}
+  if(eocd<0)throw new Error('Dosya geçerli bir .docx değil.');
+  const n=dv.getUint16(eocd+10,true);let p=dv.getUint32(eocd+16,true);const files=[];const td=new TextDecoder();
+  for(let k=0;k<n;k++){
+    if(dv.getUint32(p,true)!==0x02014b50)throw new Error('Bozuk zip yapısı.');
+    const method=dv.getUint16(p+10,true),csize=dv.getUint32(p+20,true),nl=dv.getUint16(p+28,true),el=dv.getUint16(p+30,true),cl=dv.getUint16(p+32,true),lho=dv.getUint32(p+42,true);
+    const name=td.decode(buf.subarray(p+46,p+46+nl));p+=46+nl+el+cl;
+    const ds=lho+30+dv.getUint16(lho+26,true)+dv.getUint16(lho+28,true);const raw=buf.subarray(ds,ds+csize);
+    const usize=dv.getUint32(p-nl-el-cl-46+24,true);let data;if(method===0)data=raw.slice();else if(method===8)data=await inflateAny(raw,usize);else throw new Error('Desteklenmeyen sıkıştırma ('+method+').');
+    files.push({name,data});
+  }
+  return files;
+}
+async function zip(files){
+  const enc=new TextEncoder();const chunks=[],central=[];let off=0;
+  for(const f of files){
+    const nb=enc.encode(f.name),crc=crc32(f.data);let comp=f.data,method=0;
+    try{const c=await streamThrough(f.data,new CompressionStream('deflate-raw'));if(c.length<f.data.length){comp=c;method=8;}}catch(e){}
+    const lh=new Uint8Array(30+nb.length),lv=new DataView(lh.buffer);
+    lv.setUint32(0,0x04034b50,true);lv.setUint16(4,20,true);lv.setUint16(6,0x0800,true);lv.setUint16(8,method,true);lv.setUint16(12,0x21,true);
+    lv.setUint32(14,crc,true);lv.setUint32(18,comp.length,true);lv.setUint32(22,f.data.length,true);lv.setUint16(26,nb.length,true);lh.set(nb,30);
+    const ch=new Uint8Array(46+nb.length),cv=new DataView(ch.buffer);
+    cv.setUint32(0,0x02014b50,true);cv.setUint16(4,20,true);cv.setUint16(6,20,true);cv.setUint16(8,0x0800,true);cv.setUint16(10,method,true);cv.setUint16(14,0x21,true);
+    cv.setUint32(16,crc,true);cv.setUint32(20,comp.length,true);cv.setUint32(24,f.data.length,true);cv.setUint16(28,nb.length,true);cv.setUint32(42,off,true);ch.set(nb,46);
+    chunks.push(lh,comp);central.push(ch);off+=lh.length+comp.length;
+  }
+  const cds=central.reduce((a,c)=>a+c.length,0);const end=new Uint8Array(22),ev=new DataView(end.buffer);
+  ev.setUint32(0,0x06054b50,true);ev.setUint16(8,files.length,true);ev.setUint16(10,files.length,true);ev.setUint32(12,cds,true);ev.setUint32(16,off,true);
+  return new Blob([...chunks,...central,end],{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'});
+}
+const WNS='http://schemas.openxmlformats.org/wordprocessingml/2006/main';
+const WNS_SET=new Set([WNS,'http://purl.oclc.org/ooxml/wordprocessingml/main']);
+const XMLNS='http://www.w3.org/XML/1998/namespace';
+function parseXml(str){const d=new DOMParser().parseFromString(str,'application/xml');if(d.getElementsByTagName('parsererror').length)throw new Error('Word içeriği okunamadı.');return d;}
+function walkPart(doc,ctx){
+  const rec=el=>{
+    for(let c=el.firstChild;c;c=c.nextSibling){
+      if(c.nodeType!==1)continue;
+      if(WNS_SET.has(c.namespaceURI)){
+        const ln=c.localName;
+        if(ln==='pPr'||ln==='rPr'||ln==='sectPr'||ln==='delText'||ln==='instrText'||ln==='tblPr'||ln==='trPr'||ln==='tcPr')continue;
+        if(ln==='p'){if(ctx.text.length&&!ctx.text.endsWith('\n'))ctx.text+='\n';rec(c);ctx.text+='\n';continue;}
+        if(ln==='t'){const t=c.textContent;ctx.nodes.push({el:c,start:ctx.text.length,end:ctx.text.length+t.length});ctx.text+=t;continue;}
+        if(ln==='tab'){ctx.text+='\t';continue;}
+        if(ln==='br'||ln==='cr'){ctx.text+='\n';continue;}
+      }
+      rec(c);
+    }
+  };
+  rec(doc.documentElement);
+}
+const PART_RE=/^word\/(document\d*|header\d*|footer\d*|footnotes|endnotes|comments)\.xml$/i;
+const partRank=n=>['document','header','footer','footnotes','endnotes','comments'].findIndex(x=>n.includes(x));
+async function loadDocx(file){
+  const files=await unzip(new Uint8Array(await file.arrayBuffer()));
+  const td=new TextDecoder('utf-8');const xml=new Map();
+  let main='word/document.xml';
+  const rels=files.find(f=>f.name==='_rels/.rels');
+  if(rels){const m=td.decode(rels.data).match(/Type="[^"]*\/officeDocument"[^>]*Target="\/?([^"]+)"|Target="\/?([^"]+)"[^>]*Type="[^"]*\/officeDocument"/);if(m)main=(m[1]||m[2]);}
+  const names=files.map(f=>f.name);
+  const order=names.filter(n=>n===main||PART_RE.test(n)).filter((n,i,a)=>a.indexOf(n)===i).sort((a,b)=>(a===main?-1:b===main?1:0)||partRank(a)-partRank(b)||a.localeCompare(b,undefined,{numeric:true}));
+  if(!order.includes(main))throw new Error('Word belgesi gövdesi bulunamadı ('+main+'). Dosyayı Word\'de açıp "Farklı Kaydet → Word Belgesi (.docx)" ile yeniden kaydedin.');
+  for(const n of order)xml.set(n,td.decode(files.find(f=>f.name===n).data));
+  const ctx=buildCtx(order,xml);
+  return{name:file.name,files,xml,order,text:ctx.text};
+}
+function buildCtx(order,xml){const ctx={text:'',nodes:[],docs:new Map()};for(const n of order){const d=parseXml(xml.get(n));if(ctx.text)ctx.text+='\n\n';walkPart(d,ctx);ctx.docs.set(n,d);}return ctx;}
+const HL={PER:'cyan',COMP:'magenta',INST:'magenta',PLACE:'green',ADDR:'green',DATE:'yellow',BDATE:'yellow',YEAR:'yellow',AMT:'lightGray'};
+const hlOf=t=>HL[t]||'lightGray';
+const RPR_AFTER=new Set(['u','effect','bdr','shd','fitText','vertAlign','rtl','cs','em','lang','eastAsianLayout','specVanish','oMath','rPrChange']);
+const isW=(n,ln)=>n&&n.nodeType===1&&WNS_SET.has(n.namespaceURI)&&n.localName===ln;
+function setHighlight(run,color){
+  const doc=run.ownerDocument;let rPr=null;
+  for(let c=run.firstChild;c;c=c.nextSibling)if(isW(c,'rPr')){rPr=c;break;}
+  const ns=run.namespaceURI;
+  if(!rPr){rPr=doc.createElementNS(ns,'w:rPr');run.insertBefore(rPr,run.firstChild);}
+  for(let c=rPr.firstChild;c;){const nx=c.nextSibling;if(isW(c,'highlight'))rPr.removeChild(c);c=nx;}
+  const h=doc.createElementNS(ns,'w:highlight');h.setAttributeNS(ns,'w:val',color);
+  let ref=null;for(let c=rPr.firstChild;c;c=c.nextSibling)if(c.nodeType===1&&WNS_SET.has(c.namespaceURI)&&RPR_AFTER.has(c.localName)){ref=c;break;}
+  rPr.insertBefore(h,ref);
+}
+function splitRun(t,segs){
+  const r=t.parentNode;
+  if(!isW(r,'r')){t.textContent=segs.map(s=>s.text).join('');t.setAttributeNS(XMLNS,'xml:space','preserve');return;}
+  const doc=t.ownerDocument,parent=r.parentNode;let rPr=null;
+  for(let c=r.firstChild;c;c=c.nextSibling)if(isW(c,'rPr')){rPr=c;break;}
+  const mk=()=>{const n=r.cloneNode(false);if(rPr)n.appendChild(rPr.cloneNode(true));return n;};
+  const has=n=>{for(let c=n.firstChild;c;c=c.nextSibling)if(c.nodeType===1&&!isW(c,'rPr'))return true;return false;};
+  const before=mk();for(let c=r.firstChild;c&&c!==t;){const nx=c.nextSibling;if(c!==rPr)before.appendChild(c);c=nx;}
+  const after=mk();for(let c=t.nextSibling;c;){const nx=c.nextSibling;after.appendChild(c);c=nx;}
+  if(has(before))parent.insertBefore(before,r);
+  for(const s of segs){
+    if(!s.text)continue;const n=mk();if(s.hl)setHighlight(n,s.hl);
+    const nt=doc.createElementNS(r.namespaceURI,'w:t');nt.setAttributeNS(XMLNS,'xml:space','preserve');nt.textContent=s.text;n.appendChild(nt);parent.insertBefore(n,r);
+  }
+  if(has(after))parent.insertBefore(after,r);
+  parent.removeChild(r);
+}
+function applyToNodes(nodes,spans,highlight){
+  const edits=new Map();let ni=0;
+  for(const sp of spans){
+    const r=currentRepl(sp);if(r==null)continue;
+    while(ni<nodes.length&&nodes[ni].end<=sp.s)ni++;
+    let first=true;
+    for(let k=ni;k<nodes.length&&nodes[k].start<sp.e;k++){
+      const nd=nodes[k];if(nd.end<=sp.s)continue;
+      const ls=Math.max(sp.s,nd.start)-nd.start,le=Math.min(sp.e,nd.end)-nd.start;
+      if(!edits.has(k))edits.set(k,[]);edits.get(k).push({ls,le,ins:first?r:'',type:sp.type});first=false;
+    }
+  }
+  for(const[k,arr]of edits){
+    const nd=nodes[k];const t=nd.el.textContent;arr.sort((a,b)=>a.ls-b.ls);
+    if(!highlight){let out='',cur=0;for(const ed of arr){out+=t.slice(cur,ed.ls)+ed.ins;cur=ed.le;}nd.el.textContent=out+t.slice(cur);nd.el.setAttributeNS(XMLNS,'xml:space','preserve');continue;}
+    const segs=[];let cur=0;
+    for(const ed of arr){if(ed.ls>cur)segs.push({text:t.slice(cur,ed.ls)});if(ed.ins)segs.push({text:ed.ins,hl:hlOf(ed.type)});cur=ed.le;}
+    if(cur<t.length)segs.push({text:t.slice(cur)});
+    splitRun(nd.el,segs);
+  }
+}
+const scrubAttrs=s=>s.replace(/\b(w:author|w15:author|w:initials|w15:userId)="[^"]*"/g,(m,a)=>`${a}="${a.endsWith('initials')?'A':'Anonim'}"`);
+function scrubProps(name,s){
+  if(name==='docProps/core.xml'){
+    s=s.replace(/(<dc:creator[^>]*>)[\s\S]*?(<\/dc:creator>)/,'$1Anonim$2').replace(/(<cp:lastModifiedBy[^>]*>)[\s\S]*?(<\/cp:lastModifiedBy>)/,'$1Anonim$2');
+    for(const t of['dc:title','dc:subject','dc:description','cp:keywords','cp:category'])s=s.replace(new RegExp(`(<${t}[^>]*>)[\\s\\S]*?(</${t}>)`),'$1$2');
+  }
+  if(name==='docProps/app.xml')for(const t of['Company','Manager'])s=s.replace(new RegExp(`(<${t}>)[\\s\\S]*?(</${t}>)`),'$1$2');
+  return s;
+}
+const XMLDECL='<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\r\n';
+function serialize(doc){const s=new XMLSerializer().serializeToString(doc);return s.startsWith('<?xml')?s:XMLDECL+s;}
+async function buildDocx(highlight){
+  const enc=new TextEncoder(),td=new TextDecoder();
+  if(S.docx){
+    const D=S.docx;const ctx=buildCtx(D.order,D.xml);
+    if(ctx.text!==S.res.text)throw new Error('Belge metni eşleşmedi; dosyayı yeniden açın.');
+    applyToNodes(ctx.nodes,S.res.spans,highlight);
+    const out=D.files.map(f=>{
+      if(ctx.docs.has(f.name))return{name:f.name,data:enc.encode(scrubAttrs(serialize(ctx.docs.get(f.name))))};
+      if(/\.xml$/.test(f.name)&&(f.name.startsWith('word/')||f.name.startsWith('docProps/'))){const s=td.decode(f.data);const n=scrubProps(f.name,scrubAttrs(s));return n===s?f:{name:f.name,data:enc.encode(n)};}
+      return f;
+    });
+    return zip(out);
+  }
+  const x=s=>s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  const rpr='<w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/><w:sz w:val="24"/></w:rPr>';
+  // metni (parça, boya) dizisine çevir, sonra paragraflara böl
+  const{text,spans}=S.res;const pieces=[];let cur=0;
+  for(const sp of spans){const r=currentRepl(sp);if(r==null)continue;pieces.push({t:text.slice(cur,sp.s)},{t:r,hl:highlight?hlOf(sp.type):null});cur=sp.e;}
+  pieces.push({t:text.slice(cur)});
+  const lines=[[]];
+  for(const p of pieces){const ls=p.t.split('\n');ls.forEach((l,i)=>{if(i>0)lines.push([]);if(l)lines[lines.length-1].push({t:l,hl:p.hl});});}
+  const run=p=>'<w:r><w:rPr><w:rFonts w:ascii="Times New Roman" w:hAnsi="Times New Roman" w:cs="Times New Roman"/><w:sz w:val="24"/>'+(p.hl?`<w:highlight w:val="${p.hl}"/>`:'')+'</w:rPr>'+p.t.split('\t').map(seg=>`<w:t xml:space="preserve">${x(seg)}</w:t>`).join('<w:tab/>')+'</w:r>';
+  const paras=lines.map(l=>'<w:p>'+l.map(run).join('')+'</w:p>').join('');
+  const files=[
+    ['[Content_Types].xml',XMLDECL+'<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/></Types>'],
+    ['_rels/.rels',XMLDECL+'<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/></Relationships>'],
+    ['word/document.xml',XMLDECL+`<w:document xmlns:w="${WNS}"><w:body>${paras}<w:sectPr><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0"/></w:sectPr></w:body></w:document>`],
+  ];
+  return zip(files.map(([n,s])=>({name:n,data:enc.encode(s)})));
+}
+
+/* ====================== Arayüz ====================== */
+const TYPES={PER:['Kişi','per'],COMP:['Şirket','comp'],INST:['Kurum','comp'],PLACE:['Yer','place'],ADDR:['Adres','place'],DATE:['Tarih','date'],BDATE:['Doğum tarihi','date'],YEAR:['Yıl','date'],AMT:['Tutar','amt'],TCKN:['TCKN','id'],VKN:['VKN','id'],IBAN:['IBAN','id'],TEL:['Telefon','id'],MAIL:['E-posta','id'],PLATE:['Plaka','id'],REF:['Sayı / No / Ada-Parsel','id'],WEB:['Web adresi','id'],NUM:['Numara','id'],CUS:['Özel liste','cus']};
+const TORDER=Object.keys(TYPES);
+function initUI(){
+  const $=id=>document.getElementById(id);
+  const toast=msg=>{const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),2400);};
+  const newParams=()=>{$('yearShift').value=-(3+Math.floor(Math.random()*6));$('factor').value=String(2+Math.floor(Math.random()*5));};
+  newParams();
+  let filter={type:'',text:''},entities=[];
+
+  function getOpts(){
+    const c=id=>$(id).checked;
+    const factor=parseFloat(String($('factor').value).replace(',','.'));
+    const lines=v=>v.split('\n').map(x=>x.trim()).filter(Boolean);
+    return{per:c('o_per'),comp:c('o_comp'),place:c('o_place'),date:c('o_date'),year:c('o_year'),amt:c('o_amt'),ids:c('o_ids'),plate:c('o_plate'),num:c('o_num'),ref:c('o_ref'),compFull:c('o_compfull'),inst:c('o_inst'),law:c('o_law'),locale:$('locale').value,
+      yearShift:parseInt($('yearShift').value,10)||0,dayShift:parseInt($('dayShift').value,10)||0,factor:factor>0?factor:1,roundNice:c('roundNice'),
+      custom:lines($('custom').value).map(l=>{const i=l.indexOf('=>');return i>=0?{from:l.slice(0,i).trim(),to:l.slice(i+2).trim()}:{from:l,to:null};}).filter(x=>x.from),
+      excl:new Set(lines($('excl').value).map(norm))};
+  }
+  function showErr(err){
+    const n=$('note');n.style.color='#c62828';
+    n.textContent='Hata: '+((err&&err.message)||err)+' — bu mesajı Claude\'a iletin.';
+    toast('Anonimleştirme sırasında hata oluştu; ayrıntı alt satırda.');
+    try{console.error(err);}catch(e){}
+  }
+  window.addEventListener('error',e=>showErr(e.error||e.message));
+  window.addEventListener('unhandledrejection',e=>showErr(e.reason));
+  function run(silent){try{runInner(silent);}catch(err){showErr(err&&err.stack?{message:(err.message+' @ '+String(err.stack).split('\n').slice(1,3).join(' ').replace(/\s+/g,' ').slice(0,220))}:err);}}
+  function runInner(silent){
+    $('note').style.color='';
+    const text=S.docx?S.docx.text:$('input').value.replace(/\r\n?/g,'\n');
+    if(!text.trim()){if(!silent)toast('Önce rapor metnini girin veya dosya açın.');return;}
+    S.opt=getOpts();S.res={text,spans:anonymize(text,S.opt)};
+    buildEntities();renderChips();renderPreview();renderTable();
+    for(const b of['btnCopy','btnTxt','btnDocx','btnDocxHl','btnCsv'])$(b).disabled=false;
+  }
+  function buildEntities(){
+    const m=new Map();
+    for(const sp of S.res.spans){let e=m.get(sp.key);if(!e){e={key:sp.key,type:sp.type,orig:S.res.text.slice(sp.s,sp.e),repl:sp.repl,count:0,first:sp.s};m.set(sp.key,e);}e.count++;}
+    entities=[...m.values()].sort((a,b)=>TORDER.indexOf(a.type)-TORDER.indexOf(b.type)||a.first-b.first);
+    $('cnt').textContent='('+entities.length+')';
+  }
+  function renderChips(){
+    const cnt={};for(const e of entities)cnt[e.type]=(cnt[e.type]||0)+1;
+    $('chips').innerHTML=TORDER.filter(t=>cnt[t]).map(t=>`<button class="chip t-${TYPES[t][1]}" data-type="${t}">${TYPES[t][0]} · ${cnt[t]}</button>`).join('');
+    const sel=$('fType');sel.innerHTML='<option value="">Tüm türler</option>'+TORDER.filter(t=>cnt[t]).map(t=>`<option value="${t}">${TYPES[t][0]}</option>`).join('');sel.value=filter.type;
+  }
+  function renderPreview(){
+    const{text,spans}=S.res;const cmp=$('cmp').checked;let h='',cur=0;
+    for(const sp of spans){
+      h+=htmlEsc(text.slice(cur,sp.s));const o=text.slice(sp.s,sp.e);const r=currentRepl(sp);const cls=TYPES[sp.type][1];
+      if(r==null)h+=`<span class="off" data-k="${htmlEsc(sp.key)}" title="${TYPES[sp.type][0]} · değiştirilmedi (tıklayınca yeniden uygulanır)">${htmlEsc(o)}</span>`;
+      else h+=(cmp?`<del class="orig">${htmlEsc(o)}</del>`:'')+`<mark class="t-${cls}" data-k="${htmlEsc(sp.key)}" title="${TYPES[sp.type][0]} · Orijinal: ${htmlEsc(o)}">${htmlEsc(r)||'∅'}</mark>`;
+      cur=sp.e;
+    }
+    h+=htmlEsc(text.slice(cur));
+    $('preview').innerHTML=h||'<div class="empty">Boş belge.</div>';
+    const active=S.res.spans.filter(s=>currentRepl(s)!=null).length;
+    $('note').textContent=`${active} yer değiştirildi. Otomatik tespit kusursuz değildir; paylaşmadan önce gözden geçirin.`;
+  }
+  function renderTable(){
+    const q=norm(filter.text);
+    $('tbody').innerHTML=entities.filter(e=>(!filter.type||e.type===filter.type)&&(!q||norm(e.orig).includes(q)||norm(currentVal(e)).includes(q))).map(e=>{
+      const dis=S.disabled.has(e.key);
+      return `<tr class="${dis?'dis':''}" data-k="${htmlEsc(e.key)}"><td><input type="checkbox" class="en" ${dis?'':'checked'} title="Değiştir / değiştirme"></td><td><span class="tl t-${TYPES[e.type][1]}">${TYPES[e.type][0]}</span></td><td class="o">${htmlEsc(e.orig)}</td><td><input class="r" value="${htmlEsc(currentVal(e))}"></td><td>${e.count}</td></tr>`;
+    }).join('')||'<tr><td colspan="5" style="color:var(--muted);padding:16px">Kayıt yok.</td></tr>';
+  }
+  const currentVal=e=>S.overrides.has(e.key)?S.overrides.get(e.key):e.repl;
+  function toggleKey(k){S.disabled.has(k)?S.disabled.delete(k):S.disabled.add(k);}
+
+  // olaylar
+  $('btnRun').onclick=()=>run();
+  $('btnNew').onclick=()=>{resetScenario();newParams();run(true);toast('Yeni kurgu senaryosu oluşturuldu.');};
+  let deb;const rerun=()=>{clearTimeout(deb);deb=setTimeout(()=>{if(S.res)run(true);},250);};
+  document.querySelectorAll('.left input[type=checkbox], #yearShift, #dayShift, #factor').forEach(el=>el.addEventListener('change',rerun));
+  $('locale').addEventListener('change',()=>{resetScenario();if(S.res)run(true);});
+  $('cmp').onchange=()=>S.res&&renderPreview();
+  document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>showTab(b.dataset.tab));
+  function showTab(t){document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.tab===t));$('vPreview').classList.toggle('hidden',t!=='preview');$('vList').classList.toggle('hidden',t!=='list');}
+  $('chips').onclick=e=>{const b=e.target.closest('.chip');if(!b)return;filter.type=b.dataset.type;$('fType').value=filter.type;renderTable();showTab('list');};
+  $('fType').onchange=e=>{filter.type=e.target.value;renderTable();};
+  $('fText').oninput=e=>{filter.text=e.target.value;renderTable();};
+  $('preview').onclick=e=>{const el=e.target.closest('[data-k]');if(!el||!S.res)return;if(String(window.getSelection())) return;toggleKey(el.dataset.k);renderPreview();renderTable();};
+  $('tbody').addEventListener('change',e=>{const tr=e.target.closest('tr');if(!tr||!e.target.classList.contains('en'))return;toggleKey(tr.dataset.k);tr.classList.toggle('dis',!e.target.checked);renderPreview();});
+  $('tbody').addEventListener('input',e=>{if(!e.target.classList.contains('r'))return;const k=e.target.closest('tr').dataset.k;const ent=entities.find(x=>x.key===k);
+    if(e.target.value===ent.repl)S.overrides.delete(k);else S.overrides.set(k,e.target.value);clearTimeout(deb);deb=setTimeout(renderPreview,200);});
+
+  // seçimle ekle / hariç tut
+  document.addEventListener('selectionchange',()=>{const s=window.getSelection();const ok=s&&String(s).trim().length>1&&$('preview').contains(s.anchorNode);$('selbar').classList.toggle('hidden',!ok);});
+  const addLine=(id,v)=>{const ta=$(id);const lines=ta.value.split('\n').map(x=>x.trim()).filter(Boolean);if(!lines.includes(v))lines.push(v);ta.value=lines.join('\n');ta.closest('details').open=true;};
+  $('btnSelAdd').onmousedown=e=>{e.preventDefault();const v=String(window.getSelection()).trim().replace(/\s+/g,' ');if(!v)return;addLine('custom',v);window.getSelection().removeAllRanges();run(true);toast('"'+v+'" listeye eklendi.');};
+  $('btnSelEx').onmousedown=e=>{e.preventDefault();const v=String(window.getSelection()).trim().replace(/\s+/g,' ');if(!v)return;addLine('excl',v);window.getSelection().removeAllRanges();run(true);toast('"'+v+'" artık değiştirilmeyecek.');};
+
+  // dosya
+  $('btnOpen').onclick=()=>$('file').click();
+  $('file').onchange=e=>{if(e.target.files[0])openFile(e.target.files[0]);e.target.value='';};
+  const left=$('left');
+  left.addEventListener('dragover',e=>{e.preventDefault();left.classList.add('drop');});
+  left.addEventListener('dragleave',()=>left.classList.remove('drop'));
+  left.addEventListener('drop',e=>{e.preventDefault();left.classList.remove('drop');const f=e.dataTransfer.files[0];if(f)openFile(f);});
+  async function openFile(f){
+    try{
+      if(/\.docx$/i.test(f.name)){
+        S.docx=await loadDocx(f);
+        $('input').value=S.docx.text;$('input').readOnly=true;$('docName').textContent=f.name;$('docBadge').classList.remove('hidden');
+      }else if(/\.(txt|text|md)$/i.test(f.name)||f.type.startsWith('text')){
+        const buf=new Uint8Array(await f.arrayBuffer());let t=new TextDecoder('utf-8').decode(buf);
+        if(t.includes('\uFFFD'))t=new TextDecoder('windows-1254').decode(buf);
+        clearDoc();$('input').value=t.replace(/\r\n?/g,'\n');
+      }else if(/\.doc$/i.test(f.name)){toast('Eski .doc biçimi desteklenmiyor; Word\'de "Farklı Kaydet → .docx" yapın.');return;}
+      else{toast('Sadece .docx ve .txt açılabilir. PDF için metni kopyalayıp yapıştırın.');return;}
+      run(true);
+    }catch(err){showErr(err&&err.message?err:{message:'Dosya açılamadı.'});}
+  }
+  function clearDoc(){S.docx=null;$('input').readOnly=false;$('docBadge').classList.add('hidden');}
+  $('btnClose').onclick=()=>{clearDoc();$('input').value='';};
+
+  // dışa aktarım
+  const baseName=()=>S.docx?S.docx.name.replace(/\.docx$/i,''):'rapor';
+  function download(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove();},1500);}
+  $('btnCopy').onclick=async()=>{const t=outputText();try{await navigator.clipboard.writeText(t);}catch(e){const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove();}toast('Anonim metin panoya kopyalandı.');};
+  $('btnTxt').onclick=()=>download(new Blob([outputText()],{type:'text/plain;charset=utf-8'}),baseName()+'_anonim.txt');
+  $('btnDocx').onclick=async()=>{try{download(await buildDocx(false),baseName()+'_anonim.docx');}catch(err){toast(err.message||'Word dosyası oluşturulamadı.');}};
+  $('btnDocxHl').onclick=async()=>{try{download(await buildDocx(true),baseName()+'_anonim_boyali.docx');}catch(err){toast(err.message||'Word dosyası oluşturulamadı.');}};
+  $('btnCsv').onclick=()=>{
+    if(!confirm('Bu liste GERÇEK bilgileri içerir (orijinal ↔ kurgu). Raporla birlikte paylaşmayın. İndirilsin mi?'))return;
+    const q=v=>'"'+String(v).replace(/"/g,'""')+'"';
+    const rows=[['Tür','Orijinal','Yeni','Adet','Durum'].map(q).join(';')].concat(entities.map(e=>[TYPES[e.type][0],e.orig,currentVal(e),e.count,S.disabled.has(e.key)?'değiştirilmedi':'değiştirildi'].map(q).join(';')));
+    download(new Blob(['\uFEFF'+rows.join('\r\n')],{type:'text/csv;charset=utf-8'}),baseName()+'_eslesme.csv');
+  };
+}
+if(typeof document!=='undefined')initUI();
+</script>
+<script>
+if('serviceWorker' in navigator && location.protocol==='https:'){window.addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').catch(()=>{});});}
+</script>
+</body>
+</html>
