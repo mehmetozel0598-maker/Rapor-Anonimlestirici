@@ -57,6 +57,8 @@ textarea{width:100%;border:1px solid var(--line);border-radius:8px;background:va
 .badge b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .badge .btn{margin-left:auto}
 .hidden{display:none!important}
+.warnbox{background:var(--date-bg);color:var(--ink);border-radius:8px;padding:8px 10px;margin-bottom:8px;font-size:12.5px;line-height:1.45}
+.warnbox b{color:var(--date)}
 .cats{display:grid;grid-template-columns:1fr 1fr;gap:6px 10px;margin-bottom:12px}
 .cats label{display:flex;align-items:center;gap:7px;cursor:pointer}
 .dot{width:10px;height:10px;border-radius:3px;display:inline-block;flex:none}
@@ -111,7 +113,7 @@ tr.dis input.r{text-decoration:line-through}
 </head>
 <body>
 <header class="top">
-  <div class="brand"><span class="logo">◐</span>Rapor Anonimleştirici <span style="font-weight:500;font-size:12px;color:var(--muted)">Sürüm 1.4 · 06.11.2026</span></div>
+  <div class="brand"><span class="logo">◐</span>Rapor Anonimleştirici <span style="font-weight:500;font-size:12px;color:var(--muted)">Sürüm 1.5 · 08.11.2026</span></div>
   <div class="offline">İnternetsiz çalışır · veriler cihazınızdan çıkmaz</div>
 </header>
 <main>
@@ -122,6 +124,7 @@ tr.dis input.r{text-decoration:line-through}
         <input type="file" id="file" accept=".docx,.txt" hidden>
       </div>
       <div class="badge hidden" id="docBadge"><span>📄</span><b id="docName"></b><button class="btn small" id="btnClose">Kaldır</button></div>
+      <div class="warnbox hidden" id="docWarn"></div>
       <textarea id="input" placeholder="Rapor metnini buraya yapıştırın ya da Word dosyasını sürükleyip bırakın…"></textarea>
       <p class="hint">Word dosyası açarsanız çıktı, biçimlendirme korunarak yine Word olarak alınır. Belge özelliklerindeki yazar/şirket bilgileri ve açıklama yazarları da temizlenir.</p>
     </div>
@@ -240,7 +243,7 @@ function applyCase(src,fake){
 const FIRST_M=mkSet(`Ahmet Mehmet Mustafa Ali Hüseyin Hasan İbrahim İsmail Osman Yusuf Murat Ömer Ramazan Halil Süleyman Abdullah Mahmut Recep Salih Fatih Kadir Emre Hakan Adem Kemal Yaşar Bekir Musa Metin Serkan Orhan Burak Uğur Erkan Selim Gökhan Volkan Cengiz Sinan Tolga Levent Serdar Erdal Tuncay Bülent Cem Kaan Onur Can Emin Okan Ercan Erol Ferhat Tamer Tarık Taner Ayhan Abdurrahman Alper Anıl Arda Barış Batuhan Berk Bilal Cihan Cüneyt Doğukan Engin Enes Eren Ertan Ertuğrul Ferdi Fikret Furkan Gürkan Hamza Harun Hayati Hikmet İlhan İlker İsa Kerem Koray Kürşat Mert Mesut Muhammed Muhammet Muharrem Necati Nedim Nevzat Nihat Oğuz Oğuzhan Ozan Özcan Özgür Rıza Rıdvan Sadık Samet Sedat Sefa Selçuk Semih Serhat Sezer Sezgin Şükrü Tahsin Taylan Turgay Turgut Tuncer Ufuk Umut Ümit Utku Vedat Veli Yakup Yasin Yavuz Yiğit Yunus Zafer Zeki Ziya Necmettin Nurettin Cemal Celal Cevdet Haydar İlyas İhsan Kâzım Kazım Lütfi Mevlüt Nazım Remzi Rasim Sabri Şevket Talat Tevfik Erhan Evren Faruk Fevzi Hilmi Hüsnü Kamil Kenan Kubilay Mithat Muammer Nuri Rahmi Raşit Sami Savaş Tayfun Tuğrul Hüsamettin Alaattin Bayram Cafer Davut Ekrem Eyüp Fahri Ferit Gökay Hamit Hidayet İrfan İsmet Kadri Mücahit Nazmi Nusret Oktay Orçun Recai Reşat Sadettin Sait Seyit Şenol Şeref Şakir Tufan Vahap Yener Yücel Zülfikar Burhan Cahit Durmuş Ercüment Erdem Ergün Eray Fuat Gürsel Kamuran Mazhar Mümtaz Necdet Nejat Niyazi Rauf Suat Şaban Tacettin Yahya Zekeriya Deniz Emrah Erkut Gökmen Hakkı Hulusi İlkay Kerim Mahir Mazlum Melih Muzaffer Nail Namık Nazif Orkun Reha Selahattin Sertaç Sırrı Tuncel Uğurhan Ulaş Vural Yalın Yekta Yüksel Zihni Abdülkadir Abdulkadir Bahadır Berkay Çağlar Çağatay Ender Emrecan Gökberk Hüsnü Kutay Mutlu Nevzat Osman Sabahattin Adnan Akif Alican Alim Alparslan Altan Arif Arslan Asım Atakan Atilla Aykut Aytaç Azmi Baki Battal Baran Barbaros Bedri Behçet Berkant Bora Cemil Cengizhan Cevat Cumali Coşkun Çetin Dursun Ediz Egemen Ekin Emirhan Emir Ensar Erbil Ergin Erman Ersin Fazıl Feridun Fikri Gani Göksel Güray Habib Haluk Hamdi Hami Hayrettin Hayri İlhami İnan İskender İzzet Kahraman Kani Kayhan Kemalettin Kutlu Latif Lokman Medet Metehan Mikail Mirza Muhittin Muhsin Mümin Münir Mürsel Necip Nesim Nizamettin Nuh Numan Önder Özkan Polat Rafet Ragıp Rahim Refik Reşit Rüstem Rüştü Sadi Saffet Salim Sarp Satılmış Selami Sencer Sercan Seyfettin Sezai Sıddık Soner Süha Şahin Şamil Şefik Tahir Talha Tanju Tarkan Tayyip Teoman Toygar Tuğhan Tunahan Turan Tümer Ünal Vahit Vehbi Veysel Yalçın Zahit Zekai Kudret Kurtuluş Tolgahan Berat Berkan Berke Görkem Kağan Mertcan Oğulcan Onurcan Selçuk Serkan Taha Tunç Yağız Alperen Miraç Abdulkerim Abdurrahim Abdülhamit Abdülkerim Abdulsamet Cuma Cumhur Haşim Hızır Mahsun Medeni Memduh Necmi Nurullah Sefer Selman Şevki Talip Tekin Timur Ulvi Vahdettin Zübeyir Emrullah Fethullah Hüseyin Kerem Fahrettin Fehmi Hüsamettin Ruhi Sinan Yıldırım Ergün Eşref Hasip Hulki İdris Kenan Lütfü Mehdi Muzaffer Necdet Nuhi Rıfat Sedat Şahap Ümran Yakup`);
 const FIRST_F=mkSet(`Ayşe Fatma Emine Hatice Zeynep Elif Meryem Şerife Zehra Sultan Hanife Merve Havva Zeliha Esra Fadime Özlem Hacer Melek Yasemin Hülya Leyla Derya Gülsüm Ebru Sevgi Songül Dilek Büşra Kübra Tuğba Sibel Aysel Aynur Gül Gülay Nurcan Nermin Nihal Pınar Sevim Seda Selin Sema Serap Sinem Şule Tülay Yeliz Zerrin Burcu Canan Çiğdem Didem Ece Esin Filiz Gamze Gizem Hande İrem Melike Nazlı Nilay Nilüfer Oya Öznur Rabia Sevda Şeyma Tuba Ümran Yeşim Arzu Aslı Ayten Belgin Berna Betül Birsen Duygu Emel Esma Feride Gonca Gülşen Hilal İlknur Kevser Meltem Müge Necla Nur Nurten Pelin Reyhan Saadet Selma Semra Sena Sevil Sevinç Şükran Ülkü Yağmur Zuhal Aylin Ayşegül Bahar Banu Berrin Buket Cansu Demet Dilara Dilan Eda Elçin Esen Fatoş Fulya Funda Gökçe Gülcan Gülten Güler Gülizar Handan Hayriye Hediye Işıl İclal Jale Kader Lale Leman Melahat Mine Mukaddes Münevver Nagihan Naciye Nazan Nazife Neslihan Nevin Nezahat Nilgün Nuray Nurhan Nursel Özge Özden Perihan Rukiye Sabiha Safiye Saliha Sanem Selda Semiha Serpil Sevgül Sevtap Şaziye Şenay Tijen Tuğçe Türkan Ümmühan Yıldız Zübeyde Zümrüt Aleyna Asiye Azize Bedriye Cemile Ecem Elvan Feyza Gülnur Hümeyra Kezban Mediha Nesrin Nefise Nurhayat Sevilay Begüm Beril Bengü Damla Deniz Ezgi Gülden İpek Merve Nehir Seher Sezen Tülin Yonca Zeren Afet Ahu Akgül Aliye Arife Asuman Ayla Aysun Ayşen Aysu Azra Bediha Belkıs Berfin Berivan Beyza Bilge Burçin Ceren Çağla Didem Dudu Durdane Edibe Elanur Esengül Fahriye Fehime Fazilet Feray Fevziye Figen Fikriye Gülbahar Gülhan Gülistan Gülsen Gülseren Gülşah Güldane Hafize Hamiyet Huriye İlayda İnci Kadriye Kamile Lütfiye Makbule Melda Melis Meral Mehtap Meliha Mualla Muazzez Müberra Müzeyyen Nadide Nafiye Nalan Nazmiye Necmiye Nesibe Nihan Nuran Nurdan Nurgül Nuriye Nursen Pakize Raziye Remziye Sabriye Sadiye Saniye Sevcan Sıdıka Simge Süheyla Sümeyye Şahika Şengül Şükriye Ülfet Ümmü Ümmügülsüm Ünzile Vildan Yeter Zahide Zekiye Zühal Zümra Eslem Nisa Nisanur Ravza Tuana Yaren Buse Ceyda Duygu Gözde Hayrünnisa Gülfidan Fidan Nuray Aysel Sevim Nazife Perihan`);
 const HONOR=mkSet('Bey Hanım Beyefendi Hanımefendi');
-const STOP=mkSet(`Vergi Vergisi Dairesi Daire Müdürlüğü Müdürü Müdür Başkanlığı Başkanı Başkan Kanunu Kanun Kanunun Gelir Kurumlar Katma Değer Özel Tüketim Damga Harçlar Emlak Motorlu Taşıtlar Usul Usulü Rapor Raporu Raporları Teftiş İnceleme İncelemesi Tespit Tespitler Madde Maddesi Maddesinin Fıkra Fıkrası Bent Bendi Türkiye Cumhuriyeti T.C TC Maliye Bakanlığı Hazine Ve İle Veya Tarih Tarihi Sayı Sayılı Konu Ek Ekler İlgi Ocak Şubat Mart Nisan Mayıs Haziran Temmuz Ağustos Eylül Ekim Kasım Aralık Pazartesi Salı Çarşamba Perşembe Cuma Cumartesi Pazar Toplam Tutar Tutarı Dönem Dönemi Beyanname Beyannamesi Fatura Faturası Mükellef Mükellefi Mükellefin Şirket Şirketi Şirketin Firma Firması Bu Şu O Söz Konusu Diğer İlgili Adı Unvanı Ünvanı Soyadı Adresi Adres Sonuç Değerlendirme Açıklama Açıklamalar Giriş Bölüm Kısım Tablo Genel Tebliğ Tebliği Sirküler Özelge Yönetmelik Yönetmeliği Resmi Gazete Sayın Başkanlığına Müdürlüğüne KDV ÖTV VUK GVK KVK KDVK ÖTVK DVK AATUHK SGK VDK GİB TL TRY USD EUR AŞ LTD ŞTİ NO SN DR AV SMMM YMM Mali Müşavir Avukat Defter Defteri Defterdarlığı Kayıt Kayıtları Hesap Hesabı Hesapları Bilanço Tablosu Satış Satışlar Maliyet Gider Giderleri Gideri İndirim İndirilecek Hesaplanan Devreden İade İstisna Matrah Matrahı Ceza Cezası Cezalı Tarhiyat Gecikme Faizi Faiz Ziyaı Usulsüzlük Tahakkuk Tahsilat Borç Alacak Ödeme Ödemeler İhtiyari Pişmanlık Uzlaşma Dava Mahkeme Mahkemesi Danıştay Anayasa Yargıtay İdare İdaresi Bölge Komisyon Komisyonu Kurul Kurulu Karar Kararı Yazı Yazısı Dilekçe Tutanak Tutanağı Çizelge Liste Listesi Not Notlar Sayfa Son İlk Birinci İkinci Üçüncü Denetim Müfettiş Müfettişi Müfettişleri Başmüfettiş Memur Memuru Şefi Şef Servis Servisi Müdür Yardımcısı Ayrıca Ancak Dolayısıyla Nitekim Buna Göre Öte Yandan Yapılan İncelenen Ayrıntılı Detay Detaylı Toplamı Alt Üst Not Bilgi Bilgiler Bilgileri Kimlik Numarası Numara No Sicil Sicili Telefon Faks Eposta E-posta Web Plaka Plakası Araç Kurumu Kurum Kurumu Hizmet Hizmetler Sigorta Sosyal Güvenlik Banka Bankası Şube Şubesi Ticaret Sanayi Odası Belediye Belediyesi Valiliği Kaymakamlığı İl İlçe Mahalle Köy Cadde Sokak Bulvar Kat Daire Blok Kapı Yeni Eski Büyük Küçük Merkez Merkezi Genel Müdürlük Müdürlüğü Daire Başkanlığı Grup Başkanlığı`);
+const STOP=mkSet(`VD VDM VDB VDK GİB HMB SMİYB YMM SMMM TÜRMOB TBMM AYM RG KHK ÖTV BSMV KKDF MTV Vergi Vergisi Dairesi Daire Müdürlüğü Müdürü Müdür Başkanlığı Başkanı Başkan Kanunu Kanun Kanunun Gelir Kurumlar Katma Değer Özel Tüketim Damga Harçlar Emlak Motorlu Taşıtlar Usul Usulü Rapor Raporu Raporları Teftiş İnceleme İncelemesi Tespit Tespitler Madde Maddesi Maddesinin Fıkra Fıkrası Bent Bendi Türkiye Cumhuriyeti T.C TC Maliye Bakanlığı Hazine Ve İle Veya Tarih Tarihi Sayı Sayılı Konu Ek Ekler İlgi Ocak Şubat Mart Nisan Mayıs Haziran Temmuz Ağustos Eylül Ekim Kasım Aralık Pazartesi Salı Çarşamba Perşembe Cuma Cumartesi Pazar Toplam Tutar Tutarı Dönem Dönemi Beyanname Beyannamesi Fatura Faturası Mükellef Mükellefi Mükellefin Şirket Şirketi Şirketin Firma Firması Bu Şu O Söz Konusu Diğer İlgili Adı Unvanı Ünvanı Soyadı Adresi Adres Sonuç Değerlendirme Açıklama Açıklamalar Giriş Bölüm Kısım Tablo Genel Tebliğ Tebliği Sirküler Özelge Yönetmelik Yönetmeliği Resmi Gazete Sayın Başkanlığına Müdürlüğüne KDV ÖTV VUK GVK KVK KDVK ÖTVK DVK AATUHK SGK VDK GİB TL TRY USD EUR AŞ LTD ŞTİ NO SN DR AV SMMM YMM Mali Müşavir Avukat Defter Defteri Defterdarlığı Kayıt Kayıtları Hesap Hesabı Hesapları Bilanço Tablosu Satış Satışlar Maliyet Gider Giderleri Gideri İndirim İndirilecek Hesaplanan Devreden İade İstisna Matrah Matrahı Ceza Cezası Cezalı Tarhiyat Gecikme Faizi Faiz Ziyaı Usulsüzlük Tahakkuk Tahsilat Borç Alacak Ödeme Ödemeler İhtiyari Pişmanlık Uzlaşma Dava Mahkeme Mahkemesi Danıştay Anayasa Yargıtay İdare İdaresi Bölge Komisyon Komisyonu Kurul Kurulu Karar Kararı Yazı Yazısı Dilekçe Tutanak Tutanağı Çizelge Liste Listesi Not Notlar Sayfa Son İlk Birinci İkinci Üçüncü Denetim Müfettiş Müfettişi Müfettişleri Başmüfettiş Memur Memuru Şefi Şef Servis Servisi Müdür Yardımcısı Ayrıca Ancak Dolayısıyla Nitekim Buna Göre Öte Yandan Yapılan İncelenen Ayrıntılı Detay Detaylı Toplamı Alt Üst Not Bilgi Bilgiler Bilgileri Kimlik Numarası Numara No Sicil Sicili Telefon Faks Eposta E-posta Web Plaka Plakası Araç Kurumu Kurum Kurumu Hizmet Hizmetler Sigorta Sosyal Güvenlik Banka Bankası Şube Şubesi Ticaret Sanayi Odası Belediye Belediyesi Valiliği Kaymakamlığı İl İlçe Mahalle Köy Cadde Sokak Bulvar Kat Daire Blok Kapı Yeni Eski Büyük Küçük Merkez Merkezi Genel Müdürlük Müdürlüğü Daire Başkanlığı Grup Başkanlığı`);
 const COMP_STOP=mkSet(`Mükellef Mükellefi Mükellefin Mükellefe Şirket Şirketi Şirketin Firma Firması Bu Şu Söz Konusu Diğer İlgili Adı Unvanı Ünvanı Unvanlı Ünvanlı Sayın İle Tarafından Olan Nolu Numaralı Ayrıca Ancak Dolayısıyla Nitekim Buna Göre Öte Yandan Yapılan İncelenen Alıcı Satıcı Müşteri Tedarikçi Ocak Şubat Mart Nisan Mayıs Haziran Temmuz Ağustos Eylül Ekim Kasım Aralık Konu Konusu İlgi Sonuç Not Unvan Ünvan Faturayı Düzenleyen Mükellefler Firmalar`);
 const GENERIC=mkSet(`san sanayi sanayii tic ticaret ve inş inşaat taah taahhüt ith ihr ithalat ihracat paz pazarlama gıda tekstil teks otomotiv oto turizm tur nakliyat nakliye nak lojistik loj enerji madencilik mad elektrik elektronik elk elek makina makine mak kimya kim petrol pet akaryakıt tarım hayvancılık hayv yapı malz malzemeleri malzemecilik mobilya metal plastik ambalaj yazılım bilişim bilgisayar danışmanlık dan hizmetleri hiz hizm hizmet temizlik güvenlik sağlık ecza med medikal taşımacılık taş uluslararası ulusl dış gayrimenkul emlak yatırım yat holding organizasyon org reklam matbaacılık kağıt ürünleri ürün ürt üretim grup group ilaç kozmetik teknoloji tek teknolojileri mühendislik müh mimarlık proje projecilik dekorasyon dek seramik cam kimyevi maddeler toptan perakende perak dayanıklı tüketim malları mamulleri mam deri konfeksiyon konf örme dokuma iplik halı altın kuyumculuk mücevherat otelcilik restoran yemek eğitim yayıncılık medya film spor sigorta aracılık finans faktoring leasing kiralama işletmeciliği işletmeleri işl sistemleri sis çevre geri dönüşüm atık hurda orman kereste market mağazacılık marketçilik ticari ve & dış nakliyat lim limited anonim şirketi şti ltd koll kom ticaret sanayi`);
 const PROVS=`Adana Adıyaman Afyonkarahisar Afyon Ağrı Amasya Ankara Antalya Artvin Aydın Balıkesir Bilecik Bingöl Bitlis Bolu Burdur Bursa Çanakkale Çankırı Çorum Denizli Diyarbakır Edirne Elazığ Erzincan Erzurum Eskişehir Gaziantep Antep Giresun Gümüşhane Hakkari Hakkâri Hatay Isparta Mersin İçel İstanbul İzmir Kars Kastamonu Kayseri Kırklareli Kırşehir Kocaeli İzmit Konya Kütahya Malatya Manisa Kahramanmaraş Maraş Mardin Muğla Muş Nevşehir Niğde Ordu Rize Sakarya Adapazarı Samsun Siirt Sinop Sivas Tekirdağ Tokat Trabzon Tunceli Şanlıurfa Urfa Uşak Van Yozgat Zonguldak Aksaray Bayburt Karaman Kırıkkale Batman Şırnak Bartın Ardahan Iğdır Yalova Karabük Kilis Osmaniye Düzce`.split(/\s+/);
@@ -411,7 +414,7 @@ function mkPer(firsts,surs,initials){
   const parts=(initials||[]).map(x=>({s:x.s,e:x.e,role:'I'})).concat(firsts.map(f=>({s:f.s,e:f.e,role:'F',g})),surs.map(x=>({s:x.s,e:x.e,role:'S'}))).sort((a,b)=>a.s-b.s);
   return{s:parts[0].s,e:parts[parts.length-1].e,parts};
 }
-const plainCap=tk=>reCapTok.test(tk.t)&&tk.n.length>=3&&!STOP.has(tk.n)&&!GENERIC.has(tk.n)&&!PROV_N.has(tk.n)&&!SUR_BLOCK.has(tk.n)&&!MONTH_N.includes(tk.n)&&!HONOR.has(tk.n);
+const plainCap=tk=>reCapTok.test(tk.t)&&tk.n.length>=3&&!STOP.has(tk.n)&&!GENERIC.has(tk.n)&&!PROV_N.has(tk.n)&&!DIST_SET.has(tk.n)&&!SUR_BLOCK.has(tk.n)&&!MONTH_N.includes(tk.n)&&!HONOR.has(tk.n);
 function analyzeRun(toks){
   const res=[];let i=0;
   while(i<toks.length){
@@ -480,6 +483,29 @@ function refFake(orig,O){
 const WEB_KEEP=/(?:^|\.)(?:gib|hmb|vdk|resmigazete|mevzuat|turkiye|ivd|ebeyanname|sgk|ticaret)\.gov\.tr/i;
 function webFake(o){return cached('WEB:'+o.toLowerCase(),()=>{const b=asciiTr(trL(pickUnique(POOL('brand'),'webbrand')));return (/^https?:\/\//i.test(o)?o.match(/^https?:\/\//i)[0]:'')+(/^(https?:\/\/)?www\./i.test(o)?'www.':'')+b+'.example.com';});}
 const CUES=['Sayın','Sn.','Bay','Bayan','Av.','Dr.','SMMM','YMM','Mali Müşavir','Avukat','ortağı','ortakları','ortaklarından','müdürü','yetkilisi','temsilcisi','vekili','mükellef','Mükellef','adına','eşi','oğlu','kızı','kardeşi','babası','annesi','imzalı'];
+/* ====================== Yazıyla tutarlar ====================== */
+const NUMW={sıfır:0,bir:1,iki:2,üç:3,dört:4,beş:5,altı:6,yedi:7,sekiz:8,dokuz:9,on:10,yirmi:20,otuz:30,kırk:40,elli:50,altmış:60,yetmiş:70,seksen:80,doksan:90,yüz:100,bin:1000,milyon:1e6,milyar:1e9,trilyon:1e12};
+const NUMW_KEYS=Object.keys(NUMW).sort((a,b)=>b.length-a.length);
+const NUMW_RE=NUMW_KEYS.map(ci).join('|');
+function wordsToNum(str){
+  let s=trL(str).replace(/[\s -]+/g,''),total=0,cur=0;
+  while(s.length){const k=NUMW_KEYS.find(w=>s.startsWith(w));if(!k)return null;s=s.slice(k.length);const v=NUMW[k];
+    if(v<100)cur+=v;else if(v===100)cur=(cur||1)*100;else{total+=(cur||1)*v;cur=0;}}
+  return total+cur;
+}
+function numToWords(n){
+  const ON=['','bir','iki','üç','dört','beş','altı','yedi','sekiz','dokuz'],TE=['','on','yirmi','otuz','kırk','elli','altmış','yetmiş','seksen','doksan'];
+  const three=x=>{const r=[],h=Math.floor(x/100),t=Math.floor(x%100/10),o=x%10;if(h){if(h>1)r.push(ON[h]);r.push('yüz');}if(t)r.push(TE[t]);if(o)r.push(ON[o]);return r;};
+  if(n===0)return['sıfır'];const out=[];
+  for(const[u,w]of[[1e12,'trilyon'],[1e9,'milyar'],[1e6,'milyon'],[1e3,'bin']]){const q=Math.floor(n/u);if(q){if(u===1e3&&q===1)out.push('bin');else out.push(...three(q),w);n%=u;}}
+  out.push(...three(n));return out;
+}
+function styleWords(ws,src){
+  const sp=/\s/.test(src.trim());const L=src.replace(/[^A-Za-zÇĞİÖŞÜçğıöşü]/g,'');
+  if(L.length>1&&L===trU(L))return trU(ws.join(sp?' ':''));
+  if(sp&&src.trim().split(/\s+/).every(w=>reCapStart.test(w)))return ws.map(w=>trU(w[0])+w.slice(1)).join(' ');
+  const j=ws.join(sp?' ':'');return reCapStart.test(src.trim())?trU(j[0])+j.slice(1):j;
+}
 const RE={
   mail:/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g,
   iban:/\bTR[0-9]{2}(?:[ ]?[0-9]{4}){5}[ ]?[0-9]{2}\b/gi,
@@ -513,6 +539,7 @@ const RE={
   year:new RegExp(`(?<![0-9.,/])((?:19[5-9]|20[0-9])[0-9])(?![0-9]|[.,][0-9])(?![ \\u00A0]*${ci('sayılı')})`,'gu'),
   amt1:/(?<![0-9.,])(?<!%[ \u00A0]?)([0-9]{1,3}(?:\.[0-9]{3})+(?:,[0-9]{1,2})?|[0-9]+,[0-9]{2})(?![0-9]|[.,][0-9])(?![ \u00A0]?%)/g,
   amtSp:/(?<![0-9.,])(?<![0-9][ \u00A0])[0-9]{1,3}(?:[ \u00A0][0-9]{3})+(?:,[0-9]{1,2})?(?=[ \u00A0]?(?:TL|\u20BA|TRY|USD|EUR|\u20AC|\$|T\u00FCrk Liras\u0131|Euro|Avro|Dolar|lira)(?![A-Za-z\u00C7\u011E\u0130\u00D6\u015E\u00DC\u00E7\u011F\u0131\u00F6\u015F\u00FC]))/g,
+  amtW:new RegExp(`${LB}((?:(?:${NUMW_RE})[ \\u00A0]?)+?)([ \\u00A0]*(?:${['türk lirası','tl','ytl','lira'].map(ci).join('|')})${LA})(?:([ \\u00A0]*,?[ \\u00A0]*(?:${ci('ve')}[ \\u00A0]*)?)((?:(?:${NUMW_RE})[ \\u00A0]?)+?)([ \\u00A0]*(?:${ci('kuruş')}|${ci('kr')}\\.?)${LA}))?`,'gu'),
   amt2:/(?<![0-9.,])(?<![0-9][ \u00A0])(?<!%[ \u00A0]?)[0-9]+(?=[ \u00A0]?(?:TL|₺|TRY|USD|EUR|€|\$|Türk Lirası|Euro|Avro|Dolar|lira)(?![A-Za-zÇĞİÖŞÜçğıöşü]))/g,
   amt3:/(?<=(?:₺|\$|€)[ \u00A0]?)[0-9]+(?![0-9]|[.,][0-9])/g,
   plate:/(?<![A-Za-zÇĞİÖŞÜçğıöşü0-9])(0[1-9]|[1-7][0-9]|8[01])[ ]?([A-Z]{1,3})[ ]?([0-9]{2,4})(?![A-Za-zÇĞİÖŞÜçğıöşü0-9])/g,
@@ -522,7 +549,8 @@ const RE={
   tok:new RegExp(NAMEW,'gu'),
   cue:new RegExp(`${LB}(?:${CUES.map(c=>ci(c)).join('|')})${SP}(${NAMEW}(?:${SP}${NAMEW}){1,2})${LA}`,'gu'),
   comp:new RegExp(`(?<=[ \\u00A0])(?:${ci('anonim şirketi')}|${ci('limited şirketi')}|${ci('kollektif şirketi')}|${ci('komandit şirketi')}|(?:${ci('ltd')}|${ci('koll')}|${ci('kom')})\\.?[ \\u00A0]*${ci('şti')}\\.?|[Aa]\\.[ ]?[ŞşSs]\\.?|${ci('şti')}\\.)(?![${UC}${LC}0-9])`,'gu'),
-  inst:new RegExp(`(?<=[ \\u00A0])(?:${['vergi dairesi','v.d.','defterdarlığı','belediyesi','noterliği','ticaret sicil','ticaret odası','sanayi odası','valiliği','kaymakamlığı','sgk','organize sanayi'].map(ci).join('|')})(?![${UC}${LC}])`,'gu'),
+  comp2:new RegExp(`(?<=[ \\u00A0])(?:${['firması','firmasının','firmasına','firmasından','şirketi','şirketinin','şirketine','işletmesi','grubu','holding'].map(ci).join('|')})${LA}`,'gu'),
+  inst:new RegExp(`(?<=[ \\u00A0])(?:${['vergi dairesi','v.d.m.','v.d.','vdm','vd','defterdarlığı','belediyesi','noterliği','ticaret sicil','ticaret odası','sanayi odası','valiliği','kaymakamlığı','sgk','organize sanayi'].map(ci).join('|')})(?![${UC}${LC}])`,'gu'),
   addr:new RegExp(`(?<=[ \\u00A0])(?:${['mahallesi','caddesi','sokağı','sokak','bulvarı','apartmanı','sitesi','plazası','plaza','iş merkezi','iş hanı','pasajı','köyü','mevkii'].map(ci).join('|')}|(?:${['mah','mh','cad','cd','sok','sk','bulv','blv','apt'].map(ci).join('|')})\\.)(?![${UC}${LC}])`,'gu'),
   prov:new RegExp(`${LB}(?:${PROV_RE})${LA}`,'gu'),
   dist:new RegExp(`${LB}(${NAMEW})(?=[ \\u00A0]?(?:/|\\(|-[ \\u00A0])[ \\u00A0]?(?:${PROV_RE}|${DIST_RE})${LA})`,'gu'),
@@ -530,11 +558,39 @@ const RE={
 };
 const PLATE_EX=new Set(['TL','KDV','VUK','GVK','KVK','TC','BA','BS','SGK','VDK','NO','MD','ADET','KG','LT','M','KM','GR']);
 
+/* ====================== Türkçe ek uyumu ("Yılmaz'ın" → "Kaya'nın") ====================== */
+const VOWELS='aeıioöuüâîû';
+function lastVowelOf(w){w=trL(w);for(let i=w.length-1;i>=0;i--){const c=w[i];if(VOWELS.includes(c))return c==='â'?'a':c==='î'?'i':c==='û'?'u':c;}return 'e';}
+const lettersOnly=w=>trL(w).replace(/[^a-zçğıöşüâîû0-9]/g,'');
+function harmonizeSuffix(nb,ob,suf){
+  const nbL=lettersOnly(nb),obL=lettersOnly(ob);
+  if(!nbL||/[0-9]$/.test(nbL)||/[0-9]$/.test(obL))return suf;
+  if(nb.replace(/[^A-Za-zÇĞİÖŞÜ]/g,'').length>1&&/^[A-ZÇĞİÖŞÜ]{2,4}$/.test(nb.trim()))return suf; // kısaltmalar (ABC'nin) olduğu gibi
+  const isUp=suf===trU(suf)&&suf!==trL(suf);
+  let s=trL(suf);
+  const obV=VOWELS.includes(obL.slice(-1)),nbV=VOWELS.includes(nbL.slice(-1));
+  if(obV&&!nbV&&/^[nys][aeıioöuü]/.test(s))s=s.slice(1);
+  else if(!obV&&nbV){if(/^[aeıioöuü]/.test(s))s=(/^[ıiuü]n(?![aeıioöuü])/.test(s)?'n':'y')+s;else if(/^l[ae]/.test(s))s='y'+s;}
+  const hard='fstkçşhp'.includes(nbL.slice(-1));
+  if(/^[dt]/.test(s))s=(hard?'t':'d')+s.slice(1);
+  else if(/^[cç]/.test(s))s=(hard?'ç':'c')+s.slice(1);
+  let tail='';if(/ki$/.test(s)&&s.length>2){tail='ki';s=s.slice(0,-2);}
+  let v=lastVowelOf(nb),out='';
+  for(const ch of s){
+    if(ch==='a'||ch==='e'){const r='aıou'.includes(v)?'a':'e';out+=r;v=r;}
+    else if('ıiuü'.includes(ch)){const back='aıou'.includes(v),round='ouöü'.includes(v);const r=back?(round?'u':'ı'):(round?'ü':'i');out+=r;v=r;}
+    else out+=ch;
+  }
+  out+=tail;
+  return isUp?trU(out):out;
+}
+const SUF_TYPES=new Set(['PER','PLACE','COMP','ADDR','INST','CUS']);
 /* ====================== Mevzuat koruması ====================== */
 const DATE_PAT=`(?:[0-9]{1,2}[./-][0-9]{1,2}[./-][0-9]{2,4}|[0-9]{1,2}[ \\u00A0]+(?:${MONTH_RE})[ \\u00A0]+[0-9]{4})`;
 const LAW_DOCS=['resmi gazete','resmî gazete','kanun','khk','kararname','cumhurbaşkanı','cumhurbaşkanlığı','bakanlar kurulu','tebliğ','özelge','sirküler','yönetmelik','genelge','karar'].map(ci).join('|');
 const RX_LAW={
   head:new RegExp(['mevzuat','yasal düzenleme','ilgili hükümler','yasal dayanak','hukuki dayanak','yasal çerçeve','kanuni düzenleme','ilgili düzenleme','yasal durum','hukuki durum'].map(ci).join('|'),'u'),
+  lawTitle:new RegExp(`(?:${['kanun','kanunu','tebliğ','tebliği','yönetmelik','yönetmeliği','kararname','kararnamesi','sirküler','sirküleri','genelge','genelgesi','khk','kararı','anayasası','mevzuat','mevzuatı','hükümleri','düzenlemeler','yasal mevzuat'].map(ci).join('|')})[ \\u00A0]*[:.]?[ \\u00A0]*(?:[(][^)]*[)])?[ \\u00A0]*$`,'u'),
   legalWord:new RegExp(['madde','kanun','tebliğ','yönetmelik','kararname','sirküler','özelge','gazete','sayılı','mevzuat','fıkra','bent','khk','genelge'].map(ci).join('|'),'u'),
   endHead:new RegExp(`^[ \\t]*(?:[0-9.]+[.)\\-–][ \\t]*|[IVX]+[.\\-–][ \\t]*)?(?:${['sonuç','değerlendirme','tespit','inceleme','açıklama','eleştiri','öneri','kanaat','hesaplama','olay','konu','genel bilgi','giriş'].map(ci).join('|')})`,'u'),
   article:new RegExp(`^[ \\t]*[“"']?[ \\t]*(?:(?:${['geçici','ek','mükerrer'].map(ci).join('|')})[ \\t]+)?(?:${ci('madde')})[ \\t]*[0-9]+[A-Za-z/]*[ \\t]*(?:[-–—:]|$)`,'u'),
@@ -565,7 +621,7 @@ function legalRanges(text){
     if(!isHeadLine(lines[i].t)||!RX_LAW.head.test(lines[i].t))continue;
     let j=i+1;
     for(;j<lines.length;j++){const t=lines[j].t;if(!t.trim())continue;if(lines[j].s-lines[i].e>25000)break;
-      if((isHeadLine(t)&&!RX_LAW.legalWord.test(t))||(t.trim().length<110&&RX_LAW.endHead.test(t)&&!/\.$/.test(t.trim())))break;}
+      if((isHeadLine(t)&&!RX_LAW.lawTitle.test(t.trim())&&!RX_LAW.article.test(t))||(t.trim().length<110&&RX_LAW.endHead.test(t)&&!/\.$/.test(t.trim())))break;}
     add(lines[i].s,lines[j-1].e);i=j-1;
   }
   // 2) "Madde 30 –" ile başlayan kanun alıntıları ve devamındaki (1), a) fıkraları
@@ -713,7 +769,7 @@ function fakeAddress(src){
 const BIRTH_BEFORE=new RegExp(`(?:${['doğum tarihi','doğum tarihli','doğum yılı','doğum yeri ve tarihi','doğum yeri/tarihi','doğum yeri-tarihi','doğum','d.tarihi','d.tar','d.t.','d.t','doğ.'].map(ciLoose).join('|')})[^\\n]{0,30}$`,'u');
 const BIRTH_AFTER=new RegExp(`^[ \\u00A0]*(?:${['doğumlu','d.lu','tarihinde doğ','yılında doğ','doğ.'].map(ciLoose).join('|')})`,'u');
 function isBirth(text,s,e){const ls=text.lastIndexOf('\n',s-1)+1;return BIRTH_BEFORE.test(text.slice(Math.max(ls,s-55),s))||BIRTH_AFTER.test(text.slice(e,e+25));}
-function birthFake(key,y,O){return cached('BD:'+key,()=>({d:1+rnd(28),m:1+rnd(12),y:y+O.yearShift+(rnd(7)-3)}));}
+function birthFake(key,y,O){return cached('BD:'+key+':'+O.yearShift,()=>({d:1+rnd(28),m:1+rnd(12),y:y+O.yearShift}));}
 /* ====================== Tek başına isimler ====================== */
 const FIRST_AMBIG=mkSet('Can Deniz Umut Ümit Barış Savaş Bahar Yıldız Mutlu Kader Nur Gül Emin Ender Nail Sevgi Gonca Onur Zafer Bayram Evren Erdem Melek Sultan Hilal Damla Ezgi Nehir İpek Yonca Lale Hikmet Cihan Güven Gazi Hayat Rüya Cennet Şeref Arzu Emel Ilgaz Defne Irmak Ceylan Menekşe Selvi Nergis Yağmur Tuna Kartal Poyraz Rüzgar Ege Doruk Efe Mert Asya Ela Sevinç Nimet Kıymet Seher Tan Ay Su');
 const NAME_LBL=new RegExp(`(?:(?<=^|[\\n,;(\\t]|[ \\u00A0]{2})[ \\u00A0]*(?:${['adı soyadı','adı-soyadı','adı ve soyadı','ad soyad','ad-soyad','adı','soyadı','isim','ismi','isim soyisim'].map(ciLoose).join('|')})|${LB}(?:${['baba adı','ana adı','anne adı','eşinin adı','eş adı','babasının adı','annesinin adı'].map(ciLoose).join('|')}))[ \\u00A0]*:[ \\u00A0]*(${NAMEW}(?:${SP}${NAMEW}){0,3})${LA}`,'gu');
@@ -804,6 +860,15 @@ function detect(text,O){
   if(O.year) all(RE.year,(m,s,e)=>push(s,e,'YEAR',30,'Y:'+m[0],()=>String(+m[0]+O.yearShift)));
   if(O.amt){
     for(const re of[RE.amt1,RE.amt2,RE.amt3]) all(re,(m,s,e)=>push(s,e,'AMT',50,'A:'+m[0],()=>scaleAmount(m[0],O)));
+    all(RE.amtW,(m,s,e)=>{
+      const lira=wordsToNum(m[1]);if(lira==null)return;const kr=m[4]?wordsToNum(m[4]):0;if(kr==null)return;
+      push(s,e,'AMT',53,'AW:'+norm(m[0]),()=>{
+        const v=Math.round((lira+kr/100)*O.factor*100)/100,nl=Math.floor(v),nk=Math.round((v-nl)*100);
+        let out=styleWords(numToWords(nl),m[1])+(/\s$/.test(m[1])?' ':'')+m[2];
+        if(m[4])out+=m[3]+styleWords(numToWords(nk),m[4])+(/\s$/.test(m[4])?' ':'')+m[5];
+        return out;
+      });
+    });
     all(RE.amtSp,(m,s,e)=>{const sep=m[0].match(/[  ]/)[0];push(s,e,'AMT',52,'A:'+m[0],()=>scaleAmount(m[0].split(sep).join('.'),O).split('.').join(sep));});
   }
   if(O.plate) all(RE.plate,(m,s,e)=>{if(PLATE_EX.has(m[2]))return;push(s,e,'PLATE',55,'PL:'+m[0].replace(/\s/g,''),()=>plateFake(m));});
@@ -822,6 +887,17 @@ function detect(text,O){
         const tw=tail===trU(tail)?'TİCARET':tail===trL(tail)?'ticaret':'Ticaret';
         push(s,e2,'COMP',90,'CU:'+norm(text.slice(s,e2)),()=>applyCase(ht,fakeCompanyHead(hn,idt.length))+' '+tw,extra);
       }else push(s,e,'COMP',90,'CH:'+hn,()=>applyCase(ht,fakeCompanyHead(hn,idt.length)),extra);
+    });
+  }
+  if(O.comp){
+    const STOP2=new Set([...COMP_STOP,...STOP]);
+    all(RE.comp2,(m,p)=>{
+      const head=backHead(text,p,{max:6,stop:STOP2,allowNum:false,allowConn:true,sentEnd:true});
+      let k=head.length;while(k>0&&(head[k-1].conn||GENERIC.has(norm(head[k-1].t))))k--;
+      if(!k)return;const idt=head.slice(0,k).filter(x=>!x.conn);if(!idt.length)return;
+      if(idt.every(x=>isFirst(norm(x.t))||SURNAMES.has(norm(x.t))))return; // "Ahmet Yılmaz şirketi" değil
+      const s=head[0].s,e=head[k-1].e,ht=text.slice(s,e),hn=norm(ht);
+      push(s,e,'COMP',89,'CH:'+hn,()=>applyCase(ht,fakeCompanyHead(hn,idt.length)),{head:hn,firstTok:idt.length>=2?idt[0].t:null});
     });
   }
   if(O.place){
@@ -937,15 +1013,21 @@ function detect(text,O){
     const full=text.slice(p.s,p.e);
     push(p.s,p.e,'PER',pri,'PER:'+norm(full),()=>{
       let out='',cur=p.s;
-      for(const q of p.parts){out+=text.slice(cur,q.s);const t=text.slice(q.s,q.e),n=norm(t);out+=q.role==='I'?cached('I:'+n+':'+norm(full),()=>'ABCDEFGHKLMNPRSTVYZ'[rnd(19)]):applyCase(t,q.role==='F'?fakeFirst(n,q.g):fakeSur(n));cur=q.e;}
+      const sq=p.parts.find(q=>q.role==='S'),sn=sq?norm(text.slice(sq.s,sq.e)):'';
+      let firstFake=null;
+      for(const q of p.parts){out+=text.slice(cur,q.s);const t=text.slice(q.s,q.e),n=norm(t);
+        if(q.role==='I'){const f=S.surFirst.get(sn);out+=f?trU(f[0]):cached('I:'+n+':'+sn,()=>'ABCDEFGHKLMNPRSTVYZ'[rnd(19)]);}
+        else{const f=q.role==='F'?fakeFirst(n,q.g):fakeSur(n);if(q.role==='F'&&!firstFake)firstFake=f;out+=applyCase(t,f);}
+        cur=q.e;}
+      if(sn&&firstFake&&!S.surFirst.has(sn))S.surFirst.set(sn,firstFake);
       return out+text.slice(cur,p.e);
-    },{parts:p.parts});
+    },{parts:p.parts,hasInit:p.parts.some(q=>q.role==='I')});
   }
   return C;
 }
 
 function anonymize(text,O){
-  S.locale=O.locale||'tr';
+  S.locale=O.locale||'tr';S.surFirst=new Map();
   S.docWords=new Set();RE.tok.lastIndex=0;for(const t of text.matchAll(RE.tok))S.docWords.add(norm(t[0]));
   let C=detect(text,O);
   if(O.law){
@@ -963,7 +1045,8 @@ function anonymize(text,O){
   const acc=[];
   for(const c of C){let free=true;for(let i=c.s;i<c.e;i++)if(mask[i]){free=false;break;}if(!free)continue;mask.fill(1,c.s,c.e);acc.push(c);}
   acc.sort((a,b)=>a.s-b.s);
-  for(const a of acc)a.repl=a.gen();
+  for(const a of acc)if(!a.hasInit)a.repl=a.gen();
+  for(const a of acc)if(a.hasInit)a.repl=a.gen(); // baş harfler, kişinin kurgu adına göre
   // 2. tur: aynı soyadı / şirket adı / yer adı metnin başka yerinde tek başına geçiyorsa
   const dict=new Map();
   for(const a of acc){
@@ -995,9 +1078,17 @@ function anonymize(text,O){
     }
     acc.push(...extra);acc.sort((a,b)=>a.s-b.s);
   }
-  return acc.map(a=>({s:a.s,e:a.e,type:a.type,key:a.key,repl:a.repl}));
+  // kesme işaretinden sonraki ekleri ayrıca uyumla
+  acc.sort((a,b)=>a.s-b.s);
+  for(let i=0;i<acc.length;i++){
+    const a=acc[i];if(!SUF_TYPES.has(a.type))continue;
+    const m=/^(['’])([A-Za-zÇĞİÖŞÜçğıöşüâîû]{1,12})/.exec(text.slice(a.e,a.e+14));if(!m)continue;
+    const ne=a.e+m[0].length;if(acc[i+1]&&acc[i+1].s<ne)continue;
+    a.suf={apos:m[1],s:m[2],base:text.slice(a.s,a.e)};a.e=ne;
+  }
+  return acc.map(a=>({s:a.s,e:a.e,type:a.type,key:a.key,repl:a.repl,suf:a.suf}));
 }
-function currentRepl(sp){if(S.disabled.has(sp.key))return null;if(S.overrides.has(sp.key))return S.overrides.get(sp.key);return sp.repl;}
+function currentRepl(sp){if(S.disabled.has(sp.key))return null;const b=S.overrides.has(sp.key)?S.overrides.get(sp.key):sp.repl;if(sp.suf)return b+sp.suf.apos+harmonizeSuffix(b,sp.suf.base,sp.suf.s);return b;}
 function outputText(){
   const{text,spans}=S.res;let out='',cur=0;
   for(const sp of spans){const r=currentRepl(sp);if(r==null)continue;out+=text.slice(cur,sp.s)+r;cur=sp.e;}
@@ -1085,6 +1176,7 @@ async function zip(files){
 const WNS='http://schemas.openxmlformats.org/wordprocessingml/2006/main';
 const WNS_SET=new Set([WNS,'http://purl.oclc.org/ooxml/wordprocessingml/main']);
 const XMLNS='http://www.w3.org/XML/1998/namespace';
+const ANS='http://schemas.openxmlformats.org/drawingml/2006/main';
 function parseXml(str){const d=new DOMParser().parseFromString(str,'application/xml');if(d.getElementsByTagName('parsererror').length)throw new Error('Word içeriği okunamadı.');return d;}
 function walkPart(doc,ctx){
   const rec=el=>{
@@ -1097,14 +1189,19 @@ function walkPart(doc,ctx){
         if(ln==='t'){const t=c.textContent;ctx.nodes.push({el:c,start:ctx.text.length,end:ctx.text.length+t.length});ctx.text+=t;continue;}
         if(ln==='tab'){ctx.text+='\t';continue;}
         if(ln==='br'||ln==='cr'){ctx.text+='\n';continue;}
+      }else if(c.namespaceURI===ANS&&ctx.drawingText){
+        const ln=c.localName;
+        if(ln==='p'){if(ctx.text.length&&!ctx.text.endsWith('\n'))ctx.text+='\n';rec(c);ctx.text+='\n';continue;}
+        if(ln==='t'){const t=c.textContent;ctx.nodes.push({el:c,start:ctx.text.length,end:ctx.text.length+t.length});ctx.text+=t;continue;}
+        if(ln==='rPr'||ln==='pPr'||ln==='bodyPr')continue;
       }
       rec(c);
     }
   };
   rec(doc.documentElement);
 }
-const PART_RE=/^word\/(document\d*|header\d*|footer\d*|footnotes|endnotes|comments)\.xml$/i;
-const partRank=n=>['document','header','footer','footnotes','endnotes','comments'].findIndex(x=>n.includes(x));
+const PART_RE=/^word\/(document\d*|header\d*|footer\d*|footnotes|endnotes|comments|diagrams\/data\d*)\.xml$/i;
+const partRank=n=>['document','header','footer','footnotes','endnotes','comments','diagrams'].findIndex(x=>n.includes(x));
 async function loadDocx(file){
   const files=await unzip(new Uint8Array(await file.arrayBuffer()));
   const td=new TextDecoder('utf-8');const xml=new Map();
@@ -1116,9 +1213,11 @@ async function loadDocx(file){
   if(!order.includes(main))throw new Error('Word belgesi gövdesi bulunamadı ('+main+'). Dosyayı Word\'de açıp "Farklı Kaydet → Word Belgesi (.docx)" ile yeniden kaydedin.');
   for(const n of order)xml.set(n,td.decode(files.find(f=>f.name===n).data));
   const ctx=buildCtx(order,xml);
-  return{name:file.name,files,xml,order,text:ctx.text};
+  const cnt=re=>names.filter(n=>re.test(n)).length;
+  const extras={embed:cnt(/^word\/embeddings\//),chart:cnt(/^word\/charts\/chart[0-9]*\.xml$/),img:cnt(/^word\/media\/.*\.(png|jpe?g|gif|bmp|tiff?|emf|wmf)$/i)};
+  return{name:file.name,files,xml,order,text:ctx.text,extras};
 }
-function buildCtx(order,xml){const ctx={text:'',nodes:[],docs:new Map()};for(const n of order){const d=parseXml(xml.get(n));if(ctx.text)ctx.text+='\n\n';walkPart(d,ctx);ctx.docs.set(n,d);}return ctx;}
+function buildCtx(order,xml){const ctx={text:'',nodes:[],docs:new Map()};for(const n of order){const d=parseXml(xml.get(n));if(ctx.text)ctx.text+='\n\n';ctx.drawingText=/diagrams\//.test(n);walkPart(d,ctx);ctx.docs.set(n,d);}return ctx;}
 const HL={PER:'cyan',COMP:'magenta',INST:'magenta',PLACE:'green',ADDR:'green',DATE:'yellow',BDATE:'yellow',YEAR:'yellow',AMT:'lightGray'};
 const hlOf=t=>HL[t]||'lightGray';
 const RPR_AFTER=new Set(['u','effect','bdr','shd','fitText','vertAlign','rtl','cs','em','lang','eastAsianLayout','specVanish','oMath','rPrChange']);
@@ -1171,7 +1270,7 @@ function applyToNodes(nodes,spans,highlight){
     splitRun(nd.el,segs);
   }
 }
-const scrubAttrs=s=>s.replace(/\b(w:author|w15:author|w:initials|w15:userId)="[^"]*"/g,(m,a)=>`${a}="${a.endsWith('initials')?'A':'Anonim'}"`);
+const scrubAttrs=s=>s.replace(/\b(w:author|w15:author|w:initials|w15:userId)="[^"]*"/g,(m,a)=>`${a}="${a.endsWith('initials')?'A':'Anonim'}"`).replace(/(<(?:wp:docPr|pic:cNvPr|wps:cNvPr|v:shape)\b[^>]*?)\s(?:descr|title|alt)="[^"]*"/g,'$1').replace(/(<(?:wp:docPr|pic:cNvPr|wps:cNvPr|v:shape)\b[^>]*?)\s(?:descr|title|alt)="[^"]*"/g,'$1');
 function scrubProps(name,s){
   if(name==='docProps/core.xml'){
     s=s.replace(/(<dc:creator[^>]*>)[\s\S]*?(<\/dc:creator>)/,'$1Anonim$2').replace(/(<cp:lastModifiedBy[^>]*>)[\s\S]*?(<\/cp:lastModifiedBy>)/,'$1Anonim$2');
@@ -1251,7 +1350,7 @@ function initUI(){
   }
   function buildEntities(){
     const m=new Map();
-    for(const sp of S.res.spans){let e=m.get(sp.key);if(!e){e={key:sp.key,type:sp.type,orig:S.res.text.slice(sp.s,sp.e),repl:sp.repl,count:0,first:sp.s};m.set(sp.key,e);}e.count++;}
+    for(const sp of S.res.spans){let e=m.get(sp.key);if(!e){e={key:sp.key,type:sp.type,orig:sp.suf?sp.suf.base:S.res.text.slice(sp.s,sp.e),repl:sp.repl,count:0,first:sp.s};m.set(sp.key,e);}e.count++;}
     entities=[...m.values()].sort((a,b)=>TORDER.indexOf(a.type)-TORDER.indexOf(b.type)||a.first-b.first);
     $('cnt').textContent='('+entities.length+')';
   }
@@ -1318,6 +1417,10 @@ function initUI(){
       if(/\.docx$/i.test(f.name)){
         S.docx=await loadDocx(f);
         $('input').value=S.docx.text;$('input').readOnly=true;$('docName').textContent=f.name;$('docBadge').classList.remove('hidden');
+        const X=S.docx.extras||{},w=[];
+        if(X.embed)w.push(X.embed+' gömülü nesne (Excel tablosu vb.)');if(X.chart)w.push(X.chart+' grafik');if(X.img)w.push(X.img+' resim');
+        $('docWarn').innerHTML=w.length?'<b>Dikkat:</b> Bu belgede '+w.join(', ')+' var. Bunların <b>içindeki</b> bilgiler (ekran görüntüsündeki isimler, gömülü tablodaki tutarlar) değiştirilemez; gerekirse Word\'de elle silin veya yeniden oluşturun.':'';
+        $('docWarn').classList.toggle('hidden',!w.length);
       }else if(/\.(txt|text|md)$/i.test(f.name)||f.type.startsWith('text')){
         const buf=new Uint8Array(await f.arrayBuffer());let t=new TextDecoder('utf-8').decode(buf);
         if(t.includes('\uFFFD'))t=new TextDecoder('windows-1254').decode(buf);
@@ -1327,7 +1430,7 @@ function initUI(){
       run(true);
     }catch(err){showErr(err&&err.message?err:{message:'Dosya açılamadı.'});}
   }
-  function clearDoc(){S.docx=null;$('input').readOnly=false;$('docBadge').classList.add('hidden');}
+  function clearDoc(){S.docx=null;$('input').readOnly=false;$('docBadge').classList.add('hidden');$('docWarn').classList.add('hidden');}
   $('btnClose').onclick=()=>{clearDoc();$('input').value='';};
 
   // dışa aktarım
